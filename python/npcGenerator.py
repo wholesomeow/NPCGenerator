@@ -23,10 +23,10 @@ def npcGenerator():
     responseList = responseText.splitlines()
 
     finalResponse = responseList[len(responseList) - 1]
-    print(finalResponse)
+    # print(finalResponse)
 
-    # npcJSON = npcInfo.npcPrintInfo()
-    # npcJSON.update({"Personality": finalResponse})
+    npcJSON = npcInfo.npcPrintInfo()
+    npcJSON.update({"Personality": finalResponse})
 
     return npcJSON
 

@@ -11,11 +11,9 @@ api = Api(app)
 class NPC(Resource):
     def get(self):
         getResponse = {}
-        npcInfo = npcInfoGenerator.npcInfoGenerator()
-        # getResponse = jsonify(npcGenerator.npcGenerator())
-        # getResponse.status_code = 200
-        npcInfo.generateInfo()
-        getResponse = jsonify(npcInfo.npcPrintInfo())
+        getResponse = jsonify(npcGenerator.npcGenerator())
+        getResponse.headers.add('Access-Control-Allow-Origin', '*')
+        getResponse.status_code = 200
 
         return getResponse
 
