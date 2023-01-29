@@ -1,5 +1,6 @@
 import openai
 import random
+import os
 import logging
 
 
@@ -55,7 +56,7 @@ class npcDetailGenerator:
     def dataToPrompt(self):
         self.promptOutFileName = random.randint(10000, 19999)
 
-        with open(f"prompts/{self.promptFile}", "r") as f:
+        with open(f"{self.promptFile}", "r") as f:
             npcPrompt = f.read()
 
         self.npcPrompt = npcPrompt + str(self.npcVarDict)
@@ -63,8 +64,11 @@ class npcDetailGenerator:
         return
 
     def sendPrompt(self):
-        # TODO: Figure out how to do this better
-        openai.api_key = "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"
+        # TODO: Replace env variable key with key from secrets managament
+        with open("secrets", "r") as file:
+            keyString = file.read()
+
+        openai.api_key = keyString
 
         response = openai.Completion.create(
             model="text-davinci-003",

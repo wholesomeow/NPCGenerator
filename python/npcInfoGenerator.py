@@ -393,3 +393,25 @@ class npcInfoGenerator:
 
         self.npcID = self.compileID()
         logging.info("NPC Information generated successfully")
+
+    def npcPrintInfo(self):
+        printInfo = {}
+
+        printInfo.update({"Alignment": self.alignment})
+        printInfo.update({"Alignment Ideology": self.subAlignment})
+        printInfo.update({"Stats": self.baseStats})
+        printInfo.update({"Job Name": self.jobName})
+        printInfo.update({"Job Description": self.jobDescription})
+        printInfo.update({"Race": self.race})
+        printInfo.update({"Subrace": self.subRace})
+        printInfo.update({"Size": self.size})
+        printInfo.update({"Speed": self.speed})
+        printInfo.update({"Languages": self.lanuages})
+        printInfo.update({"Gender": self.gender})
+        printInfo.update({"Sex": self.sex})
+        printInfo.update({"Pronouns-1": self.pronouns1})
+        printInfo.update({"Pronouns-2": self.pronouns2})
+        printInfo.update({"Pronouns-3": self.pronouns3})
+        printInfo.update({"Sexual Orientation": self.orientation})
+
+        return printInfo

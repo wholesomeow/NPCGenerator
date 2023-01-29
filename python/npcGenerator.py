@@ -7,6 +7,8 @@ import npcPromptGenerator
 
 
 def npcGenerator():
+    npcJSON = {}
+
     versionID = "alpha-0.6.1"
     promptFile = "prompts/npcPrompt.txt"
 
@@ -22,6 +24,11 @@ def npcGenerator():
 
     finalResponse = responseList[len(responseList) - 1]
     print(finalResponse)
+
+    # npcJSON = npcInfo.npcPrintInfo()
+    # npcJSON.update({"Personality": finalResponse})
+
+    return npcJSON
 
 
 if __name__ == "__main__":
