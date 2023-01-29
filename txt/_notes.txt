@@ -32,6 +32,7 @@
 
 #-----------------------------------------------------------------------------------#
 ### Make other python files/classes
+# TODO: Make description data for physical traits with input from the Race and Subrace
 # TODO: Custom Backgrounds with Background Design Guidlines - LINK: https://www.dandwiki.com/wiki/Background_Design_(5e_Guideline)
 # TODO: Custom Guilds with Guild Design Guidelines - LINK: https://www.dandwiki.com/wiki/Guild_Design_(5e_Guideline)
 # TODO: Make a NN for creating NPC Names with this pytorch tutorial (LINK: https://pytorch.org/tutorials/intermediate/char_rnn_generation_tutorial.html)
