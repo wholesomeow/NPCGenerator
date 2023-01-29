@@ -1,0 +1,180 @@
+#-----------------------------------------------------------------------------------#
+### Make other data files
+# TODO: Create a ranking function to add different levels of proficency to NPCs jobs
+    - Adding a Reports To and Level column
+            - There can only be one Owner, but can be multiple Masters depending on size of business
+            - Should use floats to have greater gradient of rankings within a level
+                - Two or Three decimal places should work, with each decimal place deciding "echelon"
+                    - 2.05 is middle of the low within the Sr Apprentices and 2.55 is middle of the middle within the same level
+    - Adding a Societal_View column for an indicator on how society at large values the professions
+        - The range for Societal_View is from 1-5
+            - 1 is Very Lowly
+            - 2 is Lowly
+            - 3 is Average
+            - 4 is Highly
+            - 5 is Very Highly
+
+# TODO: Edit the enneagramDataCompiled.json so that it reads better overall
+
+# TODO: Create some structure data files that utilize links from Pinterest/YouTube
+    - Relationships and Intimacy: https://www.youtube.com/watch?v=WyKFHd7cSaU
+    - Friendships: https://lostgarden.home.blog/2017/01/27/game-design-patterns-for-building-friendships/
+    - Table of Ranks: https://www.pinterest.com/pin/16255248647968389/
+    - Fleshing out Character Questions: https://www.pinterest.com/pin/16255248647968404/
+
+# TODO: Create list of building types and sizes for a town to be created, at a data level at least
+
+# TODO: Use this LINK: https://www.reddit.com/r/DnDBehindTheScreen/comments/4w3nsb/lets_build_a_republic/ to generate local government structure
+    - Also use this LINK: https://wiki.medieval-europe.eu/index.php?title=Noble_Titles and this LINK: https://wiki.medieval-europe.eu/index.php?title=Religion_Guide
+        for Nobility and Regligous structures
+    - Will need to create a Custom Structure thing as well for developing your own thing of each
+###
+
+#-----------------------------------------------------------------------------------#
+### Make other python files/classes
+# TODO: Custom Backgrounds with Background Design Guidlines - LINK: https://www.dandwiki.com/wiki/Background_Design_(5e_Guideline)
+# TODO: Custom Guilds with Guild Design Guidelines - LINK: https://www.dandwiki.com/wiki/Guild_Design_(5e_Guideline)
+# TODO: Make a NN for creating NPC Names with this pytorch tutorial (LINK: https://pytorch.org/tutorials/intermediate/char_rnn_generation_tutorial.html)
+# TODO: Make a "timestep" function that can be called in each class that "moves" people forward in time by X amount of hours/days/weeks/months
+# TODO: Make a schedule class for NPCs that creates a daily schedule for workdays and non-workdays based on Enneagram Type
+###
+
+#-----------------------------------------------------------------------------------#
+### Things to do for the NPC_Job Data
+# TODO: Fix the descriptions of the jobs so they are able to flow into the template.
+# TODO: Use this link to add a better/more detailed structure to the job and status for NPC positions socially
+
+#-----------------------------------------------------------------------------------#
+### Things to do for the Races Data
+# FUTURE TODO: Add a "Child Rearing" age range
+
+#-----------------------------------------------------------------------------------#
+### Things to do for the NPC_Generator
+
+# TODO: Create a Unique ID for each character based on:
+    - Age - DONE
+    - Race - DONE
+    - Sex - DONE
+    - Sexual Orientation - DONE
+    - Gender Identity - DONE
+    - Eneagram Data - DONE
+        - Main Type - DONE
+        - Dominant Wing - DONE
+        - Center - DONE
+    - Stress (use 10000)
+        - Base Stress (take base and +/- 1000 * level of development, depending on health vs unhealth)
+        - Stress Threashold (take alignmentIdeology and infer if they are "Resiliant" vs "Turbulant" and +/- % of LOD Stress value)
+            - Resiliant gets higher Threashold, Turbulant gets lower
+    - Job - DONE
+    - Alignment - DONE
+
+# CONSIDER_01: Adding a Reputation value to get how people view the person, regardless of their job
+    - Could be added to the Overall_Status and evaluated seperatly for interactions with the person and about the person
+    - Could build off of the Cyberpunk life events thing for relationship building
+        - Starts with a default Reputation value and has actions from interpersonal situations and professional situations +/- to it over time
+            - Unhealthy and Evil Alignment people will hold negative values higher and vice versa for healthy and Good people
+            - Maybe add a Respect value as well for actions that are Chaotic/Lawful so that people can like/not like and respect/not respect at the same time
+                - Could be based on Dominant Emotion and Alignment
+# CONSIDER_02: Adding a Job_Preference or a Status_Preference (or both) value that is compared against their current Overall_Status and Job_Status values
+    - Through a combination of those three to four values, a Content_Value is created and compared against the persons Content_Threashold
+        - Depending on the Content_Values proximity to the Content_Threashold, the person will be dissatisfied with their current situation in life
+            - Could have a certain amount of Stress added to their Stress level which then interacts with their Level of Development, Direction of Stress, etc
+# CONSIDER_03: Adding relationship and love conditions
+    - A person being In_Love will have lower stress, unless the love is one-way, in which case they could have higher stress
+    - A person in a happy marriage will have lower stress, while a person in a failing marriage will have higher stress
+        - Divorce could be a status that will add a lot of Stress
+    - Kids could make one stressed day-to-day, but have a higher Content_Value
+        - Kids in a failing marriage would have a much higher effect on Content_Value and Stress
+# CONSIDER_04: Different types of Stress values that contribute to an Overall_Stress
+    - Emotional, Financial, Existential etc
+        - Could look at types of abuse to get different types of stress
+        - Or just google it
+    - Each type could have different +/- values to ensure that the different types of stress are weighted properly
+        - Or could have a predisposition for each person that would multiply the different stress type by a percentage to get a individualized distribution
+
+## FUTURE TODO: ##
+    - Relationships will also have a base62 ID based on status between two people
+        # NOTE: If float, convert to int and preserve order in total value
+        - This would be comprised of:
+            - Entity 1 Societal_Standing to Entity 2
+                - Entity 1 Job_Preference to Entity 2
+                - Entity 1 Societal_View to Entity 2
+                - Entity 2 Reputation to Entity 1
+                            - How influential Entity 2 Reputation is
+                            - Is affected by the Status_Bias
+                - Entity 1 Status_Bias
+                    - The Status_Preference of Entity 1 increased or reduced by a value that indicates how much Status means to them
+                        - Could determine Status_Meaning by an Log Distribution skewed localized on their Status_Preference value
+                            - Low Status_Meaning = Decreasing Distribution = Status_Meaning - Status_Preference
+                            - High Status_Meaning = Increasing Distribution = Status_Meaning + Status_Preference
+            - Entity 1 Respect for Entity 2
+            - Entity 1 Personality_Preference to Entity 2
+                - This could be how well the two Eneagram Types get a long based on the Eneagram sub data
+                - When establishing relationships between things like Kingdoms/Guilds/Businesses/etc this value would be based off the types between the leaders
+            - Entity 1 Overall_History to Entity 2
+                - Entity 1 LongTerm_History to Entity 2
+                - Entity 1 ShortTerm_History to Entity 2
+                    - Big actions in the short term could have a large influence on the relationship despite the long term history
+                    - This is Eneagram Type dependant, of course
+                        - Something like a multiplier for recent actions could +/- the Overall_History value
+            - This is done for both Entity 1 to Entity 2 and vice versa
+        - The final relationship value for E1-E2 and E2-E1 (the concatenated values) would be converted to base62 and appended to their Relationship Table
+            - ie E1 has ID TlkajfsTAF in their Relationship Table for how they view their relationship with E2 as does E2 for E1
+
+## FUTURE TODO: Create parsed EPD that doesn't include full list of levels of development and pipe that into charInfo.json
+
+## FUTURE TODO: Find a way to inject how the different Eneagram Types parent to influence children
+
+## FUTURE TODO: Make a baby/child NPC Generator
+    - Should just be apperance and how fussy they are for babies
+    - Children are classified as ages 2 - 16
+        - Gotta create a list of events for those ages
+            - Mostly parent/Authority figure based with some friend interactions
+
+## FUTURE TODO: Lift the age and event thing from the Cyberpunk 2020 rules
+    - Events should be generally neutral and should have the people drive the result of the interaction
+        - Situation = E1 + En Eneagram Type. Resolution = E1 vs En Reaction Type
+            - Reaction Type would be based on Level of Development and Eneagram sub data
+            - Will need generated text on how that interaction would go, probably
+                - Generate "boilerplate" text for each type of interaction (thats going to be a lot)
+                - Analyse sentiment and convert to int
+                - Generate buffer from int to create float range for Reaction Type (or something like that)
+    - See Societal_View CONSIDER_01 for additional notes
+    - Make sure one of the life events is "Moved Towns Cities" to get at least some people that are new and don't have a full past with people in the current town
+
+## FUTURE TODO: Add the direciton of stress and growth for each Type
+    - Include the type information for each main types direcitons
+    - Include the type information for each wing types direcitons
+
+## FUTURE TODO: Create some pseudo-simulation system for city generation
+    - When a city is generated, "simulate" ~10 years or so for relationships to be created, people to grow, etc
+
+## FUTURE TODO: Add greater systems that utilize the Dominant Emotion/Center Type of others to inform relationship outcomes
+    - Usage of the Dominant Emotion could be implemented with an emotion chart
+    - When action/inaction is taken in inter/intrapersonal interactions, the parties involved could check their emotinal personal preference against
+        the other parties conveyed emotion and the amount of time (in ticks or seconds) it takes for the action to happen
+        - eg. News comes in of a bandit attack, Party A has an Instinctive Center and Party B has a Thinking Center. Party B decides they need to think
+            which will take some in-world time. This decision registers to Party A as action that will exceed their time threashold, which causes a
+            negative emotional response.
+            - Vice versa is also true, with Party A choosing an action that takes the least amount of in-world time to resolve. This doesn't meet
+                Party B's min time threashold, which causes a negative emotional response.
+        - Intuitive Centers will want to take quick action that is in the best interest of the people that they care about
+            - Values that they will look for are:
+                - Speed of result/implementation
+                    - Amount of time to begin an action
+                    - Amount of time to begin implementation of an action
+                    - Amount of time to finishing an action
+                - Equal or greater reaction to an action
+                    - Type of inbound action they are responding to
+                        - Emotional
+                        - Physical
+                        - Societal
+                    - Level of severity of response compared to level of severity of the action
+        - Thinking Centers will want to take carefully considered action that is in the best interest of the people that they care about
+        - Emotional Cetners will want to take considerate action that is in the best interest of the people that they care about
+        - Stress levels can play into the time threashold value for each NPC of each center.
+            - Intuitive Centers when at a certain Stress Level will have their time threashold reduced
+            - Thinking Centers will have theirs increased
+
+
+

@@ -1,0 +1,9 @@
+ID,Gender,Gender_Description,Pronouns,Secondary_Pronouns,Tirtiary_Pronouns
+1000000000,Agender,Not having a gender or identifying with a gender.,They Them,,
+1000000001,Bigender,A person who fluctuates between traditionally “male” and “female” gender-based behaviours and identities.,He Him,She Her,
+1000000002,Cisgender,A person whose gender identity and biological sex assigned at birth are the same.,He Him,She Her,
+1000000003,Gender Fluid,"A person who is gender fluid may always feel like a mix of the two traditional genders but may feel more man some days, and more woman other days.",He Him,She Her,They Them
+1000000004,Gender Variant,Someone who either by nature or by choice does not conform to gender-based expectations of society.,They Them,,
+1000000005,Non-Binary,A gender identity and an umbrella term for people whose identity falls outside of the binary of male and female.,They Them,,
+1000000006,Transgender man,A term used to describe someone who is assigned female at birth but identifies and lives as a man.,He Him,,
+1000000007,Transgender woman,A term used to describe someone who is assigned male at birth but identifies and lives as a woman.,She Her,,
