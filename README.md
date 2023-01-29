@@ -28,8 +28,8 @@ Alpha 0.x.x
 
 - [x] NPC Information JSON creation
 - [x] NPC JSON to GPT-3
-- [ ] API Creation with Flask
-- [ ] Basic Web Page to display result of API call
+- [x] API Creation with Flask
+- [x] Basic Web Page to display result of API call
 - [ ] Implement NLP AI for Name Generation
 
 Beta 1.x.x
