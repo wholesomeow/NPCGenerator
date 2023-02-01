@@ -8,69 +8,152 @@
     <title>NPC Generator</title>
 </head>
 <body>
-    <header class="SiteHeader">
-        <nav class="SiteNav">
-            <div id="LogoText">DungeonCraft</div>
-            <div class="NavMenu">
-                <ul class="menu">
-                    <li class="NavItems">Generate NPC</li>
-                    <li class="NavItems">About</li>
-                    <li class="NavItems">Contact</li>
-                    <li class="NavItems">GitHub</li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <button id="npcGenCall" type="button">Generate NPC</button>
-    <script src="javascript\npcGenCall.js"></script>
-    <div id="npcData">NPC Information
-        <div id="basicData">
-            <div id="infoTitle">Alignment</div>
-            <div id="Alignment">Test</div>
-
-            <div id="infoTitle">Alignment Ideology</div>
-            <div id="AlignmentIdeology">Test</div>
-            <div id="infoTitle">Race</div>
-
-            <div id="Race">Test</div>
-            <div id="infoTitle">Subrace</div>
-            <div id="Subrace">Test</div>
-
-            <div id="infoTitle">Languages</div>
-            <div id="Languages">Test</div>
-
-            <div id="infoTitle">Size</div>
-            <div id="Size">Test</div>
-
-            <div id="infoTitle">Speed</div>
-            <div id="Speed">Test</div>
-
-            <div id="infoTitle">Stats</div>
-            <div id="Stats">Test</div>
-
-            <div id="infoTitle">Gender</div>
-            <div id="Gender">Test</div>
-
-            <div id="infoTitle">Sex</div>
-            <div id="Sex">Test</div>
-
-            <div id="infoTitle">Sexual Orientation</div>
-            <div id="SexualOrientation">Test</div>
-
-            <div id="infoTitle">Job Name</div>
-            <div id="JobName">Test</div>
-
-            <div id="infoTitle">Job Description</div>
-            <div id="JobDescription">Test</div>
-
-            <div id="infoTitle">Pronouns</div>
-            <div id="Pronouns-1">Test</div>
-            <div id="Pronouns-2">Test</div>
-            <div id="Pronouns-3">Test</div>
+    <div class="page-wrapper">
+        <header class="SiteHeader">
+            <nav class="SiteNav">
+                <div id="LogoText">DungeonCraft</div>
+                <div class="NavMenu">
+                    <ul class="menu">
+                        <li class="NavItems">Generate NPC</li>
+                        <li class="NavItems">About</li>
+                        <li class="NavItems">Contact</li>
+                        <li class="NavItems">GitHub</li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="row">
+            
         </div>
-        <div id="personalityData">
-            <div id="infoTitle">Personality</div>
-            <div id="Personality">Test</div>
+        <div class="column">
+            
+        </div>
+        <div class="row">
+            <div class="column">
+                <button id="npcGenCall" type="button">Generate New NPC</button>
+                <script src="javascript\npcGenCall.js"></script>
+            </div>
+            <div class="double-column">
+                <div id="infoTitle">NPC Information</div>
+            </div>
+        </div>
+        <div id="infoSection">
+            <div id="infoRow" class="row">
+                <div id="infoColumn" class="column">
+                    <div id="infoTitle">Alignment</div>
+                </div>
+                <div id="infoColumn" class="column">
+                    <div id="Alignment" class="info">Chaotic Good</div>
+                </div>
+            </div>
+            <div id="infoRow" class="row">
+                <div id="infoColumn" class="column">
+                    <div id="infoTitle">Alignment Ideology</div>
+                </div>
+                <div id="infoColumn" class="column">
+                    <div id="AlignmentIdeology" class="info">Indulgence</div>
+                </div>
+            </div>
+            <div id="infoRow" class="row">
+                <div id="infoColumn" class="double-column">
+                    <div id="infoTitle">Race</div>
+                </div>
+                <div id="infoColumn" class="column">
+                    <div id="Race" class="info">Genasi</div>
+                </div>
+            </div>
+            <div id="infoRow" class="row">
+                <div id="infoColumn" class="column">
+                    <div id="infoTitle">Languages</div>
+                </div>
+                <div id="infoColumn" class="column">
+                    <div id="Languages" class="info">Common, Primordial</div>
+                </div>
+            </div>
+            <div id="infoRow" class="row">
+                <div id="infoColumn" class="column">
+                    <div id="infoTitle">Size</div>
+                </div>
+                <div id="infoColumn" class="column">
+                    <div id="Size" class="info">M</div>
+                </div>
+            </div>
+            <div id="infoRow" class="row">
+                <div id="infoColumn" class="column">
+                    <div id="infoTitle">Speed</div>
+                </div>
+                <div id="infoColumn" class="column">
+                    <div id="Speed" class="info">30</div>
+                </div>
+            </div>
+            <div id="infoRow" class="row">
+                <div id="infoColumn" class="column">
+                    <div id="infoTitle">Stats</div>
+                </div>
+                <div id="infoColumn" class="column">
+                    <div id="Stats" class="info">12, 13, 15, 13, 15, 15</div>
+                </div>
+            </div>
+            <div id="infoRow" class="row">
+                <div id="infoColumn" class="column">
+                    <div id="infoTitle">Gender</div>
+                </div>
+                <div id="infoColumn" class="column">
+                    <div id="Gender" class="info">Non-Binary</div>
+                </div>
+            </div>
+            <div id="infoRow" class="row">
+                <div id="infoColumn" class="column">
+                    <div id="infoTitle">Sex</div>
+                </div>
+                <div id="infoColumn" class="column">
+                    <div id="Sex" class="info">Male</div>
+                </div>
+            </div>
+            <div id="infoRow" class="row">
+                <div id="infoColumn" class="column">
+                    <div id="infoTitle">Sexual Orientation</div>
+                </div>
+                <div id="infoColumn" class="column">
+                    <div id="SexualOrientation" class="info">Bisexual</div>
+                </div>
+            </div>
+            <div id="infoRow" class="row">
+                <div id="infoColumn" class="column">
+                    <div id="infoTitle">Job Name</div>
+                </div>
+                <div id="infoColumn" class="column">
+                    <div id="JobName" class="info">Makeup Artist</div>
+                </div>
+            </div>
+            <div id="infoRow" class="row">
+                <div id="infoColumn" class="column">
+                    <div id="infoTitle">Job Description</div>
+                </div>
+                <div id="infoColumn" class="column">
+                    <div id="JobDescription" class="info">applies cosmetics to models, actors, nobles, etc.</div>
+                </div>
+            </div>
+            <div id="infoRow" class="row">
+                <div id="infoColumn" class="column">
+                    <div id="infoTitle">Pronouns</div>
+                </div>
+                <div id="infoColumn" class="column">
+                    <ul id="pronounList">
+                        <li id="Pronouns-1" class="info">They Them</li>
+                        <li id="Pronouns-2" class="info"></li>
+                        <li id="Pronouns-3" class="info"></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="infoRow" class="row">
+                <div id="infoColumn" class="column">
+                    <div id="infoTitle">Personality</div>
+                </div>
+                <div id="infoColumn" class="column">
+                    <div id="Personality" class="info">Final Result: This person has a complex mix of social tendencies with strong personal values in line with their conscientious ethics and justice driven outlooks on life \u2013 making them incredibly principled observers. Fearful of mistakes or being seen as corrupt or evil they always strive higher in an effort to constantly improve the world around them while pushing back against any criticism they may receive. On the outside they can be sociably accepting while having trust issues which leads them towards making peaceable decisions often motivated by creating harmony - even if that means avoiding things that might disrupt their internal stability. Often resembling an optimist with a healing presence this individual can successfully mediate between parties while maintaining their moral compass at all times \u2013 standing strong against whatever challenges come their way without departing from their core set of values when making decisions impacting those around them.</div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
