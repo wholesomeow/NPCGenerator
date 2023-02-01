@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 
 body {
     background-color: #EFFFFD;
+    margin: 10px 20px;
 }
 
 .page-wrapper {
@@ -15,12 +16,28 @@ body {
     flex-wrap: wrap;
     width: 100%;
 }
+
+.center-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
   
 .column {
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
+}
+
+.center-column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    align-items: center;
 }
 
 .double-column {
@@ -30,12 +47,70 @@ body {
     flex: 2;
 }
 
-#infoTitle {
-    font: 32px Poppins, sans-serif;
-    font-weight: 800;
+.double-center-column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 2;
+    align-items: center;
 }
 
 .info {
     font: 21px Poppins, sans-serif;
     font-weight: 400;
+    margin: 5px;
+    justify-content: center;
+}
+
+.infoHeader {
+    background-color: #85F4FF;
+    border-radius: 15px;
+}
+
+#npcGenCall {
+    background-color: rgba(66, 194, 255, 1);
+    font: 16px Poppins, sans-serif;
+    font-weight: 800;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 32px;
+    width: 20%;
+    text-align: center;
+    color: #EFFFFD;
+    margin: 10px;
+    transition: background-color 0.4s ease;
+    cursor: pointer;
+}
+
+#npcGenCall:hover {
+    background-color: rgba(66, 194, 255, 0.6);
+    transition: background-color 0.4s ease;
+    cursor: pointer;
+}
+
+#npcInfoTitle {
+    font: 36px Poppins, sans-serif;
+    font-weight: 800;
+    color: #2A2B2E;
+    margin: 10px;
+}
+
+#infoTitle {
+    font: 32px Poppins, sans-serif;
+    font-weight: 600;
+    color: #2A2B2E;
+    margin: 5px;
+    justify-content: center;
+}
+
+#titleColumn {
+    margin: 5px;
+}
+
+#infoColumn {
+    background-color: #B8FFF9;
+    border-radius: 10px;
+    color: #2A2B2E;
+    margin: 10px;
+    padding: 5px;
 }
