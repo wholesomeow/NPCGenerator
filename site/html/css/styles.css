@@ -2,7 +2,12 @@
 
 body {
     background-color: #EFFFFD;
-    margin: 10px 20px;
+}
+
+nav {
+    background-color: #85F4FF;
+    padding: 0px 10px 0px 15px;
+    align-items: center;
 }
 
 .page-wrapper {
@@ -55,6 +60,10 @@ body {
     align-items: center;
 }
 
+.subNav {
+    margin: 0px 0px 35px 0px;
+}
+
 .info {
     font: 21px Poppins, sans-serif;
     font-weight: 400;
@@ -64,7 +73,43 @@ body {
 
 .infoHeader {
     background-color: #85F4FF;
-    border-radius: 15px;
+    border-radius: 5px;
+}
+
+#LogoText {
+    font: 32px Poppins, sans-serif;
+    font-weight: 800;
+    color: #2A2B2E;
+}
+
+#NavItems {
+    font: 16px Poppins, sans-serif;
+    font-weight: 600;
+    color: #2A2B2E;
+    list-style-type: none;
+    padding: 0px 25px;
+    cursor: pointer;
+}
+
+#navButton {
+    background-color: rgba(66, 194, 255, 1);
+    font: 16px Poppins, sans-serif;
+    font-weight: 800;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 32px;
+    width: 28%;
+    text-align: center;
+    color: #EFFFFD;
+    margin: 10px;
+    transition: background-color 0.4s ease;
+    cursor: pointer;
+}
+
+#npcButton:hover {
+    background-color: rgba(66, 194, 255, 0.6);
+    transition: background-color 0.4s ease;
+    cursor: pointer;
 }
 
 #npcGenCall {
@@ -72,7 +117,7 @@ body {
     font: 16px Poppins, sans-serif;
     font-weight: 800;
     border: none;
-    border-radius: 20px;
+    border-radius: 50px;
     padding: 15px 32px;
     width: 20%;
     text-align: center;
@@ -109,7 +154,7 @@ body {
 
 #infoColumn {
     background-color: #B8FFF9;
-    border-radius: 10px;
+    border-radius: 5px;
     color: #2A2B2E;
     margin: 10px;
     padding: 5px;
