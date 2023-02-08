@@ -1,18 +1,5 @@
 #-----------------------------------------------------------------------------------#
 ### Make other data files
-# TODO: Create a ranking function to add different levels of proficency to NPCs jobs
-    - Adding a Reports To and Level column
-            - There can only be one Owner, but can be multiple Masters depending on size of business
-            - Should use floats to have greater gradient of rankings within a level
-                - Two or Three decimal places should work, with each decimal place deciding "echelon"
-                    - 2.05 is middle of the low within the Sr Apprentices and 2.55 is middle of the middle within the same level
-    - Adding a Societal_View column for an indicator on how society at large values the professions
-        - The range for Societal_View is from 1-5
-            - 1 is Very Lowly
-            - 2 is Lowly
-            - 3 is Average
-            - 4 is Highly
-            - 5 is Very Highly
 
 # TODO: Edit the enneagramDataCompiled.json so that it reads better overall
 
@@ -42,31 +29,51 @@
 #-----------------------------------------------------------------------------------#
 ### Things to do for the NPC_Job Data
 # TODO: Fix the descriptions of the jobs so they are able to flow into the template.
-# TODO: Use this link to add a better/more detailed structure to the job and status for NPC positions socially
+# TODO: Create a ranking function to add different levels of proficency to NPCs jobs
+    - Adding a Reports To and Level column
+            - There can only be one Owner, but can be multiple Masters depending on size of business
+            - Should use floats to have greater gradient of rankings within a level
+                - Two or Three decimal places should work, with each decimal place deciding "echelon"
+                    - 2.05 is middle of the low within the Sr Apprentices and 2.55 is middle of the middle within the same level
+    - Adding a Societal_View column for an indicator on how society at large values the professions
+        - The range for Societal_View is from 1-5
+            - 1 is Very Lowly
+            - 2 is Lowly
+            - 3 is Average
+            - 4 is Highly
+            - 5 is Very Highly
 
 #-----------------------------------------------------------------------------------#
 ### Things to do for the Races Data
 # FUTURE TODO: Add a "Child Rearing" age range
+# FUTURE TODO: Add different catagories for age range
 
 #-----------------------------------------------------------------------------------#
-### Things to do for the NPC_Generator
+### Things to do for Enneagram Data
 
-# TODO: Create a Unique ID for each character based on:
-    - Age - DONE
-    - Race - DONE
-    - Sex - DONE
-    - Sexual Orientation - DONE
-    - Gender Identity - DONE
-    - Eneagram Data - DONE
-        - Main Type - DONE
-        - Dominant Wing - DONE
-        - Center - DONE
-    - Stress (use 10000)
-        - Base Stress (take base and +/- 1000 * level of development, depending on health vs unhealth)
-        - Stress Threashold (take alignmentIdeology and infer if they are "Resiliant" vs "Turbulant" and +/- % of LOD Stress value)
-            - Resiliant gets higher Threashold, Turbulant gets lower
-    - Job - DONE
-    - Alignment - DONE
+# TODO: Add the Overview in for each type
+
+# TODO: Finish rewriting data to read better
+
+# TODO: Add a Turbulant or Resiliant value to each types LOD in the Enneagram Data file and use that to factor into the stressCal function
+
+#-----------------------------------------------------------------------------------#
+### Things to do for PrompGenerator
+
+# TODO: Rework prompt to generate an overview/summary paragraph of the character based on the three types selected mixed by the percentages provided
+
+# TODO: Rework prompt to create the following information:
+    - What is their mental state?
+    - How do they view the world?
+    - How do they view themselves?
+    - How do they interact with other people?
+        - People they like?
+        - People they know?
+        - People they don't like?
+        - People they don't know?
+
+#-----------------------------------------------------------------------------------#
+### Things to do for the InfoGenerator
 
 # CONSIDER_01: Adding a Reputation value to get how people view the person, regardless of their job
     - Could be added to the Overall_Status and evaluated seperatly for interactions with the person and about the person

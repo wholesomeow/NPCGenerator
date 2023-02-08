@@ -14,22 +14,24 @@ class npcInfoGenerator:
         self.sexID = 100000000000
         self.typeID = 10000000
         self.baseID = 1250000
-        self.wingID = 0
         self.subID = 500000
         self.centerID = 0
         self.centerType = ""
         self.alignmentID = 10000
         self.subAlignmentID = 5000
+        self.stressID = 1000
 
-        self.enneagramData = {}
-        self.dominantWing = {}
-        self.wingBlendOut = 0.00
+        self.enneagramData = []
+        self.dataBlendOut = []
 
         self.LOD = 0
 
         self.alignment = ""
         self.subAlignment = ""
         self.baseStats = []
+
+        self.baseStress = 0
+        self.stressThreashold = 0
 
         self.sex = ""
         self.ageID = 100000
@@ -106,7 +108,7 @@ class npcInfoGenerator:
                 case 0:
                     self.jobID = int(i["ID"])
                     self.jobCategory = i["Category"]
-                    if self.sex == "Male":
+                    if self.sex == "Male" or "Other":
                         self.jobName = i["Name"]
                     else:
                         self.jobName = i["Alt_Name"]
@@ -165,6 +167,8 @@ class npcInfoGenerator:
 
     def alignmentGenerator(self):
         alignmentPrefix = ""
+
+        # Chooses a personal ideology that the individual follows, either consiously or not
         aEmotions00 = ["Collectivism", "Fanaticism",
                        "Individualism", "Relativism"]
         aEmotions01 = ["Parental", "Ascendance", "Community", "Philisophy"]
@@ -229,62 +233,73 @@ class npcInfoGenerator:
                 self.subAlignment = aEmotions22[subNum]
                 self.subAlignmentID += 300
 
-        return
+        return subNum + 1
 
-    def r_wingBlend(self):
-        output = 0.0
-        output = random.uniform(0.0, 0.5)
-        output *= 100
-        self.wingBlendOut = float("{:.2f}".format(output))
-
-        return
-
-    def wingSelection(self, ennData):
-        output = {}
-
-        # Select one of the two wings
-        wingVal = self.enneagramData.get("wings")
-        ranWing = random.randint(0, 1)
-        wing = wingVal[ranWing]
-
-        # Find that wings data and return it
-        mainData = ennData.get("mainData")
-        output = mainData[wing - 1]
-
-        self.wingID = self.mainTypeID / 2
-
-        return output
-
-    def selectEnneagram(self, input):
-        output = {}
+    def selectEnneagram(self, input, ranType):
         thinking, feeling, instinctive = [5, 6, 7], [2, 3, 4], [1, 8, 9]
         mainData = input.get("mainData")
-        ranType = random.randint(0, 8)
+        ranType -= 1
         centerTypeNum = ranType + 1
 
         if centerTypeNum in thinking:
-            self.mainTypeID = self.typeID * centerTypeNum
+            self.baseID = self.typeID * centerTypeNum
             self.dominantEmotion = "Fear"
             self.centerType = "Thinking Center"
             self.subID *= 1
             self.centerID = self.baseID + self.subID
         elif centerTypeNum in feeling:
-            self.mainTypeID = self.typeID * centerTypeNum
+            self.baseID = self.typeID * centerTypeNum
             self.dominantEmotion = "Shame"
             self.centerType = "Feeling Center"
             self.subID *= 2
             self.centerID = self.baseID + self.subID
         elif centerTypeNum in instinctive:
-            self.mainTypeID = self.typeID * centerTypeNum
+            self.baseID = self.typeID * centerTypeNum
             self.dominantEmotion = "Anger"
             self.centerType = "Instinctive Center"
             self.subID *= 3
             self.centerID = self.baseID + self.subID
 
         # Having the placement of data happen after the ID is created and output is updated
-        output = mainData[ranType]
+        return mainData[ranType]
 
-        return output
+    def stressCalc(self, subNum):
+        stress = 10000
+        threashold = random.uniform(15.0, 25.0)
+
+        # Takes default stress value and creates a base stress from mental health (Level of Development)
+        if self.LOD > 5:
+            stress -= 1000 * self.LOD
+            self.baseStress = stress
+        elif self.LOD < 5:
+            stress += 1000 * self.LOD
+            self.baseStress = stress
+
+        # Creates a stress threashold based on Alignment Ideology
+        # with bonus from mental health
+        if subNum <= 2:
+            threashold += random.uniform(7.0, 13.0)
+        else:
+            threashold -= random.uniform(7.0, 13.0)
+
+        threashold += 10.0 - self.LOD * random.uniform(1.0, 10.0)
+        self.stressThreashold = float("{:.2f}".format(threashold * 100))
+        self.stressID += self.baseStress
+
+        return
+
+    def r_dataBlend(self):
+        float1 = random.uniform(0, 100)
+        float2 = random.uniform(0, 100 - float1)
+        float3 = 100.0 - float1 - float2
+
+        pfloat1 = float("{:.2f}".format(float1))
+        pfloat2 = float("{:.2f}".format(float2))
+        pfloat3 = float("{:.2f}".format(float3))
+
+        self.dataBlendOut.extend((pfloat1, pfloat2, pfloat3))
+
+        return
 
     def getStats(self, statBuffs):
         statBuffInt = []
@@ -304,7 +319,6 @@ class npcInfoGenerator:
         IDList.extend((self.sexID,
                        self.typeID,
                        self.baseID,
-                       int(self.wingID),
                        self.subID,
                        self.centerID,
                        self.alignmentID,
@@ -314,7 +328,8 @@ class npcInfoGenerator:
                        self.statusLevel,
                        self.raceID,
                        self.genderID,
-                       self.orientationID))
+                       self.orientationID,
+                       self.stressID))
 
         for id in IDList:
             num += id
@@ -335,6 +350,38 @@ class npcInfoGenerator:
 
         return ''.join(arr)
 
+# This is ugly as hell; gotta figure out a better way
+    def pickFirst(self, ennData, types, ranType):
+        ranType = random.choice(types)
+        prevType = ranType
+        self.enneagramData.append(self.selectEnneagram(ennData, ranType))
+
+        return prevType, ranType
+
+    def pickSecond(self, ennData, types, prevType, ranType):
+        ranType = random.choice(types)
+        if ranType is not prevType:
+            self.enneagramData.append(self.selectEnneagram(ennData, ranType))
+        else:
+            print("Match found... reselecting second")
+            ranType = random.choice(types)
+
+        storedType = prevType
+        prevType = ranType
+
+        return storedType, prevType, ranType
+
+    def pickThird(self, ennData, types, storedType, prevType, ranType):
+        ranType = random.choice(types)
+        if ranType is not prevType or storedType:
+            self.enneagramData.append(self.selectEnneagram(ennData, ranType))
+        else:
+            print("Match found... reselecting third")
+            ranType = random.choice(types)
+
+        return
+# --------------------------------------------------
+
     def generateInfo(self):
         fileList = ["csv/NPC_Job_List.csv", "csv/Races.csv",
                     "csv/Genders.csv", "csv/Sexual_Orientations.csv"]
@@ -350,21 +397,34 @@ class npcInfoGenerator:
         with open("json/enneagramDataCompiled.json", "r") as e:
             ennData = json.load(e)
 
-        self.enneagramData = self.selectEnneagram(ennData)
-        self.dominantWing = self.wingSelection(ennData)
-        self.r_wingBlend()
+        # Selects three random Enneagram types and creates a blend percentage of the three
+        # This is where that ugly as hell solution comes into play - bleh
+        ranType = 0
+        types = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        for selection in range(3):
+            if selection == 0:
+                prevType, ranType = self.pickFirst(ennData, types, ranType)
+            elif selection == 1:
+                storedType, prevType, ranType = self.pickSecond(
+                    ennData, types, prevType, ranType)
+            elif selection == 2:
+                self.pickThird(ennData, types, storedType, prevType, ranType)
+        self.r_dataBlend()
 
         self.getStats(statBuffs)
 
         self.r_DevelopmentLevel(self.enneagramData)
-        self.alignmentGenerator()
+        subNum = self.alignmentGenerator()
+        self.stressCalc(subNum)
 
         # TODO: Create base stress value, stres threashold, and +/- stress from Level of Development
 
-        # NOTE: npcDetail has 28 elements (Update as needed)
+        # NOTE: npcDetail has 30 elements (Update as needed)
         self.npcDetail.append(self.alignment)
         self.npcDetail.append(self.subAlignment)
         self.npcDetail.append(self.baseStats)
+        self.npcDetail.append(self.baseStress)
+        self.npcDetail.append(self.stressThreashold)
         self.npcDetail.append(self.sex)
         self.npcDetail.append(self.jobCategory)
         self.npcDetail.append(self.jobName)
@@ -387,8 +447,7 @@ class npcInfoGenerator:
         self.npcDetail.append(self.enneagramData)
         self.npcDetail.append(self.centerType)
         self.npcDetail.append(self.dominantEmotion)
-        self.npcDetail.append(self.dominantWing)
-        self.npcDetail.append(self.wingBlendOut)
+        self.npcDetail.append(self.dataBlendOut)
         self.npcDetail.append(self.LOD)
 
         self.npcID = self.compileID()
@@ -408,6 +467,8 @@ class npcInfoGenerator:
         printInfo.update({"Languages": self.lanuages})
         printInfo.update({"Gender": self.gender})
         printInfo.update({"Sex": self.sex})
+        printInfo.update({"Stress": self.baseStress})
+        printInfo.update({"StressThreashold": self.stressThreashold})
         printInfo.update({"Pronouns-1": self.pronouns1})
         printInfo.update({"Pronouns-2": self.pronouns2})
         printInfo.update({"Pronouns-3": self.pronouns3})
