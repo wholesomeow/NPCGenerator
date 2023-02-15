@@ -2,32 +2,40 @@ import logging
 
 import npcInfoGenerator
 import npcPromptGenerator
+import npcGPTCall
 
 # TODO: Add better logging everywhere
 
 
 def npcGenerator():
     npcJSON = {}
+    debug = False
 
-    versionID = "alpha-0.7.3"
+    versionNum = "alpha-0.7.3"
     promptFile = "prompts/npcPrompt.txt"
 
     npcInfo = npcInfoGenerator.npcInfoGenerator()
     npcPrompt = npcPromptGenerator.npcDetailGenerator(promptFile)
 
     npcInfo.generateInfo()
-    npcPrompt.generatePrompt(npcInfo.npcDetail)
+    promptInfo = npcPrompt.generatePrompt(npcInfo.npcDetail)
 
-    response = npcPrompt.promptResponse
-    responseText = response.choices[0].text
-    responseList = responseText.splitlines()
+    if debug:
+        versionID = versionNum
+        response = npcGPTCall.sendPrompt(promptInfo)
+        responseText = response.choices[0].text
+        responseList = responseText.splitlines()
 
-    finalResponse = responseList[len(responseList) - 1]
-    # print(finalResponse)
+        finalResponse = responseList[len(responseList) - 1]
+        # print(finalResponse)
 
-    npcJSON.update({"Version": versionID})
-    npcJSON = npcInfo.npcPrintInfo()
-    npcJSON.update({"Personality": finalResponse})
+        npcJSON = npcInfo.npcPrintInfo()
+        npcJSON.update({"Personality": finalResponse})
+        npcJSON.update({"Version": versionID})
+    else:
+        versionID = f"{versionNum}-PROMPT_DEBUG"
+        npcJSON = npcInfo.npcPrintInfo(debug)
+        npcJSON.update({"Version": versionID})
 
     return npcJSON
 
