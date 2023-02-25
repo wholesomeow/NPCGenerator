@@ -1,15 +1,28 @@
-import random
 import logging
 
 
 class npcDetailGenerator:
-    def __init__(self, promptFile):
-        self.promptFile = promptFile
+    def __init__(self, promptFileCompile, promptFileCreate_1, promptFileCreate_2):
+        self.promptFileCompile = promptFileCompile
+        self.promptFileCreate_1 = promptFileCreate_1
+        self.promptFileCreate_2 = promptFileCreate_2
         self.npcPromptData = []
+        self.npcDataCreate_1 = []
+        self.npcDataCreate_2 = []
+        self.npcStoredData = []
 
-        self.npcPrompt = ""
+        self.npcPromptOut = ""
+        self.npcPromptOut_1 = ""
+        self.npcPromptOut_2 = ""
         self.promptOutFileName = 0
         self.promptResponse = {}
+
+    def storeData(self, response):
+        for l in response:
+            if len(l) > 0:
+                self.npcStoredData.append(l)
+
+        return
 
     def detailToData(self, npcDetail, i):
         promptNamesCounter = 0
@@ -23,7 +36,7 @@ class npcDetailGenerator:
         detail = dataDetail[i]
         LOD = npcDetail[28]
         numLOD = LOD[i]
-        percentages = npcDetail[26]
+        percentages = npcDetail[27]
 
         varDict.update(
             {promptVarNames[promptNamesCounter]: percentages[i]})
@@ -50,21 +63,81 @@ class npcDetailGenerator:
 
         return
 
-    def dataToPrompt(self):
-        self.promptOutFileName = random.randint(10000, 19999)
+    def dataToPromptCompile(self):
+        with open(f"{self.promptFileCompile}", "r") as f:
+            npcPromptCompile = f.read()
 
-        with open(f"{self.promptFile}", "r") as f:
-            npcPrompt = f.read()
-
-        for d in self.npcPromptData:
-            self.npcPrompt = npcPrompt + str(d)
+        self.npcPromptOut = npcPromptCompile + str(self.npcPromptData)
 
         return
 
-    def generatePrompt(self, npcDetail):
+    def gatherResponse_1(self, s):
+        result_1 = []
+        varList = ["ESum1", "ESum2", "ESum3", "MentalSum"]
+        for char in s.splitlines():
+            if ":" in char:
+                start_index = 0
+                end_index = char.index(":")
+                substring = char[start_index:end_index].strip()
+                if substring in varList:
+                    result_1.append(char)
+
+        return result_1
+
+    def gatherResponse_2(self, s):
+        result_2 = []
+        varList = ["Overview", "MentalSum"]
+        for char in s.splitlines():
+            if ":" in char:
+                start_index = 0
+                end_index = char.index(":")
+                substring = char[start_index:end_index].strip()
+                if substring in varList:
+                    result_2.append(char)
+
+        return result_2
+
+    def dataToPrompCreate_1(self):
+        i = 0
+        with open(f"{self.promptFileCreate_1}", "r") as f:
+            npcPromptCreate_1 = f.read()
+
+        self.npcPromptOut_1 = npcPromptCreate_1 + str(self.npcDataCreate_1)
+
+        return
+
+    def dataToPrompCreate_2(self):
+        i = 0
+        with open(f"{self.promptFileCreate_2}", "r") as f:
+            npcPromptCreate_2 = f.read()
+
+        self.npcPromptOut_2 = npcPromptCreate_2 + str(self.npcDataCreate_2)
+
+        return
+
+    def generatePromptCompile(self, npcDetail):
         self.cycleDetail(npcDetail)
-        self.dataToPrompt()
+        self.dataToPromptCompile()
+
+        return
+
+    def generatePromptCreate_1(self, responseCompile):
+        for a in responseCompile:
+            self.npcDataCreate_1.append(a)
+        self.dataToPrompCreate_1()
+
+        return
+
+    def generatePromptCreate_2(self, responseCreate_1):
+        for b in responseCreate_1:
+            if len(b) > 0:
+                self.npcDataCreate_2.append(b)
+        self.dataToPrompCreate_2()
+
+        return
 
     def testFile(self, npcDetail):
         self.cycleDetail(npcDetail)
         print(self.npcPromptData)
+
+        return

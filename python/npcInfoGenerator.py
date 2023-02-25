@@ -511,10 +511,9 @@ class npcInfoGenerator:
             printInfo.update({"Pronouns-2": self.pronouns2})
             printInfo.update({"Pronouns-3": self.pronouns3})
             printInfo.update({"SexualOrientation": self.orientation})
-            printInfo.update({"EnneagramData": self.enneagramData})
             printInfo.update({"CenterType": self.centerType})
             printInfo.update({"DominantEmotion": self.dominantEmotion})
             printInfo.update({"DataBlendPercentage": self.dataBlendOut})
-            printInfo.update({"LevelofDevelopment": self.LOD})
+            printInfo.update({"SelectedDevelopmentLevels": self.LOD})
 
         return printInfo
