@@ -18,6 +18,8 @@ def sendPrompt(npcPrompt, engine=1):
 
     openai.api_key = keyString
 
+    # TODO: Add chatGPT as engine option
+
     if engine == 0:
         # Use DaVinci for longer prompts
         response = openai.Completion.create(
@@ -38,6 +40,11 @@ def sendPrompt(npcPrompt, engine=1):
             frequency_penalty=0.5,
             presence_penalty=0
         )
+    elif engine == 2:
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": f"{npcPrompt}"}]
+        )
 
     responseText = response.choices[0].text
     usage = response.usage
@@ -46,10 +53,7 @@ def sendPrompt(npcPrompt, engine=1):
     responseListClean = remove_empty_strings(responseList)
     responseClean = remove_blank_strings(responseListClean)
 
-    responseDict.update({"Usage": usage})
-    responseDict.update({"Response": responseClean})
-
-    return responseDict
+    return responseClean, usage
 
 
 if __name__ == '__main__':

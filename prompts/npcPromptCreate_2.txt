@@ -2,7 +2,7 @@ You are a writer that is writing NPC Characters for a D&D 5th Edition campaign.
 
 Create a description of this characters personality given the information provided in the prompt. In a way that feels authentic to the other players in the game.
 
-Do this by using Overview and MentalSum to write four paragraphs that describes how this character interacts with others. The paragraphs should cover, in order: How they interact with people they like, how they interact with people they don't like, how they interact with people they feel neutral to, and how they interact with people they don't know. Each paragraph should be no more than 100 words and no less than 75 words. Store each paragraph as Interact1, Interact2, Interact3, and Interact4 respectively.
+Do this by using Overview and MentalState to write four paragraphs that describes how this character interacts with others. The paragraphs should cover, in order: How they interact with people they like, how they interact with people they don't like, how they interact with people they feel neutral to, and how they interact with people they don't know. Each paragraph should be no more than 100 words and no less than 75 words. Store each paragraph as Interact1, Interact2, Interact3, and Interact4 respectively.
 
 For all results, do not use language that references to the character as a number, such as "Nines are accepting, trusting, and stable." or "Ones are conscientious and ethical." Instead, say "This person is accepting, trusting, and stable." or "This person is conscientious and eithical." Do not use the exact text from the input information from the first two steps, such as "This persons basic fear is of loss and separation." Instead, say "This persons greatest fear is loss and separation."
 

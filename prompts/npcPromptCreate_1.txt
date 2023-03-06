@@ -2,7 +2,7 @@ You are a writer that is writing NPC Characters for a D&D 5th Edition campaign.
 
 Create a description of this characters personality given the information provided in the prompt. In a way that feels authentic to the other players in the game.
 
-First, summarize the three ESum strings into a single paragraph. This summarization should use the npc_MixPercentage values to determine the weight each EnneagramSum string has in the final summarization. Store this summarization as Overview. The Overview summarization should be no more than 250 words and no less than 200 words.
+First, summarize the three ESum strings into a single paragraph. This summarization should use the mixPercentage values to determine the weight each EnneagramSum string has in the final summarization. Store this summarization as Overview. The Overview summarization should be no more than 250 words and no less than 200 words.
 
 Next, use Overview and MentalSum to write a paragraph that describes how this character views the world. This paragraph should be no more than 100 words and no less than 75 words. Store this paragraph as WorldView.
 

@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 from flask_restful import Resource, Api, reqparse
 
 import npcGenerator
-import npcInfoGenerator
+import npcEnneagramGenerator
 
 app = Flask(__name__)
 api = Api(app)

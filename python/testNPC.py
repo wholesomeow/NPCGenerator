@@ -1,18 +1,34 @@
-import npcInfoGenerator
-import npcPromptGenerator
-
 
 def main():
-    # Write code for testing either the Information Generator or the Prompt Generator here
-    promptFile = "prompts/npcPrompt.txt"
+    response = ['ESum1: This person i...knowledge.', 'ESum2: This person i... balance. ', 'ESum3: This person i... others.  ',
+                'DesireSum: The funda...ul tasks. ', 'FearSum: An inherent...tuations. ', 'MentalSum: This char...at hand . ', 'MotiveSum: Their str...n moment .']
+    holding = []
 
-    npcInfo = npcInfoGenerator.npcInfoGenerator()
-    npcPrompt = npcPromptGenerator.npcDetailGenerator(promptFile)
+    # if statement
+    thisThing = 1
+    if thisThing == 0:
+        print("This thing was true")
+    elif thisThing == 1:
+        print("This thing was not true")
+    else:
+        print("It was neither")
 
-    npcInfo.generateInfo()
-    npcPrompt.testFile(npcInfo.npcDetail)
+    print("___________________")
 
-    print("Done")
+    # for loop
+    for item in response:
+        print(item)
+
+    for num in range(3):
+        print(num)
+
+    print("___________________")
+
+    # while loop
+    i = 0
+    while i < 10:
+        print(i)
+        i += 1
 
 
 if __name__ == "__main__":
