@@ -5,6 +5,7 @@ import logging
 
 import npcEnneagramGenerator
 import npcPromptGenerator
+import npcAppearance
 from npcGPTCall import sendPrompt
 from diceRoller import Dice_Roller
 
@@ -21,23 +22,18 @@ class NPC:
         self.NPCSize = ""
         self.NPCSpeed = ""
 
+        self.NPCAppearance = {}
+
+        self.NPCSelfEsteem = 0
+        self.stress = 0
+        self.stressThresh = 0
+
         self.eSum = {}
 
         self.NPCStats = []
         self.NPCLanguages = []
         self.NPCPronouns = []
         self.Enneagram = []
-
-        self.NPCAppearance = {"Height": "",
-                              "Weight": "",
-                              "Age": "",
-                              "Gender": "",
-                              "Race": "",
-                              "Coverings": "",
-                              "Face": "",
-                              "Eyes": "",
-                              "Body": "",
-                              "Clothes": ""}
 
         self.NPCInformation = {}
 
@@ -67,12 +63,6 @@ class NPC:
 
         self.NPCBackground = {"PersonalBackground": self.NPCPersonalBackground,
                               "FamilyBackground": self.NPCFamilyBackground}
-
-        self.NPCData = {"Appearance": self.NPCAppearance,
-                        "Information": self.NPCInformation,
-                        "Personality": self.NPCPersonality,
-                        "Background": [self.NPCPersonalBackground,
-                                       self.NPCFamilyBackground]}
 
     def loadCSV(self, fileName):
         csvOutput = []
@@ -107,90 +97,45 @@ class NPC:
 
         return
 
-    def generateBodyType(self, height, weight):
-        bodyType = ""
-        bodyID = 0
-
-        meters = height / 100
-        BMI = round((weight / meters**2), 2)
-
-        # Selects a level of health for how the person treats their body
-        # 1 = In shape, 2 = Average, 3 = Not in shape
-        healthLevel = random.randint(1, 3)
-
-        if BMI <= 18.5:
-            bodyID = 0
-        elif 18.5 < BMI <= 24.9:
-            bodyID = 1
-        elif 25 < BMI <= 29.29:
-            bodyID = 2
-        else:
-            bodyID = 3
-
-        match healthLevel:
-            case 1:
-                if bodyID == 0:
-                    bodyType = "Sinewy"
-                elif bodyID == 1:
-                    bodyType = "Lean"
-                elif bodyID == 2:
-                    bodyType = "Buff"
-                else:
-                    bodyType = "Massive"
-            case 2:
-                if bodyID == 0:
-                    bodyType = "Thin"
-                elif bodyID == 1:
-                    bodyType = "Average"
-                elif bodyID == 2:
-                    bodyType = "Slightly Larger"
-                else:
-                    bodyType = "Larger"
-            case 3:
-                if bodyID == 0:
-                    bodyType = "Reedy"
-                elif bodyID == 1:
-                    bodyType = "Soft"
-                elif bodyID == 2:
-                    bodyType = "Plump"
-                else:
-                    bodyType = "Fat"
-
-        return bodyType
-
-    def generateAppearance(self):
-        ft, inch, lbs = 0, 0, 0
-
-        if self.NPCSize == "Medium":
-            ft = random.randint(4, 7)
-            inch = random.randint(0, 11)
-            lbs = random.randint(110, 250)
-        else:
-            ft = random.randint(2, 3)
-            inch = random.randint(0, 11)
-            lbs = random.randint(75, 110)
-
-        inches = (ft * 12) + inch
-
-        cm = self.imperialToMetric(inches, 0)
-        self.NPCAppearance.update({"Height": f"{ft}ft {inch}in / {cm}cm"})
-
-        kg = self.imperialToMetric(lbs, 1)
-        self.NPCAppearance.update({"Weight": f"{lbs}lbs / {kg}kg"})
-
-        bodyType = self.generateBodyType(cm, kg)
-        self.NPCAppearance.update({"Body": f"{bodyType}"})
-
+    def initSelfEsteem(self, faceValue, jobStatus, ownership):
         return
+
+    # TODO: This
+    # This function gets current event, determines how stressful that is to the NPC, and recalcs stress level
+    # If post-event, then intakes new stress value from getSelfEsteem and recalcs stress level
+    # As stress gets closer to stressThresh, the higher the chance of a mental break
+    def getStress(self, mode):
+        match mode:
+            case "preEvent":
+                pass
+            case "postEvent":
+                pass
+        return
+
+    # TODO: and this
+    # This function creates a new event object and compares available options to npc personality type to select a probable outcome
+    def eventChoice(self):
+        npcEventChoice = ""
+        return npcEventChoice
+
+    # TODO: and this
+    # This function gets decision made from last event and compares that to selfImage (Direction of Integration/Disintegration)
+    # If these values don't align, selfEsteem is lowered and stress is increased or vice-versa
+    def getSelfEsteem(self, npcEventChoice):
+        stressAdd = 0
+        return stressAdd
 
     def baseInfoParse(self, baseInfo):
         statName = ["Str", "Dex", "Con", "Int", "Wis", "Cha"]
-        firstLevelStats, buffs = [], []
+        firstLevelStats, buffs, coveringlist = [], [], []
+        preAppearList = []
 
         for h, i in enumerate(baseInfo):
             match h:
                 case 0:
                     self.NPCOccupation = i["Name"]
+                    self.NPCPersonalBackground.update(
+                        {"Occupation": self.NPCOccupation})
 
                     if i["Can_Own"] == 0:
                         ownership = False
@@ -204,17 +149,29 @@ class NPC:
                 case 1:
                     race = i["Race"]
                     subRace = i["Subrace"]
-                    self.NPCRace = f"{subRace} {race}"
+                    if subRace == "none":
+                        self.NPCRace = race
+                    else:
+                        self.NPCRace = f"{subRace} {race}"
+                    preAppearList.append(self.NPCRace)
 
                     ageMin = i["Adult_Age_Min"]
                     ageMax = i["Adult_Age_Max"]
                     age = random.randint(int(ageMin), int(ageMax))
-                    self.NPCAppearance.update({"Age": f"{age}"})
+                    preAppearList.append(age)
+
+                    covering = i["Covering"]
+                    covering_Alt = i["Covering_Alt"]
+                    coveringlist.append(covering)
+                    if covering_Alt == "None":
+                        covering_Alt = None
+                    else:
+                        coveringlist.append(covering_Alt)
+                    preAppearList.append(coveringlist)
 
                     self.NPCSize = i["Size"]
+                    preAppearList.append(self.NPCSize)
                     self.NPCSpeed = i["Speed"]
-
-                    self.generateAppearance()
 
                     languages = i["Language"]
                     self.NPCLanguages = languages.split(", ")
@@ -223,15 +180,59 @@ class NPC:
                     for stat in statName:
                         buffs.append(i[f"{stat}"])
                     self.getStats(buffs, firstLevelStats)
+                    charisma = self.NPCStats[5]
+                    preAppearList.append(charisma)
                 case 2:
-                    self.NPCAppearance.update({"Gender": i["Gender"]})
+                    preAppearList.append(i["Gender"])
                     self.NPCPronouns.extend((i["Pronouns"],
                                              i["Secondary_Pronouns"],
                                              i["Tirtiary_Pronouns"]))
                 case 3:
                     self.NPCSexualOrientation = i["Sexual_Orientation"]
 
-        return jobStatus, ownership
+        NPCAppearance = npcAppearance.npcAppearance(preAppearList)
+        NPCAppearance.generateAppearance()
+        NPCAppearance.generateClothing(jobStatus)
+        self.NPCAppearance = NPCAppearance.appearance
+
+        faceTotal = NPCAppearance.appearance.get("Face")
+        face = faceTotal.get("Overview")
+        faceValue = 25
+        match face:
+            case "Unattractive":
+                faceValue -= 10
+            case "Average":
+                faceValue = 25
+            case "Attractive":
+                faceValue += 10
+            case "Gorgeous":
+                faceValue += 15
+
+        return jobStatus, ownership, faceValue
+
+    def setEducation(self, jobstatus):
+        educationStatus = [
+            "No or Limited Formal Education",
+            "Some Formal Education",
+            "Well Educated within Profession",
+            "Some additional Education outside Profession",
+            "Well educated in a Formal Institution"
+        ]
+
+        if jobstatus <= 3:
+            self.NPCEducation = educationStatus[0]
+        elif jobstatus >= 4 and jobstatus <= 5:
+            self.NPCEducation = educationStatus[1]
+        elif jobstatus >= 6 and jobstatus <= 7:
+            self.NPCEducation = educationStatus[2]
+        elif jobstatus >= 8 and jobstatus <= 10:
+            self.NPCEducation = educationStatus[3]
+        elif jobstatus >= 11 and jobstatus <= 13:
+            self.NPCEducation = educationStatus[4]
+        else:
+            self.NPCEducation = educationStatus[5]
+
+        return
 
     def addEnneagramData(self, NPCEnneagram):
         self.NPCInformation.update({"Alignment": NPCEnneagram.alignment})
@@ -240,6 +241,9 @@ class NPC:
         self.NPCInformation.update({"Stress": NPCEnneagram.baseStress})
         self.NPCInformation.update(
             {"StressThreashold": NPCEnneagram.stressThreashold})
+
+        self.stress = NPCEnneagram.baseStress
+        self.stressThresh = NPCEnneagram.stressThreashold
 
         return
 
@@ -265,6 +269,8 @@ class NPC:
 
         return PromptResponse, PromptUsage
 
+    # Generates Prompt Data to be paired with Prompt Text for novel data creation
+    # iteration 1 is Prompt 2, iteration 2 is Prompt 3, etc
     def buildPromptData(self, iteration):
         if iteration == 1:
             promptData = str(self.eSum) + \
@@ -275,6 +281,7 @@ class NPC:
 
         return promptData
 
+    # Updates object information with data from first Prompt response
     def updateNPCResponse(self, response, iteration):
         match iteration:
             case 0:
@@ -320,6 +327,14 @@ class NPC:
 
         return
 
+    def updateData(self):
+        self.NPCData = {"Appearance": self.NPCAppearance,
+                        "Information": self.NPCInformation,
+                        "Personality": self.NPCPersonality,
+                        "Background": [self.NPCPersonalBackground,
+                                       self.NPCFamilyBackground]}
+        return
+
     def createNPC(self):
         # Initializes base information list where most non-personality data will be stored until allocation in public variables
         baseInfo, procEnneagramList = [], []
@@ -335,11 +350,14 @@ class NPC:
             self.baseInfoPick(csvOutput, baseInfo)
 
         # Generates Race, Job, Gender, Sex, and base D&D Stats
-        # also determines if the NPC can own a business
+        # baseInfoParse also generates the NPC Appearance, status level of their job,
+        # and if the NPC owns a business
         self.sexSelector()
-        jobStatus, ownership = self.baseInfoParse(baseInfo)
+        jobStatus, ownership, faceValue = self.baseInfoParse(baseInfo)
+        self.initSelfEsteem(jobStatus, ownership, faceValue)
 
         # Generates name and education
+        self.setEducation(jobStatus)
 
         # Generates and derives personality data for prompt loading
         NPCEnneagram = npcEnneagramGenerator.npcEnneagramGenerator()
@@ -347,13 +365,7 @@ class NPC:
 
         #  --Updates the NPCInformation list with information from the generateInfo() function
         self.initialUpdate()
-
-        self.NPCInformation.update({"Alignment": NPCEnneagram.alignment})
-        self.NPCInformation.update(
-            {"AlignmentIdeology": NPCEnneagram.subAlignment})
-        self.NPCInformation.update({"Stress": NPCEnneagram.baseStress})
-        self.NPCInformation.update(
-            {"StressThreashold": NPCEnneagram.stressThreashold})
+        self.addEnneagramData(NPCEnneagram)
 
         #  --Compiles Enneagram data into NPC public var, which is used as initial prompt data
         preProcEnneagram = NPCEnneagram.enneagramData
@@ -365,13 +377,16 @@ class NPC:
         procEnneagramList.append(mentalState)
         self.Enneagram = procEnneagramList
 
-        # generate personal(past experiences and relationships) background and family background
-
         # derive skills and abilities from occupation and background
+
+        # generate personal(past experiences and relationships) background and family background
+        # NOTE: For experiences gen, loop through eventSelect -> getStress -> eventChoice -> getSelfEsteem -> getStress
 
         # generate speech patterns and quirks
 
         # API to edit generated character
+
+        self.updateData()
 
     def initialUpdate(self):
         keyWords = ["Name", "Education", "Sex", "SexualOrientation",
@@ -392,17 +407,3 @@ class NPC:
 
     def npcPrintInfo(self):
         return self.NPCData
-
-    def imperialToMetric(imperial, mode):
-        # Converts input imperial to metric based on mode
-        # Mode 0 is inches to cm
-        # Mode 1 is lbs to kg
-
-        metric = 0
-        match mode:
-            case 0:
-                metric = imperial * 2.54
-            case 1:
-                metric = imperial * 0.453592
-
-        return metric
