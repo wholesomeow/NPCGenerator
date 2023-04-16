@@ -33,19 +33,32 @@
                     - 2.05 is middle of the low within the Sr Apprentices and 2.55 is middle of the middle within the same level
 
 #-----------------------------------------------------------------------------------#
-### Things to do for PrompGenerator
+### Template notes
 
-# TODO: Rework prompt to generate an overview/summary paragraph of the character based on the three types selected mixed by the percentages provided
+# Template-
+# Overview: {Name} is [General Keywords] driven by a desire to [Key Motivations]. {Pronoun} are/is [LOD Attributes] and is {Local Status}.
+# Desire: {Pronoun} wants to be [Desire Keywords] in an effort to be [Type of Person] that is [Desc Positive Attributes].
+# Fear: {Pronoun} is afraid of being [Fear Keywords], which causes them to struggle with [Desc Problems] and be [Desc Negative Attributes].
+# Motivation: {Name} wants [Key Motivations Desire]. Their [Fear Keywords] drives them to pursue a life where {Pronoun} are/is [Key Motivations Fear].
+# SelfView: {Pronoun} sees themselves as [LOD Self]. {Pronoun} has a need to be [Desire Summary] while being [Desc Negative Attributes] because of [Fear Summary].
+# WorldView: {Pronoun} understands the world as [LOD Others]. Because of their [General Keywords], they pursue [Key Motivations Desire] and [Goal].
+# Interactions:
+    - Like: To those {Name} likes, interactions are [Interactions Like Discription]. {Pronoun} will often [Interactions Like Acts].
+    - Dislike: To {Name}'s enemies or those {Pronoun} finds unfavourable, interactions are usually [Interactions Dislike Discription].
+    - Impartial: If {Name} doesn't know you, {Pronoun} will be [Interactions Impartial Discription] and can [Interactions Impartial Acts].
+# Stressed Overview: When stressed, {Name} will often be [LOD - 1 Attributes] and [LOD - 1 Summary Attributes].
+# Stressed Interactions: (Same as regular, just with LOD - 1)
 
-# TODO: Rework prompt to create the following information:
-    - What is their mental state?
-    - How do they view the world?
-    - How do they view themselves?
-    - How do they interact with other people?
-        - People they like?
-        - People they know?
-        - People they don't like?
-        - People they don't know?
+# Data Categories-
+# briefDesc: [[General Keywords] [Type of Person] [Positive Attributes] [Negative Attributes] [Problems]]
+# basicFear: [Keywords] [Summary]
+# basicDesire: [Keywords] [Summary]
+# levelOfDevelopment: [Attributes] [Summary Attributes] [Assessment] [Self] [Others] [Goal]
+                      [Interactions Like Discription] [Interactions Like Acts] [Interactions Dislike Discription] [Interactions Dislike Acts]
+                      [Interactions Impartial Discription] [Interactions Impartial Acts] [Interactions Unknown Discription] [Interactions Unknown Acts]
+# keyMotivations: [Desire] [Fear]
+
+# Turn keywords in data to be a single word from each LOD.
 
 #-----------------------------------------------------------------------------------#
 ### Things to do for the InfoGenerator

@@ -1,0 +1,101 @@
+{
+    "NPCData": {
+      "Appearance": {
+        "Age": 629,
+        "Body": "Reedy",
+        "Clothing": {
+          "Feet": "Old shoes",
+          "Head": "Cap",
+          "Legs": "Simple skirt",
+          "OverTorso": "Plain robe",
+          "Torso": "Plain shirt"
+        },
+        "Coverings": {
+          "Color": "Forest",
+          "Descriptor": "Thinning",
+          "Length": "Medium Length",
+          "Style": "Up",
+          "Texture": "Gleaming",
+          "Type": "Hair"
+        },
+        "Face": {
+          "Browline": "Hooded",
+          "Brows": "Tapered",
+          "Ears": "Ragged",
+          "Eyes": "Upturned Pink eyes",
+          "Lips": "Curved",
+          "Nose": "Pointed",
+          "Overview": "Gorgeous",
+          "Skin": "Plump"
+        },
+        "Gender": "Cisgender",
+        "Height": "7ft 9in / 236.22cm",
+        "Race": "Vampire",
+        "Weight": "216lbs / 97.975872kg"
+      },
+      "Background": [
+        {
+          "DefiningEvents": [],
+          "Friends": [],
+          "Occupation": "Caregiver",
+          "Partners": [],
+          "RecentEvents": [],
+          "Relatives": [],
+          "RomanticInterests": [],
+          "Siblings": []
+        },
+        {
+          "Bond": "Default",
+          "DefiningEvents": [],
+          "RecentEvents": [],
+          "Reputation": "Default",
+          "Wealth": "Default"
+        }
+      ],
+      "Information": {
+        "Alignment": "Chaotic Good",
+        "AlignmentIdeology": "Brutality",
+        "Education": "Some Formal Education",
+        "Languages": [
+          "Common",
+          "Vampire"
+        ],
+        "Name": "Default",
+        "Pronouns": [
+          "He Him",
+          "She Her",
+          ""
+        ],
+        "Race": "Vampire",
+        "Sex": "Male",
+        "SexualOrientation": "Asexual",
+        "Size": "Medium",
+        "Speed": "30",
+        "Stats": [
+          8,
+          9,
+          11,
+          13,
+          13,
+          19
+        ],
+        "Stress": 12000,
+        "StressThreashold": 1548.68
+      },
+      "Personality": {
+        "Desire": " This person is conscientious and ethical, suppressing feelings of worthlessness by striving to be good and balanced according to their ideals. ",
+        "Fear": " This characters primary desire is to feel valuable, striving for integrity and balance in an attempt to attain purity in the face of corruption or immorality. ",
+        "Interactions": [
+          " When interacting with those that this character likes, they come off as optimistic, upbeat and alert. They have a strong desire to create a genuine connection by actively seeking to offer understanding and support. Ultimately, this character is looking for approval from these people as they hope to put in their best effort and be recognized for trying their hardest.",
+          " When faced with those that this character does not like, they may attempt to hold themselves together outwardly in order to uphold the good image they try so hard to project. Inwardly however, there may be quite a different feeling of resentment and irritation hidden away within them. This person will strive to remain strong even in the face of adversity because their ultimate fear is becoming worthless or evil. ",
+          " A person's neutrality can throw off the carefully crafted persona this character showcases in order to garner approval from others. Different aspects of their demeanor can become suppressed while they maintain an air of respectful precision while being distant at the same time. They are aware that neutrality could eventually lead down a path towards being disliked or completely ignored by those around them. ",
+          " For those the character doesn't know, this individual presents themselves as composed and in control but highly observant (as any conscientious individual would be). Approaching with an open resolute attitude, they maintain a balance between calmness and firmness while displaying pride in themselves and their passions. Afterall, their drive is at heart based on a pursuit for excellence which stems from both inspiration and admiration as well as fear of worthlessness or evilness from others' condemnation."
+        ],
+        "MentalState": " This characters great fear is that of being worthless or evil, as evidenced by their desire for perfect morality in order to avoid condemnation from others. ",
+        "Motivation": " This characters mental state tends towards anxiety in self-critical thinking centered around maintaining high standards, as well as towards impatience in some situations which might lead them towards resentment.  ",
+        "Overview": " This character is a conscientious and ethical individual who places an intensely strong focus on upholding standards and being seen in a positive light amongst peers. With the desire for admiration and to reach the highest status, they strive to be an exemplary figure. They are driven, ambitious, and rather image-conscious in wanting to present themselves among the best. Despite their striving for excellence, this person can become resentful or impatient if standards not met, inviting inner fears of truly being worthless or evil due to a deep desire for perfect morality.",
+        "SelfView": " This person looks upon themselves as someone with the potential of reaching perfection and admirability by others through their efforts. They have a deep need to be seen in a favorable light while ruthlesslessly condemning themselves from within if standards not met due to feeling unlovable and facing inner thoughts of evils. This person\u2019s ambitions are fueled by self-respect and inner assurance that leads them towards values set by themself for themself.",
+        "WorldView": " Generally looking outwards in a bid to reach perfectionism, this character views the world as one of standards which they strive towards making peers envious through their achievements while obsessively fearing being condemned or judged as unworthy or evil. With ambition and determination, they will strive to reach what they set out for despite any obstacles along the way."
+      }
+    }
+}

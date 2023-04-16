@@ -1,5 +1,6 @@
 {
-    "json.schemas": [
-        // "python.defaultInterpreterPath": "A:\GitHub\AI-Character-Creator\.venv\Scripts\python.exe"
-    ]
+  "json.schemas": [
+    // "python.defaultInterpreterPath": "A:\GitHub\AI-Character-Creator\.venv\Scripts\python.exe"
+  ],
+  "python.analysis.typeCheckingMode": "off"
 }
