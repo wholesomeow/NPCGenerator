@@ -7,15 +7,16 @@ import NPCCommunicationClass
 
 from utility import utilities
 
-from collections import deque
-
 
 class NPCBase:
     def __init__(self, UUID, Name) -> None:
         self.NPC_UUID = UUID
         self.NPC_Name = Name
-        self.NPC_Detail_Information = deque()
-        self.NPC_Social_Network = None
+        self.NPC_Detail_Information = []
+        self.NPC_Social_Network = {
+            "tooltip": "First iteration of elements is percieved relationship from source node to destination node. Second iteration of elements is percieved relationship from destination node to source node.",
+            "data": None
+        }
 
         self.NPC_Social_Role = None
 
@@ -26,8 +27,8 @@ class NPCBase:
 
         self.NPC_Communication = None
 
-        self.NPC_Rumors = None
-        self.NPC_Known_Jobs = None
+        self.NPC_Rumors = "None"
+        self.NPC_Known_Jobs = "None"
 
     def assignCoreData(self):
         NPC_CSREI = NPCCoreData.CSREI()
@@ -53,11 +54,11 @@ class NPCBase:
 
     def createDetail(self):
         # Creates generic details of NPC such as height, gender, and sexual ortientation
-        num = deque([3, 7])
+        num = [3, 7]
         for index, each in enumerate(num):
             num[index] = random.randint(1, each)
 
-        self.NPC_Type = NPCDetailData.NPCType.DEFAULT
+        self.NPC_Type = NPCDetailData.NPCType.DEFAULT.name
         NPC_Sex = NPCDetailData.SexType(num[0])
         NPC_Ori = NPCDetailData.OrientationType(num[1])
         NPC_Ori_Tooltip = NPCDataCache.CoreData(
@@ -106,8 +107,8 @@ class NPCBase:
         cm = utilities.imperialToMetric(inches, 0)
         kg = utilities.imperialToMetric(lbs, 1)
         Body_Type = NPCDetailData.generateBodyType(cm, kg)
-        NPC_Imperial_Data = deque([ft, inch, lbs])
-        NPC_Metric_Data = deque([cm, kg])
+        NPC_Imperial_Data = [ft, inch, lbs]
+        NPC_Metric_Data = [cm, kg]
 
         self.NPC_Detail_Information.append(NPC_Sex.name)
         self.NPC_Detail_Information.append(NPC_Ori.name)

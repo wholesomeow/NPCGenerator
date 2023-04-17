@@ -4,12 +4,10 @@ import random
 
 import NPCDataCache
 
-from collections import deque
-
 
 class OCEAN:
     def __init__(self):
-        self.OCEAN = deque()
+        self.OCEAN = []
 
     def defineOCEAN(self, CS_Coords):
         OCEAN_Coords = NPCDataCache.CoreData().OCEAN_Coords
@@ -24,7 +22,7 @@ class OCEAN:
 
 class EM:
     def __init__(self):
-        self.EM = deque()
+        self.EM = []
 
     def defineEnneagram(self, Enneagram_Data):
         # NOTE: Potentially update to use an Enum?
@@ -50,7 +48,7 @@ class EM:
         return Enneagram
 
     def defineMICE(self):
-        MICE = deque()
+        MICE = []
         MICE_Data = NPCDataCache.CoreData().MICE_Data
         MICE_Tooltip = NPCDataCache.CoreData().MICE_Tooltip
 
@@ -64,7 +62,7 @@ class EM:
 
     def populateEM(self):
         Enneagram = {}
-        MICE = deque()
+        MICE = []
 
         Enneagram_Data = NPCDataCache.CoreData().Enneagram_Main_Data
         Enneagram = self.defineEnneagram(Enneagram_Data)
@@ -79,11 +77,11 @@ class EM:
 
 class CSREI:
     def __init__(self):
-        self.CSREI = deque()
+        self.CSREI = []
 
     def defineCSData(self):
-        CS_Data = deque()
-        CS_Coords = deque([0, 0])
+        CS_Data = []
+        CS_Coords = [0, 0]
         CS_Dimensions = NPCDataCache.CoreData().CS_Dimensions
         CS_Tooltip = NPCDataCache.CoreData().CS_Tooltip
 

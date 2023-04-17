@@ -1,0 +1,341 @@
+{
+    "NPC_CSREI": {
+      "CSREI": [
+        [
+          -70,
+          12
+        ],
+        "Analytical",
+        "is a rational person, but not very intuitive.",
+        "action taking skills"
+      ]
+    },
+    "NPC_Communication": {
+      "NPC_Interaction_Matrix": [
+        {
+          "compatibilityMatrix": [
+            1,
+            3
+          ],
+          "goodSpots": "Enneagram Ones and Threes are both competent, serious minded, and idealistic. This is a highly task-oriented relationship, with both partners driven to hard work and to be intensely aware when, individually and collectively, they are not measuring up to their own expectations and high standards. Both parties can bring selflessness, self-discipline, good work habits, and the ability to put aside their personal feelings for the sake of the objective good that needs to be done. Both types are used to working so hard that they often succeed, garnering admiration from those around them and attaining places of leadership and responsibility. The One and Three combination can be dazzlingly accomplished, high energy, extraordinarily competent and impressive both individually and collectively. They both strive after excellence, both as an ideal and as something to personally embody. Sometimes they succeed so well that this pairing virtually glows with self-confidence and the thrill of their own talents. They strive to make each other proud of them, someone the other can look up to and show off to his or her friends and family. They enjoy planning and organizing their lives, dividing up responsibilities after seeing who is objectively better at which tasks. Both thrive on respect and give each other personal space. There are only two other equally goal-oriented pairings, a One with One combination and a Three with Three\u00a0pairing, although since these both are same type pairings, they typically have blind spots that these combinations will need to be aware of. Because the One/Three is a mixed pair, this produces a powerful coalition that is capable of dealing both with ideals and with practical matters. They will try to solve problems in the relationship by discussing the issues involved since neither likes emotionally charged bickering or unresolved issues. Ones help Threes to be more grounded and realistic; Threes help Ones stretch themselves and not be so perfectionistic. They are both industrious and persistent, efficient and concerned with excellence and with making a real difference in the world.",
+          "troubleSpots": "Potential Trouble Spots or Issues If this relationship gets into trouble, it is often over time commitments, lack of emotional attachment to each other, and a creeping sense of competition. Further, Ones tend to find Threes too workaholic, pragmatic, and too concerned with image and with their reputations rather than with principle. Ones can see Threes as tending to cut corners in ethical matters, willing to exaggerate or fudge the truth in order to achieve whatever they are after. They can also become critical of Threes if they change their goals pragmatically, dropping efforts or switching positions when something does not work for them. Ones may also have issues with Threes attempting to reinterpret ethical questions and with not owning up to their personal behavior, including their behavior regarding fidelity in the relationship itself."
+        },
+        {
+          "compatibilityMatrix": [
+            2,
+            3
+          ],
+          "goodSpots": "Both Enneagram Twos and Threes are driven by their feelings and emotional needs-although this is not always apparent in the case of Threes. Both are also driven by their need for attention and the desire to be loved-although this is not always apparent in the case of Twos. But for these reasons, both are oriented toward people and toward activities that will place them in the spotlight. This makes the Two/Three couple one of the most interpersonally attractive and impactful pairings possible. Individually and collectively, they are outgoing, sociable, high-spirited, charming, and often physically attractive. Both know how to make a favorable impression on people and to win them over. Each type brings energy, personal and social ambition, the ability to communicate with people and to make others feel like they are the center of attention. Both know how to get people to like them and to rally support to achieve their goals. Twos in particular bring a more personal, individual focus to their interactions with others. They are thoughtful and follow up exchanges with genuine kindness and compassion. Threes bring flexibility, charm, practicality, and a goal-oriented vision for ways the couple can improve. Twos like to feel proud of their loved ones, and Threes want to make their partner proud. There is also a particular way that this pairing works as a team: Twos like to put the spotlight on others, and Threes like to be in the spotlight. Twos like to be the power behind the throne, and Threes can be happy being the point person for the couple. As long as healthy Threes appreciate the lavish attention of the Two, this arrangement can work well. In a sense, this is almost an ideal political couple\u2014socially adept, energetic, virtually radiating charm and self-confidence, inviting others (by their manner and attractiveness) to join them in some way. Twos and Threes can be dazzling\u2014a couple so widely admired and socially gifted that they become icons for their social sphere and time.",
+          "troubleSpots": "Potential Trouble Spots or Issues A couple with such conscious star power also tends to be self-conscious\u2014and even more conscious of each other. Twos get jealous and possessive of Threes. They can fall into a \"I made you\u2014you owe me\" syndrome, feeling used and unappreciated. For all of their apparent willingness to take second place, Twos want to be recognized privately by their partners and to be made to feel that they are important. But Threes typically find it difficult to thank others for their success or to share the glory. Moreover, Threes may feel that Twos overestimate their contributions: they take credit for too much, sometimes, embarrassingly, in public. As a result, Twos can start to undermine the Three's confidence to get the Three to feel that he or she depends on the Two. Threes react quickly and strongly to perceived criticism and potential humiliation by distancing themselves\u2014inevitably creating more anxiety and manipulation in the Two, a vicious cycle."
+        },
+        {
+          "compatibilityMatrix": [
+            3,
+            3
+          ],
+          "goodSpots": "As with all double-type relationships, two Enneagram Threes generally bring the same qualities to each other. Therein lies both a main source of the attraction as well as one of the main pitfalls. Thus, the Level of health of each person is especially important for these types of relationships as are their dominant instincts. Two Threes bring to each other a concern for achievement and excellence, for making something of themselves and their opportunities, and for being a credit to the relationship. They are both hard workers, always looking for a way to improve their station in life and to share these benefits with their loved ones and friends. Threes also tend to be sociable and to enjoy the company of others. They have the ability to charm others and present themselves in a favorable, attractive light\u2014even to their spouse or close friends. Some Threes are less sociable and more concerned with business matters and with gaining financial security, but they too, want both themselves and their relationship to be admirable and outstanding in some way. They may be known for their closeness or personal devotion, or the longevity of the relationship itself. Both Threes can form an extremely effective team that is likely to be successful in virtually any endeavor they might pursue. They are able to coordinate tasks at home or in the office, becoming a working team supporting each other. They each want the other to be proud of them and to be admired by the other as a worthy partner. They both try to avoid drama in the relationship and they give each other space to pursue their own interests and self-development. Double Three couples are usually excellent motivators of each other, urging the other to higher achievement and to attaining their goals, whether in child-rearing, education, or sports and physical fitness. They can act as the coach of the other, helping the partner to improve their technique and hone their professional and personal skills. What they demand of each other is respect for their achievements and for their hard work. Thus, in many ways, two Threes can make an impression on others of being virtually an ideal couple,\u2014attractive, energetic, ambitious, focused, and often outstanding members of their social group.",
+          "troubleSpots": "Potential Trouble Spots or Issues As long as a Three couple is healthy, they both tend to be highly supportive of each other and the other's interests and career. They are glad for the success and prestige that their spouse may garner. Problems may arise in average to lower-functioning Three couples if they begin to compare themselves with each other. An unhealthy spirit of competition and one-upmanship can infect the relationship and undermine the pride and generosity they have felt toward each other. Even if they have different careers, two Threes may begin to compare their relative success, their incomes, how well each is regarded professionally\u2014and what their relative chances for advancement are. One partner being elected to a committee or board of directors puts pressure on the other to do something similar or even more prestigious."
+        },
+        {
+          "compatibilityMatrix": [
+            3,
+            4
+          ],
+          "goodSpots": "These two types can form something of a complementary relationship, with each bringing important qualities to the relationship that the other generally lacks.\u00a0Enneagram Fours can teach Threes how to talk about themselves on a deeper level and help acknowledge and process their feelings. They can also bring Threes more sensitivity, a feeling for beauty and for the non-practical but fulfilling aspects of life. Finding the Three's heart's desire is an extremely important area of self-awareness in which Fours can play a helpful role to Threes. Fours can bring a sense of style and presentation, rich communication, and sense of refinement. Threes model many of the qualities that Fours would like to develop in themselves, and Threes are well-suited to helping Fours gain new skills. Threes can bring a good deal of tact and diplomacy to handling Fours' emotional reactions and their sometimes too-sensitive feelings and self-doubts. Knowing what to say and when to say it-and what not to say\u2014to a Four can be crucial for building trust in the relationship and avoiding inadvertent episodes when either feels humiliated or embarrassed. Threes can bring a sense of hope and ambition to the relationship, practical goal-setting, coaching and behavior management techniques that help Fours get out of a slump or a period of low energy. Threes can coach Fours on how to get on with practical matters and to act professionally despite the shifts in their feelings and self-doubts. Since both types are driven by (often unconscious) feelings and reactions, this can be an intense and passionate coupling. Both are aware of \"image\" issues and about how others perceive them, and so this couple will be noteworthy for its energy, flair, sense of style, and enjoyment of the finer things of life. They may both feel a connection with the other that goes beyond words or reason into another realm as if they had known each other from a previous existence or that the other is some kind of soul mate.",
+          "troubleSpots": "Potential Trouble Spots or Issues Both Threes and Fours have issues with self-esteem and with needing attention and validation from others. They both suffer from questions about their own identity and have hidden feelings of shame and worthlessness. These two types secretly compare themselves with others and have more or less openly competitive tendencies. Much will depend on how narcissistically wounded each person is\u2014and therefore how much they will be vying for approval, attention, and recognition. Both Threes and Fours need attention and to feel appreciated, although Threes will be more able to openly seek these things. Fours can feel overshadowed or shut out of the limelight by the more energetic Three. This can trigger feelings in Fours of being defective and deficient, which Threes may play on. Threes will tend to give less attention than Fours to the relationship itself, although both will tend to see the other as essential for their welfare. Fours will typically want far more emotional involvement and intimacy than Threes are comfortable with (or even capable of providing)."
+        },
+        {
+          "compatibilityMatrix": [
+            3,
+            5
+          ],
+          "goodSpots": "This is a frequently seen combination, although one that might not be expected.\u00a0Enneagram Fives often give Threes depth, new areas of expertise and credibility, while sparking creativity. Threes give Fives confidence, presentation skills, and awareness of the importance of communicating effectively with others. Both Threes and Fives are primarily focused on their work and on objective issues and concerns. Both types are preoccupied with competency and effectiveness, especially in their professional areas, and this is where they support each other in an outstanding way. Although both have deep feelings, both tend not to focus on them for the sake of getting on with their work. They tend to understand each other's need to balance closeness with their need for personal space: they do not crowd each other. Threes contribute social skills, the ability to communicate and to sell ideas and projects, charm, energy, and a strong sense of practicality to the relationship. They can often see what is needed in the relationship or in the world and help to marshal the Five's skills toward that goal. Fives bring depth of understanding, expertise in one or more areas, perseverance with details until the goal is accomplished, an objective dispassion, and lack of attachment to outcomes. This can be a \"brilliant\" couple\u2014sharp, successful, deeply competent, and well respected. If they are attractive, Threes can be a trophy for Fives who are usually less concerned with appearance; Fives, on the other hand, can also be a trophy for Threes who are proud of the Five's expertise and who are glad to learn from them whenever they can. Both regard the other as a catch who enhances their own self-esteem and social standing. Their deep, often unspoken, feelings for each other frequently deepen even more over time, gradually allowing this couple to discover not just passion but quiet affection and pride in each other.",
+          "troubleSpots": "Potential Trouble Spots or Issues This couple's emphasis on work and competency can also lead them into conflicts and tensions with each other. A great deal of their self-esteem is also derived from their work and how it is regarded by others. Threes and Fives can get into more or less open contentiousness over who was the original source of ideas and work. There can be elements of comparing one's work and contributions, claims about who is responsible for which ideas or breakthroughs, and other forms of competitiveness coming not only from Threes but from Fives. Threes also tend to want to get on with the project or with whatever they feel needs to be done, while Fives tend to take a long time fine tuning and tinkering until they feel that they are adequately complete. Conflicts can erupt over use of time, resources, and priorities as the more practical minded Three becomes increasingly impatient with the Five's lengthy preparations but lack of action. Fives may also begin to lose respect for the ethical standards of Threes who they feel are ready to cut corners or exaggerate claims in order to accomplish goals or to stay ahead professionally."
+        },
+        {
+          "compatibilityMatrix": [
+            3,
+            6
+          ],
+          "goodSpots": "Surprisingly, this is not a common pairing, although these two types can work very well as a team. On the positive side,\u00a0Threes bring hard work, optimism, energy, a desire to communicate to and connect with people, and a feeling of unlimited potential both personally and in the relationship itself. Threes can bring an enormous sense of self-confidence and the hope of success that is assured\u2014that this relationship is a winning team or that this couple is the best ever! Common goals bring them together\u2014they are both practical and want to achieve tangible things in the world.\u00a0Sixes bring grounding, industrious hard work, perseverance in difficult times and personal loyalty to the Three. Sixes provide warmth, support, and a great deal of practical good sense. Sixes can also bring a compassion for the downtrodden or the less fortunate in life. Threes can pick up on this compassionate quality in Sixes and learn to open their own hearts more deeply to the underprivileged and the unfortunate. Both believe in applying elbow grease toward goals, whether toward financial security or developing personal talents. In short, they are both doers. They foster equality and mutual respect for the different talents each brings and the shared interests they invest in. Threes help bolster the Six's confidence and develop their self-esteem. Sixes offer support to Threes without Threes feeling smothered. Sixes also help Threes to become part of something bigger than themselves-a church, a service organization, a political or spiritual group. Both become stronger individually and as a team by \"finding themselves\" through service and humble hard work. Respect for each other can grow as each continues to discover the other's good qualities. This can be a very enduring and successful couple as long as heart-centered values and deeper principles keeps them both grounded.",
+          "troubleSpots": "Potential Trouble Spots or Issues Ultimately, each has what the other needs, but unless their relationship is healthy and well stabilized, they can tend to bring out the worst characteristics in themselves and in each other. These two types have similar negative qualities in common: both can be competitive and become workaholics, both are looking externally for reassurance to make up for secret inferiority feelings and insecurity, both want to be socially accepted. Both can be conformists of various kinds, doing what is expected of them, and both avoid looking at their deeper feelings or discussing their emotions. Both Sixes and Threes have feelings, but they tend to put them aside in order to get the job done whatever it is. Their different coping styles can get on each other's nerves by reminding them of their own weak spots. Threes seem to be inflated and grandiose to Sixes; Sixes seem to be nervous and reactive loose cannons to Threes. Sixes err on the side of caution, Threes on the side of too much ambition."
+        },
+        {
+          "compatibilityMatrix": [
+            3,
+            7
+          ],
+          "goodSpots": "This is a highly complementary pair: both types are self-assertive, have high energy, and are outgoing and capable of being around people with relative ease. Both types bring optimism, a future orientation, the sense of possibility and renewal to their relationships and to enterprises they become involved with.\u00a0Threes can work alone more easily than Sevens, although both are stimulated by interacting with people and both can be excellent communicators of their ideas and values. Both are persuasive and articulate, often lively and attractive, making them sought after company. Both have a youthful orientation such that they feed off of each other's energy: no other couple is as vivacious or gregarious as the Three/Seven couple. This is probably the highest energy combination of types and they wholeheartedly engage in lots of activities, plans and projects, with the emphasis on attaining the good life. The focus is on sociability, going out, having adventures together and on realizing possibilities and on finding personal fulfillment. To this mix, Threes bring sensitivity to people and how to communicate with them, a sense of propriety, appropriateness, and social conventions, as well as the ability to focus on goals and get them accomplished. Sevens bring a sense of fun and adventure, resilience, and not being overly concerned with failure. Sevens can be spontaneous in ways that are helpful to more self-conscious Threes. Sevens bring breadth of knowledge and experience, boundless enthusiasm and good spirits. Threes bring a focus on goals, on staying practical and grounded, and on observing healthy limits. This can be a fun, articulate, generous pair, virtually sparkling with vitality and the joy of life. This can sometimes seem to others to be an almost magical couple.",
+          "troubleSpots": "Potential Trouble Spots or Issues This is also an extremely volatile couple: there is almost too much electricity under one roof. A Three/Seven pair always looks like a great couple, but this can also mean having to live up their own hype. They can be exhausting to keep up with and their mutual qualities make it difficult to admit to or look at problems. They both feel the pressure to be \"fabulous\" and perfect all of the time. Both types seem light-hearted, and unconcerned; yet, in their high-energy routines they often hurt each others without realizing it. Often this results in a backlog of past hurts that have been suppressed until it is too late and too much damage has been done."
+        },
+        {
+          "compatibilityMatrix": [
+            3,
+            8
+          ],
+          "goodSpots": "These two types can form powerful and highly effective affiliations and can also have passionate and stimulating personal relationships. Both are assertive: both Threes and Eights go after what they want in life. Both can be larger-than-life figures who are outstanding in some way and because both stand out in their social circle. They cannot help but notice each other and come to terms with each other. Either an alliance forms that will enhance both parties or a competition develops that will keep them apart. Surprisingly, Eight's strength and solidity gives Threes permission to be more heartfelt: the Eight feels reliable and Threes seek safety to reveal their hearts. Eights also like seeing Threes use the opportunities and rise to the challenges they offer. On the other side, it helps Eights to relax once they see that the Three is competent and can do things on their own. Moreover, both Threes and Eights are action oriented, pragmatic, care about getting the job done and are willing to take the lead to achieve their goals. They both have a marked degree of self-confidence (at least outwardly), they can be persuasive, and they can cut their losses and change goals when things are not working for them. To this mix, Threes bring more awareness of others, a feeling for public relations and for how to please people. They are more diplomatic and adaptable, both in their relationship with Eights and with others. Eights bring forthrightness in expression, fearlessness, physical vigor, and determination to achieve their personal vision. They bring solidity, decisiveness, and a kind of strength that the more flexible Three gains confidence from. They want to be proud of each other and to support each other's potentials and accomplishments. They tend not to compete with each other\u2014surprising because both tend, in general, to be competitive with others.",
+          "troubleSpots": "Potential Trouble Spots or Issues Threes and Eights can be effective in the business world and in their professional careers where energy, determination to succeed, and personal drive are necessary. But both types tend to be workaholics, putting themselves under tremendous stress in order to achieve their goals and to hang onto to whatever success they have. Under sufficient stress, they may stop supporting each other and compete to top the other's achievements. Of the two types, Eights are more openly controlling than Threes, although Threes will attempt to control situations covertly\u2014which can arouse the Eight's suspicions and lack of trust. Once trust is compromised, Eights can become jealous and possessive, ordering the Three to do things to prove their personal loyalty to the Eight. Threes may easily feel used and belittled, not adequately appreciated for their contributions or for their support of the Eight. Eights begin to expect and demand loyalty\u2014even obedience\u2014for their patronage and guidance. Threes begin to feel that they are losing their ability to pursue their own goals, that they are becoming an appendage of the Eight."
+        },
+        {
+          "compatibilityMatrix": [
+            3,
+            9
+          ],
+          "goodSpots": "This is a fairly common pairing.\u00a0Nines bring enormous support, encouragement, and a sense of pride in the Three's accomplishments.\u00a0Threes can feel that with the Nine behind them, they are able to be themselves, explore their potential, and become the best mate, friend, or professional that they can be. Threes can help Nines to properly value themselves, to have more self-respect, and to invest in their own development. Nines can help Threes relax and find enjoyment in simple things\u2014Nines give them permission to not drive themselves so much. Both types also want to avoid conflicts and to put a positive spin on things\u2014Nines are genuinely optimistic and look on the bright side, while Threes focus on being positive and hopeful, and are careful to not let people see them being down or depressed. Both types are sociable, idealistic, caring for children, animals, and the underdog. Both are usually hard working and want to achieve a degree of material success that will enable them to take care of others in a kind of extended family where everyone would be safe, comfortable, and thriving. They both want a pleasant, aesthetically pleasing home. To this mix, Threes bring energy, personal ambition, flexibility, the ability to set and achieve long term goals, and efficiency. Threes energize Nines and bring change and excitement to the relationship. Nines bring a feeling of safety and steadiness, the assurance that the Three is loved for themselves and not just for their achievements, and the feeling of not being judged or evaluated at every moment. Threes feel that they can let down their hair and really be themselves with Nines who accept them just as they are. The sensuality of the Nine and the attractiveness of the Three can meet in a couple highly attracted to each other and attached by physical passion. In other Three-and-Nine couples, the need for comfort and security may be the main source of attachment and the pleasure they get from each other.",
+          "troubleSpots": "Potential Trouble Spots or Issues The Three/Nine couple can almost be a case of \"too much of a good thing.\" Because both types are attracted to keeping the positive values in their lives alive\u2014and there can be so much attachment to comfort and stability in their world\u2014that it becomes difficult to question the status quo and the routines that they get into. Neither wants to bring up conflicts that they have with the other. Nines are more likely not to want to talk about whatever is bothering them for fear of further endangering the relationship. But Threes also do not want to express their complaints because doing so will risk rejection and may also expose the fragility or even the falseness of their relationship. Nines feel that it is better not to say anything and to let things work out on their own, if that is at all possible. If Threes are heavily invested in having a \"perfect marriage\" to the outside world, it will be difficult to talk about their unhappiness in the relationship or the frustrations they are feeling."
+        }
+      ]
+    },
+    "NPC_Detail_Information": [
+      "FEMALE",
+      "AROMANTIC",
+      "Not romantically attracted to anyone.",
+      "BIGENDER",
+      "He Him",
+      "FAT",
+      [
+        2,
+        3,
+        95
+      ],
+      [
+        68.58,
+        43.09124
+      ]
+    ],
+    "NPC_EM": {
+      "EM": [
+        {
+          "addictions": "Over-stressing the body for recognition. Working out to exhaustion. Starvation diets. Workaholism. Excessive intake of coffee, stimulants, amphetamines, cocaine, steroids or excessive surgery for cosmetic improvement.",
+          "basicDesire": "To feel valuable and worthwhile",
+          "basicFear": "Of being worthless",
+          "breifDesc": null,
+          "dominantEmotion": "Shame",
+          "keyMotivations": "Want to be affirmed, to distinguish themselves from others, to have attention, to be admired, and to impress others.",
+          "levelOfDevelopment": [
+            "Self-accepting, inner-directed, and authentic, everything they seem to be. Modest and charitable, self-deprecatory humor and a fullness of heart emerge. Gentle and benevolent.",
+            "Self-assured, energetic, and competent with high self-esteem: they believe in themselves and their own value. Adaptable, desirable, charming, and gracious.",
+            "Ambitious to improve themselves, to be 'the best they can be'\u00e2\u20ac\u201doften become outstanding, a human ideal, embodying widely admired cultural qualities. Highly effective: others are motivated to be like them in some positive way.",
+            "Highly concerned with their performance, doing their job well, constantly driving self to achieve goals as if self-worth depends on it. Terrified of failure. Compare self with others in search for status and success. Become careerists, social climbers, invested in exclusivity and being the 'best.'",
+            "Become image-conscious, highly concerned with how they are perceived. Begin to package themselves according to the expectations of others and what they need to do to be successful. Pragmatic and efficient, but also premeditated, losing touch with their own feelings beneath a smooth facade. Problems with intimacy, credibility, and 'phonines' emerge.",
+            "Want to impress others with their superiority: constantly promoting themselves, making themselves sound better than they really are. Narcissistic, with grandiose, inflated notions about themselves and their talents. Exhibitionistic and seductive, as if saying 'Look at me!' Arrogance and contempt for others is a defense against feeling jealous of others and their success.",
+            "Fearing failure and humiliation, they can be exploitative and opportunistic, covetous of the success of others, and willing to do 'whatever it takes' to preserve the illusion of their superiority.",
+            "Devious and deceptive so that their mistakes and wrongdoings will not be exposed. Untrustworthy, maliciously betraying or sabotaging people to triumph over them. Delusionally jealous of others",
+            "Become vindictive, attempting to ruin others' happiness. Relentless, obsessive about destroying whatever reminds them of their own shortcomings and failures. Psychopathic behavior. Generally corresponds to the Narcissistic Personality Disorder."
+          ],
+          "typeID": 3
+        },
+        [
+          "Money",
+          "for financial compensation, with the amount depending on risk and desperation."
+        ]
+      ]
+    },
+    "NPC_Known_Jobs": "None",
+    "NPC_Name": "Olhuntr",
+    "NPC_OCEAN": {
+      "OCEAN": [
+        170,
+        115,
+        203,
+        32,
+        112
+      ]
+    },
+    "NPC_Rumors": "None",
+    "NPC_Social_Network": {
+      "data": {
+        "5KapawmZ": {
+          "neighbors": [
+            {
+              "id": "5Kapawor",
+              "weight": [
+                "FAMILY",
+                "BAD"
+              ]
+            },
+            {
+              "id": "5KapawnW",
+              "weight": [
+                "FAMILY",
+                "BAD"
+              ]
+            },
+            {
+              "id": "5Kapawns",
+              "weight": [
+                "FAMILY",
+                "GOOD"
+              ]
+            },
+            {
+              "id": "5Kapawor",
+              "weight": [
+                "FAMILY",
+                "OKAY"
+              ]
+            },
+            {
+              "id": "5KapawnW",
+              "weight": [
+                "FAMILY",
+                "NONE"
+              ]
+            },
+            {
+              "id": "5Kapawns",
+              "weight": [
+                "FAMILY",
+                "OKAY"
+              ]
+            }
+          ]
+        },
+        "5KapawnW": {
+          "neighbors": [
+            {
+              "id": "5Kapawor",
+              "weight": [
+                "FAMILY",
+                "OKAY"
+              ]
+            },
+            {
+              "id": "5Kapawor",
+              "weight": [
+                "FAMILY",
+                "BAD"
+              ]
+            },
+            {
+              "id": "5Kapawns",
+              "weight": [
+                "FAMILY",
+                "GOOD"
+              ]
+            },
+            {
+              "id": "5KapawmZ",
+              "weight": [
+                "FAMILY",
+                "BAD"
+              ]
+            },
+            {
+              "id": "5Kapawns",
+              "weight": [
+                "FAMILY",
+                "NONE"
+              ]
+            },
+            {
+              "id": "5KapawmZ",
+              "weight": [
+                "FAMILY",
+                "NONE"
+              ]
+            }
+          ]
+        },
+        "5Kapawns": {
+          "neighbors": [
+            {
+              "id": "5Kapawor",
+              "weight": [
+                "FAMILY",
+                "GOOD"
+              ]
+            },
+            {
+              "id": "5KapawnW",
+              "weight": [
+                "FAMILY",
+                "GOOD"
+              ]
+            },
+            {
+              "id": "5Kapawor",
+              "weight": [
+                "FAMILY",
+                "NONE"
+              ]
+            },
+            {
+              "id": "5KapawnW",
+              "weight": [
+                "FAMILY",
+                "NONE"
+              ]
+            },
+            {
+              "id": "5KapawmZ",
+              "weight": [
+                "FAMILY",
+                "GOOD"
+              ]
+            },
+            {
+              "id": "5KapawmZ",
+              "weight": [
+                "FAMILY",
+                "OKAY"
+              ]
+            }
+          ]
+        },
+        "5Kapawor": {
+          "neighbors": [
+            {
+              "id": "5KapawnW",
+              "weight": [
+                "FAMILY",
+                "OKAY"
+              ]
+            },
+            {
+              "id": "5Kapawns",
+              "weight": [
+                "FAMILY",
+                "GOOD"
+              ]
+            },
+            {
+              "id": "5KapawmZ",
+              "weight": [
+                "FAMILY",
+                "BAD"
+              ]
+            },
+            {
+              "id": "5KapawnW",
+              "weight": [
+                "FAMILY",
+                "BAD"
+              ]
+            },
+            {
+              "id": "5Kapawns",
+              "weight": [
+                "FAMILY",
+                "NONE"
+              ]
+            },
+            {
+              "id": "5KapawmZ",
+              "weight": [
+                "FAMILY",
+                "OKAY"
+              ]
+            }
+          ]
+        }
+      },
+      "tooltip": "First iteration of elements is percieved relationship from source node to destination node. Second iteration of elements is percieved relationship from destination node to source node."
+    },
+    "NPC_Social_Role": [
+      "CHILD",
+      "SIBLING"
+    ],
+    "NPC_Type": "DEFAULT",
+    "NPC_UUID": "5KapawmZ"
+  }

@@ -1,4 +1,5 @@
 import random
+import itertools
 
 import NPCClass
 
@@ -7,8 +8,6 @@ from nameGen import markovChain
 
 from datetime import datetime
 from enum import Flag, Enum
-from collections import deque, defaultdict
-from itertools import combinations
 
 
 class Genogram(Flag):
@@ -59,8 +58,8 @@ class Location:
     def __init__(self, size=Size.HAMLET):
         self.size = size.value
         self.type = size.name
-        self.families = deque()
-        self.citizens = deque()
+        self.families = []
+        self.citizens = []
         self.family_size = {
             "Parents": 2,
             "Kids": 2
@@ -72,12 +71,12 @@ class Location:
             collection = []
             current_size = self.family_size[i]
             for j in range(current_size):
-                collection.append(people.popleft())
+                collection.append(people.pop())
             members.update({i: collection})
         return members
 
     def populate(self):
-        families, citizens = deque(), deque()
+        families, citizens = [], []
         now = datetime.now()
         counter = now.year * 10000000000 + now.month * 100000000 + \
             now.day * 1000000 + now.hour * 10000 + now.minute * 100 + now.second
@@ -115,29 +114,36 @@ class Location:
 
 class SocialNetwork:
     def __init__(self):
-        self.families = deque()
+        self.families = []
+        self.families_printable = []
 
     def populateAssociates(self, members):
         # First, create graph of family members
         arr = []
-        family = utilities.Graph()
+        family = utilities.Network()
 
         for current_role in members:
             for person in members[current_role]:
                 match current_role:
                     case "Parents":
-                        person.NPC_Social_Role = Genogram.PARENT | Genogram.SPOUSE
+                        person.NPC_Social_Role = [
+                            Genogram.PARENT.name, Genogram.SPOUSE.name]
                     case "Kids":
-                        person.NPC_Social_Role = Genogram.CHILD | Genogram.SIBLING
+                        person.NPC_Social_Role = [
+                            Genogram.CHILD.name, Genogram.SIBLING.name]
                 family.add_vertex(person.NPC_UUID)
                 arr.append(person.NPC_UUID)
 
         # Built a list of all posible direct connections within the family
-        combs = list(combinations(arr, 2))
+        # itertools and list comprehension is shockingly faster than for loops
+        # TODO: Replace for loops with iter/comprehension
+        combs = [c for c in itertools.product(
+            arr, arr) if len(set(c)) == len(c)]
 
+        # TODO: Add in Relationship_To value in the weight to indicate what the relationship to the src node is
         for combo in combs:
             r = random.randint(0, 5)
             family.add_edge(combo[0], combo[1],
-                            [Closeness.FAMILY, Relationship(r)])
+                            [Closeness.FAMILY.name, Relationship(r).name])
 
-        self.families.append(family)
+        self.families = family

@@ -1,7 +1,16 @@
 import sys
+
+from json import JSONEncoder
 from types import ModuleType, FunctionType
 from gc import get_referents
-from collections import deque, defaultdict
+
+# --------------------------------------------------------------
+# Custom JSON Encoder for the Custom data objects
+
+
+class jsonEncoder(JSONEncoder):
+    def default(self, o):
+        return super().default(o.__dict__)
 
 # --------------------------------------------------------------
 # Custom Tree Data Structure
@@ -23,7 +32,7 @@ class TreeNode(object):
         return self.children[index]
 
     def attach(self, children):
-        self.children = deque()
+        self.children = []
         for each in children:
             self.children.append(TreeNode(each))
 
@@ -33,7 +42,7 @@ class Tree(object):
         """Creates a tree and takes lists for new nodes and, optionally, their children.
            Uses NullData in place of None so that None may be used as placeholders."""
         if new_nodes is not NullData:
-            self.nodes = deque()
+            self.nodes = []
             for index, value in enumerate(new_nodes):
                 if new_children is not NullData:
                     self.nodes.append(
@@ -63,13 +72,14 @@ class Vertex:
         self.adjacent = {}
 
     def __str__(self):
-        return str(self.id) + ' adjacent: ' + str([x.id for x in self.adjacent])
+        # return str(self.id) + ' adjacent: ' + str([x.id for x in self.adjacent])
+        return str(self.id)
 
     def add_neighbor(self, neighbor, weight=0):
         self.adjacent[neighbor] = weight
 
     def get_connections(self):
-        return self.adjacent.keys()
+        return self.adjacent.keys.id()
 
     def get_id(self):
         return self.id
@@ -85,6 +95,7 @@ class Graph:
 
     def __init__(self):
         self.vert_dict = {}
+        self.vert_dict_printable = {}
         self.num_vertices = 0
 
     def __iter__(self):
@@ -101,6 +112,7 @@ class Graph:
         self.num_vertices = self.num_vertices + 1
         new_vertex = Vertex(node)
         self.vert_dict[node] = new_vertex
+        self.vert_dict_printable[node] = new_vertex.adjacent
         return new_vertex
 
     def get_vertex(self, n):
@@ -121,11 +133,51 @@ class Graph:
         if to not in self.vert_dict:
             self.add_vertex(to)
 
-        self.vert_dict[frm].add_neighbor(self.vert_dict[to], cost)
-        self.vert_dict[to].add_neighbor(self.vert_dict[frm], cost)
+        sour = self.vert_dict[frm]
+        dest = self.vert_dict[to]
+
+        sour.add_neighbor(dest, cost)
+        dest.add_neighbor(sour, cost)
+
+# TODO: Make this append each neighbor/edge to a list of dicts
+        self.vert_dict_printable[frm][to].append(
+            {dest.get_id(): dest.get_weight(sour)})
+        self.vert_dict_printable[to][frm].append(
+            {sour.get_id(): sour.get_weight(dest)})
 
     def get_vertices(self):
         return self.vert_dict.keys()
+
+
+class Network:
+    def __init__(self) -> None:
+        self.num_verticies = 0
+        self.vert_dict = {}
+        self.vert = {}
+
+    def __iter__(self):
+        return iter(self.vert_dict.values())
+
+    def add_vertex(self, node):
+        self.num_verticies = self.num_verticies + 1
+        new_vertex = {"neighbors": []}
+        self.vert_dict[node] = new_vertex
+        return new_vertex
+
+    def add_edge(self, frm, to, cost=0):
+        if frm not in self.vert_dict:
+            self.add_vertex(frm)
+        if to not in self.vert_dict:
+            self.add_vertex(to)
+
+        to_data = {"id": to, "weight": cost}
+        frm_data = {"id": frm, "weight": cost}
+
+        self.vert_dict[frm]["neighbors"].append(to_data)
+        self.vert_dict[to]["neighbors"].append(frm_data)
+
+    def get_dict(self):
+        return self.vert_dict
 
 # --------------------------------------------------------------
 # More Comprehensive getsize function
@@ -143,9 +195,9 @@ def getsize(obj):
             'getsize() does not take argument of type: ' + str(type(obj)))
     seen_ids = set()
     size = 0
-    objects = deque([obj])
+    objects = [obj]
     while objects:
-        need_referents = deque()
+        need_referents = []
         for obj in objects:
             if not isinstance(obj, BLACKLIST) and id(obj) not in seen_ids:
                 seen_ids.add(id(obj))
@@ -188,7 +240,7 @@ def encode(num, alphabet=BASE62):
     """
     if num == 0:
         return alphabet[0]
-    arr = deque()
+    arr = []
     arr_append = arr.append  # Extract bound-method for faster access.
     _divmod = divmod  # Access to locals is faster.
     base = len(alphabet)

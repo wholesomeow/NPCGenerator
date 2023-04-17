@@ -81,4 +81,4 @@ def generateBodyType(height, weight):
         body_ID = 4
 
     body_select = health_Level * body_ID
-    return BodyType(body_select)
+    return BodyType(body_select).name
