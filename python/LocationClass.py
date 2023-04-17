@@ -114,13 +114,12 @@ class Location:
 
 class SocialNetwork:
     def __init__(self):
-        self.families = []
-        self.families_printable = []
+        self.networks = []
 
     def populateAssociates(self, members):
         # First, create graph of family members
         arr = []
-        family = utilities.Network()
+        network = utilities.Network()
 
         for current_role in members:
             for person in members[current_role]:
@@ -131,19 +130,22 @@ class SocialNetwork:
                     case "Kids":
                         person.NPC_Social_Role = [
                             Genogram.CHILD.name, Genogram.SIBLING.name]
-                family.add_vertex(person.NPC_UUID)
+                network.add_vertex(person.NPC_UUID)
                 arr.append(person.NPC_UUID)
 
         # Built a list of all posible direct connections within the family
         # itertools and list comprehension is shockingly faster than for loops
-        # TODO: Replace for loops with iter/comprehension
+        # TODO: Replace for loops with iter/comprehension where possible/able
         combs = [c for c in itertools.product(
             arr, arr) if len(set(c)) == len(c)]
 
         # TODO: Add in Relationship_To value in the weight to indicate what the relationship to the src node is
         for combo in combs:
             r = random.randint(0, 5)
-            family.add_edge(combo[0], combo[1],
-                            [Closeness.FAMILY.name, Relationship(r).name])
+            network.add_edge(combo[0], combo[1],
+                             [Closeness.FAMILY.name, Relationship(r).name])
 
-        self.families = family
+        # Second, add random friend connections to each network
+
+        # Last, search one layer deep in friend network and add to player network
+        self.networks = network

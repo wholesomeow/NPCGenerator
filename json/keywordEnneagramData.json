@@ -2,264 +2,598 @@
     "mainData": [
         {
             "typeID": 1,
-            "keyWords": [
-            ],
-            "briefDesc": "conscientious, ethical, moral. mentors, crusaders, advocates for change, well-organized, orderly, fastidious. high standards, afraid of making a mistake, critical and perfectionistic. resentment and impatience.",
-            "basicFear": "corrupt, evil, defective",
-            "basicDesire": "good, integrity, balanced",
+            "briefDesc": {
+                "GeneralKeywords": ["person", "conscientious", "ethical", "sense of right and wrong", "striving to improve", "afraid of making a mistake", "well-organized", "orderly", "fastidious", "maintain high standards", "critical", "perfectionistic", "resentment", "impatience"],
+                "TypeofPerson": ["teachers", "crusaders", "advocates for change"],
+                "PositiveAttributes": ["conscientious", "ethical", "striving to improve", "well-organized", "orderly", "fastidious"],
+                "NegativeAttributes": ["afraid of making a mistake", "critical", "perfectionistic", "resentment", "impatience"],
+                "Problems": ["resentment", "impatience"]
+                },
+            "basicFear": {
+                "Keywords": ["corrupt", "evil", "defective"],
+                "Summary": "Negative self-perception and fear of being viewed as corrupt or defective."
+                },
+            "basicDesire": {
+                "Keywords": ["good", "integrity", "balanced"],
+                "Summary": "Desires to be a good and balanced person with integrity."
+            },
             "levelOfDevelopment": [
-                "wise and discerning. accepting, realistic, decisive. Humane, inspiring, and hopeful.",
-                "conscientious, strong convictions. strong moral compass, personal religious and moral values. desire to be rational, reasonable, self-disciplined, mature, and moderate.",
-                "extremely principled. desire to be fair, objective, and ethical. values truth and justice. sense of responsibility and personal integrity. have a higher purpose. mentors and witnesses to the truth.",
-                "dissatisfied, high-minded idealist, saviour. crusader, critical.",
-                "afraid of making mistakes. Stubborn, idealistic. orderly, well-organized, impersonal, puritanical, emotionally constricted, rigid, self-suppressing. workaholics, 'anal-compulsive,' punctual, pedantic, fastidious.",
-                "highly critical, picky, judgmental, perfectionistic. Very opinionated, evangelical. Impatient, perfectionist. Moralizing, scolding, abrasive, indignantly angry.",
-                "highly dogmatic, self-righteous, intolerant, and inflexible. absolutist, severe, judgemental",
-                "obsessive about imperfection, hypocritical, superior",
-                "condemnatory, punitive, cruel, depressed, nervous, and suicidal."
+                {
+                    "Attributes": "wise, discerning, accepting, realistic, decisive, humane, inspiring, hopeful, transcendent",
+                    "Summary": "extraordinarily wise and discerning. accepting what is, they have become transcendentally realistic. Humane, inspiring, and hopeful knowing the truth will be heard",
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "",
+                    "ViewofOthers": "",
+                    "PersonalGoal": ""
+                },
+                {
+                    "Attributes": "conscientious, strong convictions, moral compass, religious values, rational, reasonable, self-disciplined, mature, moderate",
+                    "Summary": "conscientious with strong personal convictions. intense sense of right and wrong, personal religious and moral values with a wish to be rational, reasonable, self-disciplined, mature, and moderate in all things",
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "",
+                    "ViewofOthers": "",
+                    "PersonalGoal": ""
+                },
+                {
+                    "Attributes": "principled, fair, objective, ethical, truth, justice, responsible, integrity, higher purpose, teacher, witness",
+                    "Summary": "extremely principled; always want to be fair, objective, and ethical. Truth and justice are primary values with a sense of responsibility and personal integrity. They feel like they have a higher purpose that often makes them teachers and witnesses to the truth",
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "",
+                    "ViewofOthers": "",
+                    "PersonalGoal": ""
+                },
+                {
+                    "Attributes": "dissatisfied, high-minded, idealist, saviour, crusader, critical, advocate, into causes, explaining how things ought to be",
+                    "Summary": "dissatisfied with reality, which leads them becoming high-minded idealists and feeling that it is up to them to improve everything. These people are crusaders, advocates, and critics and are typically into "causes" and explaining to others how things "ough" to be",
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "",
+                    "ViewofOthers": "",
+                    "PersonalGoal": ""
+                },
+                {
+                    "Attributes": "afraid, idealistic, orderly, well-organized, impersonal, puritanical, emotionally constricted, rigid, self-suppressing, workaholic, anal-compulsive, punctual, pedantic, fastidious",
+                    "Summary": "afraid of making mistakes; Everything must be consistent with their ideals. Become orderly and well-organized, but impersonal, puritanical, emotionally constricted, rigidly keeping their feelings and impulses in check. They are often workaholics, "anal-compulsive," punctual, pedantic, and fastidious",
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "",
+                    "ViewofOthers": "",
+                    "PersonalGoal": ""
+                },
+                {
+                    "Attributes": "highly critical, picky, judgmental, perfectionistic, opinionated, evangelical, impatient, moralizing, scolding, abrasive, angry",
+                    "Summary": "highly critical both of self and others: picky, judgmental, perfectionistic. Very opinionated about everything: correcting people and badgering them to "do the right thing"—as they see it. Impatient, never satisfied with anything unless it is done according to their prescriptions. Moralizing, scolding, abrasive, and indignantly angry",
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "",
+                    "ViewofOthers": "",
+                    "PersonalGoal": ""
+                },
+                {   "Attributes": "dogmatic, self-righteous, intolerant, inflexible, dealing in absolutes",
+                    "Summary": "highly dogmatic, self-righteous, intolerant, and inflexible. Begin to deal in absolutes, believing that they alone know "The Truth." Everyone else is wrong in their eyes. Very severe in their judgments, while increasingly self-rationalizing.",
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "",
+                    "ViewofOthers": "Everyone else is wrong in their eyes, severe in their judgments, rationalizing their own actions",
+                    "PersonalGoal": ""
+                },
+                {   "Attributes": "obsessive, hypocritical, contradictory",
+                    "Summary": "Becomes obsessive about imperfection and the wrongdoing of others, but may act hypocritically by doing the opposite of what they preach.",
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "",
+                    "ViewofOthers": "",
+                    "PersonalGoal": ""
+                },
+                {   "Attributes": "condemnatory, punitive, cruel, severe depressions, nervous breakdowns, suicide attempts",
+                    "Summary": "Condemnatory towards others, punitive and cruel. Likely to experience severe depressions, nervous breakdowns, and suicide attempts.",
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "",
+                    "ViewofOthers": "",
+                    "PersonalGoal": "rid themselves of wrongdoers"
+                }
             ],
-            "keyMotivations": "to be right, to strive higher and improve everything, to be consistent with their ideals, to justify themselves, to be beyond criticism and not to be condemned by anyone.",
-            "mentalIllness": "Obsessive-Compulsive and Depressive personality disorders.",
-            "addictions": "Excessive use of diets, vitamins, and cleansing techniques (fasts, diet pills, enemas). Under-eating for self-control: in extreme cases anorexia and bulimia. Alcohol to relieve tension.",
-            "growthRecommendations": [
-                "Learn to relax. Take some time for yourself, without feeling that everything is up to you or that what you do not accomplish will result in chaos and disaster. Mercifully, the salvation of the world does not depend on you alone, even though you may sometimes feel it does.",
-                "You have a lot to teach others and are probably a good teacher, but do not expect others to change immediately. What is obvious to you may not be as obvious to them, especially if they are not used to being as self-disciplined and objective about themselves as you are about yourself. Many people may also want to do what is right and may agree with you in principle but for various reasons simply cannot change right away. The fact that others do not change immediately according to your prescriptions does not mean that they will not change sometime in the future. Your words and above all, your example may do more good than you realize, although they may take longer than you expect. So have patience.",
-                "It is easy for you to work yourself up into a lather about the wrongdoings of others. And it may sometimes be true that they are wrong. But what is it to you? Your irritation with them will do nothing to help them see another way of being. Similarly, beware of your constant irritation with your own \"shortcomings.\" Does your own harsh self-criticism really help you to improve? Or does it simply make you tense, nervous, and self-doubting? Learn to recognize the attacks of your superego and how they undermine rather than help you.",
-                "It is important for you to get in touch with your feelings, particularly your unconscious impulses. You may find that you are uneasy with your emotions and your sexual and aggressive impulses\u2014in short, with the messy human things that make us human. It might be beneficial to keep a journal or to get into some kind of group therapy or other group work both to develop your emotions and to see that others will not condemn you for having human needs and limitations.",
-                "Your Achilles' heel is your self-righteous anger. You get angry easily and are offended by what seems to you to be the perverse refusal of others to do the right thing\u2014as you have defined it. Try to step back and see that your anger alienates people so that they cannot hear many of the good things you have to say. Further, your own repressed anger may well be giving you an ulcer or high blood pressure and is a harbinger of worse things to come."
-            ]
+            "keyMotivations": {
+                "Keywords": ["right", "strive", "improve", "consistent", "ideals", "justify", "criticism", "condemned"],
+                "DesireSummary": ["To be right", "To strive higher and improve everything", "To be consistent with their ideals", "To justify themselves", "To be beyond criticism"],
+                "FearSummary": ["To be condemned by anyone"]
+                },
+            "mentalIllness": ["Obsessive-Compulsive", "Depressive personality disorder"],
+            "addictions": {
+                "Keywords": ["diets", "vitamins", "cleansing techniques", "fasts", "diet pills", "enemas", "under-eating", "anorexia", "bulimia", "alcohol", "tension"],
+                "Summary": "Uses excessive dieting, cleansing techniques, and alcohol to manage tension; has tendencies toward under-eating, anorexia, and bulimia."
+            }
         },
         {
             "typeID": 2,
-            "keyWords": [
-            ],
-            "briefDesc": "This person is empathetic, sincere, and warm-hearted. They are friendly, generous, and self-sacrificing, but can also be sentimental, flattering, and people-pleasing. They are well-meaning and driven to be close to others, but can slip into doing things for others in order to be needed. They typically have problems with possessiveness and with acknowledging their own needs.",
-            "basicFear": "Of being unwanted, unworthy of being loved",
-            "basicDesire": "To feel loved",
+            "briefDesc": {
+                "GeneralKeywords": ["empathetic", "sincere", "warm-hearted", "friendly", "generous", "self-sacrificing", "sentimental", "flattering", "people-pleasing", "well-meaning", "driven", "close to others", "possessiveness", "acknowledging own needs"],
+                "TypeofPerson": ["friendly", "generous", "self-sacrificing", "people-pleasing"],
+                "PositiveAttributes": ["empathetic", "sincere", "warm-hearted", "friendly", "generous", "self-sacrificing", "well-meaning", "driven", "close to others"],
+                "NegativeAttributes": ["sentimental", "flattering", "people-pleasing", "possessiveness"],
+                "Problems": ["possessiveness", "acknowledging own needs"]
+            },
+            "basicFear": {
+                "Keywords": ["Feeling", "Unwanted", "Unworthy", "Loved"],
+                "Summary": "Feeling unwanted and unworthy of being loved."
+            },
+            "basicDesire": {
+                "Keywords": ["feel", "loved"],
+                "Summary": "Desire to experience the feeling of being loved."
+            },
             "levelOfDevelopment": [
-                "This person becomes deeply unselfish, humble, and altruistic, giving unconditional love to self and others. They feel that it is a privilege to be in the lives of others.",
-                "This person is empathetic, compassionate, and feeling for others. They are caring and concerned about their needs as well as thoughtful, warm-hearted, forgiving and sincere.",
-                "This person is encouraging and appreciative, and able to see the good in others. To them service is important, but taking care of self is just as important too. They are nurturing, generous, and giving—a truly loving person.",
-                "This person wants to be closer to others, so they start 'people pleasing' and becoming overly friendly, emotionally demonstrative, and full of 'good intentions' about everything. They give seductive attention: approval, 'strokes', and flattery are common examples. Love is their supreme value, and they talk about it constantly.",
-                "This person becomes overly intimate and intrusive; They need to be needed, so they hover, meddle, and control in the name of love. They want others to depend on them, so they give, but expect a return and often send double messages. They are typically enveloping and possessive: they are the codependent, self-sacrificial person who cannot do enough for others without wearing themselves out for everyone, and creating needs for themselves to fulfill.",
-                "This person is increasingly self-important and self-satisfied, and feel they are indispensable, although they overrate their efforts on others' behalf. Prone to hypochondria and becoming a 'martyr' for others. They are overbearing, patronizing, and presumptuous.",
-                "This person can be manipulative and self-serving, and often instills guilt by telling others how much they owe them and make them suffer. They can abuse food and medication to 'stuff feelings' and get sympathy. Often times this person will undermine people and make belittling or disparaging remarks. They can be extremely self-deceptive about their motives and how aggressive and/or selfish their behavior is.",
-                "This person can be domineering and coercive, and feel entitled to get anything they want from others. Typically this comes in the form of the repayment of old debts, money, sexual favors.",
-                "This person is able to excuse and rationalize what they do since they feel abused and victimized by others and are bitterly resentful and angry. Often times somatization of their aggressions results in chronic health problems as they vindicate themselves by 'falling apart' and burdening others. Generally corresponds to the Histrionic Personality Disorder and Factitious Disorder."
+                {
+                    "Attributes": ["unselfish", "humble", "altruistic", "loving", "generous"],
+                    "Summary": "Unselfish, humble, and altruistic, giving unconditional love to self and others. Feeling that it is a privilege to be in the lives of others.",
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "They view themselves as unselfish, humble, and altruistic, with the ability to give unconditional love to self and others.",
+                    "ViewofOthers": "They view others as individuals for whom they feel privileged to be in their lives.",
+                    "PersonalGoal": ""
+                },
+                {
+                    "Attributes": ["empathetic", "compassionate", "caring", "thoughtful", "forgiving", "sincere"],
+                    "Summary": "Empathetic, compassionate, and caring for others. Thoughtful, warm-hearted, forgiving, and sincere.",
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "They view themselves as empathetic, compassionate, and caring for others, with a thoughtful, warm-hearted, forgiving, and sincere nature.",
+                    "ViewofOthers": "They view others with concern and care for their needs.",
+                    "PersonalGoal": ""
+                },
+                {
+                    "Attributes": ["encouraging", "appreciative", "nurturing", "generous", "loving"],
+                    "Summary": "Encouraging and appreciative, able to see the good in others. Nurturing, generous, and giving, a truly loving person.",
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "They view themselves as encouraging, appreciative, and able to see the good in others. They are nurturing, generous, and giving.",
+                    "ViewofOthers": "They view others with a desire to encourage and appreciate, and with a nurturing and generous attitude.",
+                    "PersonalGoal": ""
+                },
+                {
+                    "Attributes": ["people-pleasing", "friendly", "emotionally demonstrative", "seductive attention", "approval-seeking", "flattery"],
+                    "Summary": "People-pleasing, overly friendly, emotionally demonstrative, and giving seductive attention such as approval-seeking and flattery. Love is their supreme value and they talk about it constantly.",
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "They view themselves as individuals who value love above all else, and they seek to please others through emotionally demonstrative behavior and seductive attention.",
+                    "ViewofOthers": "They view others as individuals they want to be closer to and as individuals who they seek to please through people-pleasing behavior and seductive attention.",
+                    "PersonalGoal": "Their goal is to be closer to others."
+                },
+                {
+                    "Attributes": ["overly intimate", "intrusive", "hovering", "meddling", "controlling", "codependent", "self-sacrificial", "enveloping", "possessive"],
+                    "Summary": ["need to be needed", "want others to depend on them", "give but expect a return", "send double messages"],
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "",
+                    "ViewofOthers": ["hovering", "meddling", "controlling", "enveloping", "possessive", "want others to depend on them", "give but expect a return", "send double messages"],
+                    "PersonalGoal": "fulfill needs by helping others"
+                },
+                {
+                    "Attributes": ["self-important", "self-satisfied", "overrating their efforts", "hypochondriac", "overbearing", "patronizing", "presumptuous"],
+                    "Summary": ["feel indispensable", "prone to martyrdom"],
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": ["self-important", "self-satisfied", "overrating their efforts"],
+                    "ViewofOthers": ["overbearing", "patronizing", "presumptuous", "feel others owe them", "instill guilt", "undermine", "make belittling or disparaging remarks", "self-deceptive"],
+                    "PersonalGoal": "martyrdom for others"
+                },
+                {
+                    "Attributes": ["manipulative", "self-serving", "guilt-inducing", "abuse of food and medication", "undermining", "belittling", "disparaging", "self-deceptive"],
+                    "Summary": ["tell others how much they owe", "make others suffer"],
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "",
+                    "ViewofOthers": ["guilt-inducing", "undermining", "belittling", "disparaging"],
+                    "PersonalGoal": "get what they want"
+                },
+                {
+                    "Attributes": ["domineering", "coercive", "entitled", "manipulative", "self-serving"],
+                    "Summary": ["expect repayment of old debts", "expect money", "expect sexual favors"],
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "",
+                    "ViewofOthers": ["expect repayment of old debts", "expect money", "expect sexual favors"],
+                    "PersonalGoal": "get what they want"
+                },
+                {   "Attributes": ["Excuses", "Rationalization", "Feeling abused", "Feeling victimized", "Resentful", "Angry"],
+                    "Summary": ["Somatization of aggressions", "Chronic health problems"],
+                    "MentalHealthSummary": ["Histrionic Personality Disorder", "Factitious Disorder"],
+                    "ViewofSelf": "",
+                    "ViewofOthers": "",
+                    "PersonalGoal": "get what they want"
+                }
             ],
-            "keyMotivations": "Want to be loved, to express their feelings for others, to be needed and appreciated, to get others to respond to them, to vindicate their claims about themselves.",
-            "overview": "Content TBD",
-            "addictions": "Abusing food and over-the-counter medications. Bingeing, especially on sweets and carbohydrates. Over-eating from feeling clove-starved; in extreme cases bulimia. Hypochondria to look for sympathy.",
-            "growthRecommendations": [
-                "First and foremost, remember that if you are not addressing your own needs, it is highly unlikely that you will be able to meet anyone else's needs without problems, underlying resentments, and continual frustration. Further, you will be less able to respond to people in a balanced way if you have not gotten adequate rest, and taken care of yourself properly. It is not selfish to make sure that you are okay before attending to others' needs\u2014it is simply common sense.",
-                "Try to become more conscious of your own motives when you decide to help someone. While doing good things for people is certainly an admirable trait, when you do so because you expect the other person to appreciate you or do something nice for you in return, you are setting yourself up for disappointments. Your type has a real danger of falling into unconscious codependent patterns with loved ones, and they almost never bring you what you really want.",
-                "While there are many things you might want to do for people, it is often better to ask them what they really need first. You are gifted at accurately intuiting others' feelings and needs, but that does not necessarily mean that they want those needs remedied by you in the way you have in mind. Communicate your intentions, and be willing to accept a \"no thank you.\" Someone deciding that they do not want your particular offer of help does not mean that they dislike you or are rejecting you.",
-                "Resist the temptation to call attention to yourself and your good works. After you have done something for others, do not remind them about it. Let it be: either they will remember your kindness themselves and thank you in their own way or they will not. Your calling attention to what you have done for them only puts people on the spot and makes them feel uneasy. It will not satisfy anyone or improve your relationships.",
-                "Learn to recognize the affection and good wishes of others, even when these are not in terms that you are familiar with. Although others may not express their feelings in a way that you want, they may be letting you know in other ways how much they care about you. If you can recognize what others are\u00a0giving you, you will rest more easily in the knowledge that you really are loved. Love is always available but only to the degree that we are present and therefore receptive to it."
-            ]
+            "keyMotivations": {
+                "Keywords": ["loved", "express", "feelings", "needed", "appreciated", "respond", "vindicate", "claims"],
+                "DesireSummary": "Desires to feel loved, express their feelings for others, be needed and appreciated, and vindicate their claims about themselves.",
+                "FearSummary": "Fears not being loved, having their feelings rejected, being unappreciated, and not being able to vindicate their claims about themselves."
+            },
+            "mentalIllness": ["Histrionic Personality Disorder", "Factitious Disorder"],
+            "addictions": {
+                "Keywords": ["Abusing food", "Over-the-counter medications", "Bingeing", "Sweets", "Carbohydrates", "Over-eating", "Clover-starved", "Bulimia", "Hypochondria", "Sympathy"],
+                "Summary": "The person abuses food and over-the-counter medications, binges on sweets and carbohydrates, over-eats from feeling clove-starved, and may develop bulimia. They also experience hypochondria in search of sympathy."
+                }
         },
         {
             "typeID": 3,
-            "keyWords": [
-            ],
-            "briefDesc": "This person is self-assured, attractive, and charming. They are often ambitious, competent, and energetic, and they can also be status-conscious and highly driven for advancement. They are diplomatic and poised, but can also be overly concerned with their image and what others think of them. They typically have problems with workaholism and competitiveness.",
-            "basicFear": "Of being worthless",
-            "basicDesire": "To feel valuable and worthwhile",
+            "briefDesc": {
+                "GeneralKeywords": ["person", "self-assured", "attractive", "charming", "ambitious", "competent", "energetic", "status-conscious", "driven", "diplomatic", "poised", "concerned", "image", "others", "problems", "workaholism", "competitiveness"],
+                "TypeofPerson": ["driven", "ambitious", "competent", "energetic", "diplomatic", "poised"],
+                "PositiveAttributes": ["self-assured", "attractive", "charming", "competent", "energetic", "diplomatic", "poised"],
+                "NegativeAttributes": ["status-conscious", "overly concerned with image", "problems with workaholism", "problems with competitiveness"],
+                "Problems": ["workaholism", "competitiveness"]
+                },
+            "basicFear": {
+                "Keywords": ["worthless", "unimportant"],
+                "Summary": "feeling worthless."
+                },
+            "basicDesire": {
+                "Keywords": ["valuable", "worthwhile"],
+                "Summary": "Desire to feel valuable and worthwhile"
+                },
             "levelOfDevelopment": [
-                "Self-accepting, inner-directed, and authentic, everything they seem to be. Modest and charitable, self-deprecatory humor and a fullness of heart emerge. Gentle and benevolent.",
-                "Self-assured, energetic, and competent with high self-esteem: they believe in themselves and their own value. Adaptable, desirable, charming, and gracious.",
-                "Ambitious to improve themselves, to be 'the best they can be'—often become outstanding, a human ideal, embodying widely admired cultural qualities. Highly effective: others are motivated to be like them in some positive way.",
-                "Highly concerned with their performance, doing their job well, constantly driving self to achieve goals as if self-worth depends on it. Terrified of failure. Compare self with others in search for status and success. Become careerists, social climbers, invested in exclusivity and being the 'best.'",
-                "Become image-conscious, highly concerned with how they are perceived. Begin to package themselves according to the expectations of others and what they need to do to be successful. Pragmatic and efficient, but also premeditated, losing touch with their own feelings beneath a smooth facade. Problems with intimacy, credibility, and 'phonines' emerge.",
-                "Want to impress others with their superiority: constantly promoting themselves, making themselves sound better than they really are. Narcissistic, with grandiose, inflated notions about themselves and their talents. Exhibitionistic and seductive, as if saying 'Look at me!' Arrogance and contempt for others is a defense against feeling jealous of others and their success.",
-                "Fearing failure and humiliation, they can be exploitative and opportunistic, covetous of the success of others, and willing to do 'whatever it takes' to preserve the illusion of their superiority.",
-                "Devious and deceptive so that their mistakes and wrongdoings will not be exposed. Untrustworthy, maliciously betraying or sabotaging people to triumph over them. Delusionally jealous of others",
-                "Become vindictive, attempting to ruin others' happiness. Relentless, obsessive about destroying whatever reminds them of their own shortcomings and failures. Psychopathic behavior. Generally corresponds to the Narcissistic Personality Disorder."
+                {
+                    "Attributes": ["Self-accepting", "Inner-directed", "Authentic", "Modest", "Charitable", "Self-deprecatory humor", "Fullness of heart", "Gentle", "Benevolent"],
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "Self-accepting, inner-directed, authentic, modest, charitable, with self-deprecatory humor and a fullness of heart.",
+                    "ViewofOthers": "",
+                    "PersonalGoal": ""
+                },
+                {
+                    "Attributes": ["Self-assured", "Energetic", "Competent", "High self-esteem", "Adaptable", "Desirable", "Charming", "Gracious"],
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "Self-assured, energetic, and competent with high self-esteem; adaptable, desirable, charming, and gracious.",
+                    "ViewofOthers": "",
+                    "PersonalGoal": ""
+                },
+                {
+                    "Attributes": ["Ambitious", "Self-improvement", "Highly effective", "Motivational"],
+                    "MentalHealthSummary": "",
+                    "ViewofSelf": "Ambitious to improve themselves, to be 'the best they can be'--often become outstanding, a human ideal, embodying widely admired cultural qualities.",
+                    "ViewofOthers": "",
+                    "PersonalGoal": "Ambitious to improve themselves, to be 'the best they can be'"
+                },
+                {
+                    "Attributes": ["Performance oriented", "Self-motivated", "Terrified of failure", "Compare self with others", "Careerists", "Invested in exclusivity"],
+                    "Summary": "Highly driven and competitive",
+                    "MentalHealthSummary": "Fear of failure and low self-worth",
+                    "ViewofSelf": "Self-worth is tied to achievement and status",
+                    "ViewofOthers": "Comparative and status-driven",
+                    "PersonalGoal": "To be successful and achieve high status"
+                },
+                {
+                    "Attributes": ["Highly concerned with how they are perceived", "Package themselves according to the expectations of others", "Pragmatic and efficient", "Premeditated", "Problems with intimacy and credibility"],
+                    "Summary": "Image-conscious and efficient",
+                    "MentalHealthSummary": "Difficulty connecting with emotions and being genuine",
+                    "ViewofSelf": "Self-image is based on perception of others",
+                    "ViewofOthers": "Credibility and sincerity are important",
+                    "PersonalGoal": "To be successful and perceived as competent"
+                },
+                {
+                    "Attributes": ["Superior", "Self promoting", "Narcissistic", "Grandiose", "Exhibitionist", "Arrogance", "Contemptous"],
+                    "Summary": "Narcissistic and grandiose",
+                    "MentalHealthSummary": "Inflated sense of self-importance and insecurity",
+                    "ViewofSelf": "Self is superior to others",
+                    "ViewofOthers": "Jealousy and contempt towards others",
+                    "PersonalGoal": "To be perceived as superior to others"
+                },
+                {
+                    "Attributes": ["Performance-driven", "status-seeking", "comparative"],
+                    "Summary": "Driven to succeed, compare self with others, fear failure",
+                    "MentalHealthSummary": "Terrified of failure, driven by fear of not being good enough",
+                    "ViewofSelf": "Self-worth tied to achievement and success, always striving to be the best",
+                    "ViewofOthers": "Comparison to others to establish status and worth",
+                    "PersonalGoal": "Achieve goals, attain status and success"
+                },
+                {
+                    "Attributes": ["Image-conscious", "pragmatic", "efficient"],
+                    "Summary": "Focused on success, losing touch with emotions, concerned with perception",
+                    "MentalHealthSummary": "Lack of connection to emotions, problems with intimacy and credibility",
+                    "ViewofSelf": "Self-worth tied to success and perception of others",
+                    "ViewofOthers": "See others as tools to achieve success",
+                    "PersonalGoal": "Achieve success, maintain positive image"
+                },
+                {
+                    "Attributes": ["Vindictive", "malicious", "jealous"],
+                    "Summary": "Deceptive, vindictive, malicious",
+                    "MentalHealthSummary": "Relentless, obsessive, psychopathic",
+                    "ViewofSelf": "Inflated sense of superiority, delusionally jealous of others",
+                    "ViewofOthers": "See others as obstacles to success, attempt to ruin others' happiness",
+                    "PersonalGoal": "Destroy whatever reminds them of their own shortcomings and failures"
+                }
             ],
-            "keyMotivations": "Want to be affirmed, to distinguish themselves from others, to have attention, to be admired, and to impress others.",
-            "overview": "Content TBD",
-            "addictions": "Over-stressing the body for recognition. Working out to exhaustion. Starvation diets. Workaholism. Excessive intake of coffee, stimulants, amphetamines, cocaine, steroids or excessive surgery for cosmetic improvement.",
-            "growthRecommendations": [
-                "For our real development, it is essential to be truthful. Be honest with yourself and others about your genuine feelings and needs. Likewise, resist the temptation to impress others or inflate your importance. You will impress people more deeply by being authentic than by bragging about your successes or exaggerating your accomplishments.",
-                "Develop charity and cooperation in your relationships. You can do this by taking time to pause in a busy day to really connect with someone you care about. Nothing spectacular is required\u2014simply a few moments of quiet appreciation. When you do so, you will become a more loving person, a more faithful friend\u2014and a much more desirable individual. You will feel better about yourself.",
-                "Take breaks. You can drive yourself and others to exhaustion with your relentless pursuit of your goals. Ambition and self-development are good qualities, but temper them with rest periods in which you reconnect more deeply with yourself. Sometimes taking three to five deep breaths is enough to recharge your battery and improve your outlook.",
-                "Develop your social awareness. Many Threes have grown tremendously by getting involved in projects that had nothing to do with their own personal advancement. Working cooperatively with others toward goals that transcend personal interest is a powerful way of finding your true value and identity.",
-                "In their desire to be accepted by others, some average Threes adapt so much to the expectations of others that they lose touch with what they are really feeling about the situation. Develop yourself by resisting doing what is acceptable just to be accepted. It is imperative that you invest time in discovering your own core values."
-            ]
+            "keyMotivations": {
+                "Keywords": ["affirmation", "distinguish", "attention", "admired", "impress"],
+                "DesireSummary": "The desire to be recognized, admired and stand out from others.",
+                "FearSummary": "The fear of being ignored, overlooked, or not being seen as special."
+            },
+            "mentalIllness": ["Narcissistic Personality Disorder"],
+            "addictions": {
+                "Keywords": ["Over-stressing", "Working out to exhaustion", "Starvation diets", "Workaholism", "Excessive intake of coffee", "Stimulants", "Amphetamines", "Cocaine", "Steroids", "Excessive surgery", "Cosmetic improvement"],
+                "Summary": "Engaging harmful behaviors, such as over-stressing the body, working out to exhaustion, starvation diets, workaholism, excessive intake of stimulants and drugs, and excessive surgery for cosmetic improvement."
+                }
         },
         {
             "typeID": 4,
-            "keyWords": [
-            ],
-            "briefDesc": "This person is self-aware, sensitive, and reserved. They are emotionally honest, creative, and personal, but can also be moody and self-conscious. They can be prone to withholding themselves from others due to feeling vulnerable and defective. They can also feel disdainful and exempt from ordinary ways of living and they typically have problems with melancholy, self-indulgence, and self-pity.",
-            "basicFear": "That they have no identity or personal significance",
-            "basicDesire": "To find themselves and their significance (to create an",
+            "briefDesc": {
+                "GeneralKeywords": ["self-aware", "sensitive", "reserved", "emotionally honest", "creative", "personal", "moody", "self-conscious", "withholding", "vulnerable", "disdainful", "exempt", "melancholy", "self-indulgence", "self-pity"],
+                "TypeofPerson": ["introverted", "artistic"],
+                "PositiveAttributes": ["self-aware", "sensitive", "emotionally honest", "creative", "personal"],
+                "NegativeAttributes": ["moody", "self-conscious", "withholding", "vulnerable", "disdainful", "exempt", "self-indulgence", "self-pity"],
+                "Problems": ["melancholy", "self-pity"]
+            },
+            "basicFear": {
+                "Keywords": ["identity", "personal significance"],
+                "Summary": "The person feels that they lack a sense of identity or personal significance."
+                },
+            "basicDesire": {
+                "Keywords": ["find", "themselves", "significance"], 
+                "Summary": "To find themselves and their significance"
+            },
             "levelOfDevelopment": [
-                "Profoundly creative, expressing the personal and the universal, possibly in a work of art. Inspired, self-renewing and regenerating: able to transform all their experiences into something valuable: self-creative.",
-                "Self-aware, introspective, on the 'search for self,' aware of feelings and inner impulses. Sensitive and intuitive both to self and others: gentle, tactful, compassionate.",
-                "Highly personal, individualistic, 'true to self.' Self-revealing, emotionally honest, humane. Ironic view of self and life: can be serious and funny, vulnerable and emotionally strong.",
-                "Take an artistic, romantic orientation to life, creating a beautiful, aesthetic environment to cultivate and prolong personal feelings. Heighten reality through fantasy, passionate feelings, and the imagination.",
-                "To stay in touch with feelings, they interiorize everything, taking everything personally, but become self-absorbed and introverted, moody and hypersensitive, shy and self-conscious, unable to be spontaneous or to 'get out of themselves.' Stay withdrawn to protect their self-image and to buy time to sort out feelings.",
-                "Gradually think that they are different from others, and feel that they are exempt from living as everyone else does. They become melancholy dreamers, disdainful, decadent, and sensual, living in a fantasy world. Self-pity and envy of others leads to self-indulgence, and to becoming increasingly impractical, unproductive, effete, and precious.",
-                "When dreams fail, become self-inhibiting and angry at self, depressed and alienated from self and others, blocked and emotionally paralyzed. Ashamed of self, fatigued and unable to function.",
-                "Tormented by delusional self-contempt, self-reproaches, self-hatred, and morbid thoughts: everything is a source of torment. Blaming others, they drive away anyone who tries to help them.",
-                "Despairing, feel hopeless and become self-destructive, possibly abusing alcohol or drugs to escape. In the extreme: emotional breakdown or suicide is likely. Generally corresponds to the Avoidant, Depressive, and Narcissistic personality disorders."
+                {   "Attributes": ["Profoundly creative", "Inspired", "Self-renewing", "Regenerating"],
+                    "Summary": "Expressive of personal and universal themes through creative means.",
+                    "Mental Health Summary": "",
+                    "View of Self Summary": "Views self as creative and able to transform experiences into something valuable.",
+                    "View of Others Summary": "",
+                    "Goal Summary": "To express personal and universal themes through creative means and to continually renew and regenerate oneself through this process."
+                },
+                {
+                    "Attributes": ["Self-aware", "Introspective", "Sensitive", "Intuitive", "Gentle", "Tactful", "Compassionate"],
+                    "Summary": "On a search for self, aware of feelings and inner impulses. Sensitive and intuitive both to self and others.",
+                    "Mental Health Summary": "",
+                    "View of Self Summary": "",
+                    "View of Others Summary": "",
+                    "Goal Summary": ""
+                    },
+                {
+                    "Attributes": ["Highly personal", "individualistic", "true to self", "self-revealing", "emotionally honest", "humane", "ironic view of self and life", "serious and funny", "vulnerable", "emotionally strong"],
+                    "Summary": "Highly personal and individualistic with a sense of self-revelation and emotional honesty, and an ironic view of self and life that is both serious and funny, while being vulnerable and emotionally strong.",
+                    "Mental Health Summary": "Possessing emotional honesty and self-awareness can be beneficial for mental health.",
+                    "View of Self Summary": "Has a strong sense of self and self-expression while also acknowledging their own vulnerabilities and weaknesses.",
+                    "View of Others Summary": "Sensitive and compassionate towards others while also maintaining a highly individualistic view of the world.",
+                    "Goal Summary": "To be true to themselves, express their individuality, and maintain emotional honesty and self-awareness."
+                },
+                {
+                    "Attributes": ["Artistic", "Romantic", "Imaginative"],
+                    "Summary": "Create a beautiful and aesthetic environment to cultivate and prolong personal feelings.",
+                    "Mental Health Summary": "May be prone to escapism and living in a fantasy world.",
+                    "View of Self Summary": "Values personal feelings and aesthetics.",
+                    "View of Others Summary": "May expect others to appreciate and participate in their artistic and romantic ideals.",
+                    "Goal Summary": "To heighten reality through fantasy, passionate feelings, and the imagination."
+                },
+                {
+                    "Attributes": ["introverted", "self-absorbed", "moody", "hypersensitive", "shy", "self-conscious"],
+                    "Summary": "Stay withdrawn to protect their self-image and to buy time to sort out feelings.",
+                    "Mental Health Summary": "May struggle with excessive introspection and self-absorption that can lead to moodiness and hypersensitivity.",
+                    "View of Self Summary": "Tends to take everything personally, becoming self-absorbed and introverted, and may struggle with shyness and self-consciousness.",
+                    "View of Others Summary": "May withdraw to protect their self-image and to sort out their feelings.",
+                    "Goal Summary": "To stay in touch with their feelings."
+                },
+                {
+                    "Attributes": ["Melancholy dreamers", "Disdainful", "Decadent", "Sensual", "Living in a fantasy world", "Self-pity", "Envy of others", "Self-indulgent", "Impractical", "Unproductive", "Effete", "Precious"],
+                    "Summary": "Think they are different from others and live in a fantasy world, becoming increasingly self-indulgent and impractical.",
+                    "Mental Health Summary": "Possible risk of depression, narcissism, and detachment from reality.",
+                    "View of Self Summary": "Views themselves as unique and exempt from living as others do.",
+                    "View of Others Summary": "May feel envious of others and disdainful towards them.",
+                    "Goal Summary": "Goal is to live a life that is different from the norm and to indulge in their fantasies."
+                },
+                {
+                    "Attributes": ["self-inhibiting", "angry", "depressed", "alienated", "blocked", "emotionally paralyzed", "ashamed", "fatigued", "unable to function"],
+                    "Summary": "",
+                    "Mental Health Summary": "",
+                    "View of Self Summary": "",
+                    "View of Others Summary": "",
+                    "Goal Summary": ""
+                },
+                {
+                    "Attributes": ["tormented", "delusional", "self-contempt", "self-reproachful", "self-hatred", "morbid thoughts", "blaming others"],
+                    "Summary": "The individual is plagued by a sense of self-contempt, self-reproach, and self-hatred. They struggle with morbid thoughts and blame others for their problems.",
+                    "Mental Health Summary": "The individual is tormented by delusional self-contempt, self-reproaches, self-hatred, and morbid thoughts. They may be experiencing mental health issues such as depression, anxiety, or psychosis.",
+                    "View of Self Summary": "The individual has a negative view of themselves, struggling with self-contempt and self-hatred. They may have low self-esteem and struggle with self-worth.",
+                    "View of Others Summary": "The individual blames others for their problems and may push people away when they try to help.",
+                    "Goal Summary": ""
+                }
+                {
+                    "Attributes": ["Despairing", "self-destructive", "substance abusing"],
+                    "Summary": "",
+                    "Mental Health Summary": "Feel hopeless and may experience emotional breakdown or suicide.",
+                    "View of Self Summary": "Negative view of self, possibly experiencing self-hatred or self-reproach.",
+                    "View of Others Summary": "Blaming others and pushing them away when they try to help.",
+                    "Goal Summary": ""
+                }
             ],
-            "keyMotivations": "Want to express themselves and their individuality, to create and surround themselves with beauty, to maintain certain moods and feelings, to withdraw to protect their self-image, to take care of emotional needs before attending to anything else, to attract a 'rescuer.'",
-            "overview": "Content TBD",
-            "addictions": "Over-indulgence in rich foods, sweets, alcohol to alter mood, to socialize, and for emotional consolation. Lack of physical activity. Bulimia. Depression. Tobacco, prescription drugs, or heroin for social anxiety. Cosmetic surgery to erase rejected features.",
-            "growthRecommendations": [
-                "Do not pay so much attention to your feelings; they are not a true source of support for you, as you probably already know. Remember this advice: \"From our present perspective, we can also see that one of the most important mistakes Fours make is to equate themselves with their feelings. The fallacy is that to understand themselves they must understand their feelings, particularly their negative ones, before acting. Fours do not see that the self is not the same as its feelings or that the presence of negative feelings does not preclude the presence of good in themselves\" (Personality Types, p. 172). Always remember that your feelings are telling you something about yourself as you are at this particular moment, not necessarily more than that.",
-                "Avoid putting off things until you are \"in the right mood.\" Commit yourself to productive, meaningful work that will contribute to your good and that of others, no matter how small the contribution may be. Working consistently in the real world will create a context in which you can discover yourself and your talents. (Actually, you are happiest when you are working\u2014that is, activating your potentials and realizing yourself. You will not \"find yourself\" in a vacuum or while waiting for inspiration to strike, so connect\u2014and stay connected\u2014with the real world.",
-                "Self-esteem and self-confidence will develop only from having positive experiences, whether or not you believe that you are ready to have them. Therefore, put yourself in the way of good. You may never feel that you are ready to take on a challenge of some sort, that you always need more time. (Fours typically never feel that they are sufficiently \"together,\" but they must nevertheless have the courage to stop putting off their lives.) Even if you start small, commit yourself to doing something that will bring out the best in you.",
-                "A wholesome self-discipline takes many forms, from sleeping regular hours to working regularly to exercising regularly, and has a cumulative, strengthening effect. Since it comes from yourself, a healthy self-discipline is not contrary to your freedom or individuality. On the other hand, sensuality, excessive sexual experiences, alcohol, drugs, sleep, or fantasizing have a debilitating effect on you, as you already know. Therefore, practice healthy self-discipline and stay with it.",
-                "Avoid lengthy conversations in your imagination, particularly if they are negative, resentful, or even excessively romantic. These conversations are essentially unreal and at best only rehearsals for action\u2014although, as you know, you almost never say or do what you imagine you will. Instead of spending time imagining your life and relationships, begin to live them."
-            ]
+            "keyMotivations": {
+                "Keywords": ["express", "individuality", "create", "beauty", "moods", "feelings", "withdraw", "self-image", "emotional needs", "rescuer"],
+                "DesireSummary": "The desire to express themselves, their individuality, create and surround themselves with beauty, maintain certain moods and feelings, withdraw to protect their self-image, take care of emotional needs before attending to anything else, and attract a rescuer.",
+                "FearSummary": "Fears not being able to express themselves fully, being unable to create or surround themselves with beauty, losing control of their emotional state, and not having someone to rescue them."
+            },
+            "mentalIllness": ["Avoidant personality disorder", "Depressive personality disorder", "Narcissistic personality disorder"],
+            "addictions": {
+                "Keywords": ["Over-indulgence", "Rich foods", "Sweets", "Alcohol", "Mood alteration", "Socializing", "Emotional consolation", "Lack of physical activity", "Bulimia", "Depression", "Tobacco", "Prescription drugs", "Heroin", "Social anxiety", "Cosmetic surgery", "Rejected features"],
+                "Summary": "Engaging in unhealthy behaviors like overeating, alcohol consumption, lack of physical activity, and drug abuse to cope with negative emotions or social anxiety. Bulimia, depression, and cosmetic surgery are also common means of dealing with feelings of rejection and low self-esteem."
+                }
         },
         {
             "typeID": 5,
-            "keyWords": [
-            ],
-            "briefDesc": "This person is alert, insightful, and curious. They are able to concentrate and focus on developing complex ideas and skills. This person is typically independent, innovative, and inventive, yet they can also become preoccupied with their thoughts and imaginary constructs. They can become detached, yet high-strung and intense. They typically have problems with eccentricity, nihilism, and isolation.",
-            "basicFear": "Being useless, helpless, or incapable",
-            "basicDesire": "To be capable and competent",
+            "briefDesc": {
+                "GeneralKeywords": ["alert", "insightful", "curious", "independent", "innovative", "inventive", "detached", "high-strung", "intense", "problems", "eccentricity", "nihilism", "isolation"],
+                "TypeofPerson": ["creative"],
+                "PositiveAttributes": ["able to concentrate and focus on developing complex ideas and skills"],
+                "NegativeAttributes": ["preoccupied with their thoughts and imaginary constructs"],
+                "Problems": ["eccentricity", "nihilism", "isolation"]
+                },
+            "basicFear": {
+                "Keywords": ["useless", "helpless", "inadequate"],
+                "Summary": "Feeling inadequate and lacking ability or value."
+                },
+            "basicDesire": {
+                "Keywords": ["capable", "helplful", "competent"],
+                "Summary": "To feel capable and competent."
+                },
             "levelOfDevelopment": [
                 "Become visionaries, broadly comprehending the world while penetrating it profoundly. Open-minded, take things in whole, in their true context. Make pioneering discoveries and find entirely new ways of doing and perceiving things.",
                 "Observe everything with extraordinary perceptiveness and insight. Most mentally alert, curious, searching intelligence: nothing escapes their notice. Foresight and prediction. Able to concentrate: become engrossed in what has caught their attention.",
                 "Attain skillful mastery of whatever interests them. Excited by knowledge: often become expert in some field. Innovative and inventive, producing extremely valuable, original works. Highly independent, idiosyncratic, and whimsical.",
-                "Begin conceptualizing and fine-tuning everything before acting—working things out in their minds: model building, preparing, practicing, and gathering more resources. Studious, acquiring technique. Become specialized, and often 'intellectual,' often challenging accepted ways of doing things.",
-                "Increasingly detached as they become involved with complicated ideas or imaginary worlds. Become preoccupied with their visions and interpretations rather than reality. Are fascinated by off-beat, esoteric subjects, even those involving dark and disturbing elements. Detached from the practical world, a 'disembodied mind,' although high-strung and intense.",
+                "Begin conceptualizing and fine-tuning everything before acting—working things out in their minds: model building, preparing, practicing, and gathering more resources. Studious, acquiring technique. Become specialized, and often "intellectual," often challenging accepted ways of doing things.",
+                "Increasingly detached as they become involved with complicated ideas or imaginary worlds. Become preoccupied with their visions and interpretations rather than reality. Are fascinated by off-beat, esoteric subjects, even those involving dark and disturbing elements. Detached from the practical world, a "disembodied mind," although high-strung and intense.",
                 "Begin to take an antagonistic stance toward anything which would interfere with their inner world and personal vision. Become provocative and abrasive, with intentionally extreme and radical views. Cynical and argumentative.",
                 "Become reclusive and isolated from reality, eccentric and nihilistic. Highly unstable and fearful of aggressions: they reject and repulse others and all social attachments.",
                 "Get obsessed yet frightened by their threatening ideas, becoming horrified, delirious, and prey to gross distortions and phobias.",
                 "Seeking oblivion, they may commit suicide or have a psychotic break with reality. Deranged, explosively self-destructive, with schizophrenic overtones. Generally corresponds to the Schizoid Avoidant and Schizotypal personality disorders."
             ],
-            "keyMotivations": "Want to possess knowledge, to understand the environment, to have everything figured out as a way of defending the self from threats from the environment.",
-            "overview": "Content TBD",
-            "addictions": "Poor eating and sleeping habits due to minimizing needs. Neglecting hygiene and nutrition. Lack of physical activity. Psychotropic drugs for mental stimulation and escape, narcotics for anxiety.",
-            "growthRecommendations": [
-                "Learn to notice when your thinking and speculating takes you out of the immediacy of your experience. Your mental capacities can be an extraordinary gift, but only can also be a trap when you use them to retreat from contact with yourself and others. Stay connected with your physicality.",
-                "You tend to be extremely intense and so high-strung that you find it difficult to relax and unwind. Make an effort to learn to calm down in a healthy way, without drugs or alcohol. Exercising or using biofeedback techniques will help channel some of your tremendous nervous energy. Meditation, jogging, yoga, and dancing are especially helpful for your type.",
-                "You see many possibilities but often do not know how to choose among them or judge which is more or less important. When you are caught in your fixation, a sense of perspective can be missing, and with it the ability to make accurate assessments. At such time, it can be helpful to get the advice of someone whose judgment you trust while you are gaining perspective on your situation. Doing this can also help you trust someone else, a difficulty for your type.",
-                "Notice when you are getting intensely involved in projects that do not necessarily support your self-esteem, confidence, or life situation. It is possible to follow many different fascinating subjects, games, and pastimes, but they can become huge distractions from what you know you really need to do. Decisive action will bring more confidence than learning more facts or acquiring more unrelated skills.",
-                "Fives tend to find it difficult to trust people, to open up to them emotionally, or to make themselves accessible in various ways. Their awareness of potential problems in relationships may tend to create a self-fulfilling prophecy. It is important to remember that having conflicts with others is not unusual and that the healthy thing is to work them out rather than reject attachments with people by withdrawing into isolation. Having one or two intimate friends whom you trust enough to have conflicts with will enrich your life greatly."
-            ]
+            "keyMotivations": {
+                "Keywords": ["knowledge", "understand", "environment", "figured out", "defending", "self", "threats"],
+                "DesireSummary": "Desire to possess knowledge, understand the environment, and have everything figured out as a way of defending the self from threats from the environment.",
+                "FearSummary": "Fear of not having knowledge or understanding, of being vulnerable to threats from the environment."
+            },
+            "mentalIllness": ["Schizoid Avoidant personality disorder", "Schizotypal personality disorder"],
+            "addictions": {
+                "Keywords": ["Poor eating habits", "Poor sleeping habits", "Neglecting hygiene", "Neglecting nutrition", "Lack of physical activity", "Psychotropic drugs", "Narcotics", "Mental stimulation", "Escape", "Anxiety"],
+                "Summary": "Neglecting personal needs and using drugs to cope with mental and emotional issues."
+                }
         },
         {
             "typeID": 6,
-            "keyWords": [
-            ],
-            "briefDesc": "This person is the committed, security-oriented type. They are reliable, hard-working, responsible, and trustworthy. They are typically excellent 'troubleshooters', since they car foresee problems and foster cooperation. They can also become defensive, evasive, and anxious running on stress while complaining about it. They can be cautious and indecisive, but also reactive, defiant and rebellious. They typically have problems with self-doubt and suspicion.",
-            "basicFear": "Of being without support and guidance",
-            "basicDesire": "To have security and support",
+            "briefDesc": {
+                "GeneralKeywords": ["committed", "security-oriented", "reliable", "hard-working", "responsible", "trustworthy", "troubleshooters", "defensive", "evasive", "anxious", "cautious", "indecisive", "reactive", "defiant", "rebellious", "self-doubt", "suspicion"],
+                "TypeofPerson": "Security-oriented",
+                "PositiveAttributes": ["reliable", "hard-working", "responsible", "trustworthy", "excellent troubleshooters", "cooperation fostering"],
+                "NegativeAttributes": ["defensive", "evasive", "anxious", "cautious", "indecisive", "reactive", "defiant", "rebellious"],
+                "Problems": ["running on stress", "complaining about stress", "self-doubt", "suspicion"]
+            },
+            "basicFear": {
+                "Keywords": ["without support", "without guidance"],
+                "Summary": "Feeling unsupported and lacking guidance"
+                },
+            "basicDesire": {
+                "Keywords": ["security", "support"],
+                "Summary": "To have security and support"
+            },
             "levelOfDevelopment": [
                 "Become self-affirming, trusting of self and others, independent yet symbiotically interdependent and cooperative as an equal. Belief in self leads to true courage, positive thinking, leadership, and rich self-expression.",
                 "Able to elicit strong emotional responses from others: very appealing, endearing, lovable, affectionate. Trust important: bonding with others, forming permanent relationships and alliances.",
                 "Dedicated to individuals and movements in which they deeply believe. Community builders: responsible, reliable, trustworthy. Hard-working and persevering, sacrificing for others, they create stability and security in their world, bringing a cooperative spirit.",
                 "Start investing their time and energy into whatever they believe will be safe and stable. Organizing and structuring, they look to alliances and authorities for security and continuity. Constantly vigilant, anticipating problems.",
-                "To resist having more demands made on them, they react against others passive-aggressively. Become evasive, indecisive, cautious, procrastinating, and ambivalent. Are highly reactive, anxious, and negative, giving contradictory, 'mixed signals.' Internal confusion makes them react unpredictably.",
-                "To compensate for insecurities, they become sarcastic and belligerent, blaming others for their problems, taking a tough stance toward 'outsiders.' Highly reactive and defensive, dividing people into friends and enemies, while looking for threats to their own security. Authoritarian while fearful of authority, highly suspicious, yet, conspiratorial, and fear-instilling to silence their own fears.",
+                "To resist having more demands made on them, they react against others passive-aggressively. Become evasive, indecisive, cautious, procrastinating, and ambivalent. Are highly reactive, anxious, and negative, giving contradictory, "mixed signals." Internal confusion makes them react unpredictably.",
+                "To compensate for insecurities, they become sarcastic and belligerent, blaming others for their problems, taking a tough stance toward "outsiders." Highly reactive and defensive, dividing people into friends and enemies, while looking for threats to their own security. Authoritarian while fearful of authority, highly suspicious, yet, conspiratorial, and fear-instilling to silence their own fears.",
                 "Fearing that they have ruined their security, they become panicky, volatile, and self-disparaging with acute inferiority feelings. Seeing themselves as defenseless, they seek out a stronger authority or belief to resolve all problems. Highly divisive, disparaging and berating others",
-                "Feeling persecuted, that others are 'out to get them,' they lash-out and act irrationally, bringing about what they fear. Fanaticism, violence.",
+                "Feeling persecuted, that others are "out to get them," they lash-out and act irrationally, bringing about what they fear. Fanaticism, violence.",
                 "Hysterical, and seeking to escape punishment, they become self-destructive and suicidal. Alcoholism, drug overdoses, self-abasing behavior. Generally corresponds to the Passive-Aggressive and Paranoid personality disorders."
             ],
-            "keyMotivations": "Want to have security, to feel supported by others, to have certitude and reassurance, to test the attitudes of others toward them, to fight against anxiety and insecurity.",
-            "overview": "Content TBD",
-            "addictions": "Rigidity in diet causes nutritional imbalances (\"I don't like vegetables\"). Working excessively. Caffeine and amphetamines for stamina, but also alcohol and depressants to deaden anxiety. Higher susceptibility to alcoholism than many types.",
-            "growthRecommendations": [
-                "Remember that there is nothing unusual about being anxious since everyone is anxious and much more often than you might think. Learn to be more present to your anxiety, to explore it, and to come to terms with it. Work creatively with your tensions without turning to excessive amounts of alcohol (or other drugs) to allay them. In fact, if you are present and breathing fully, anxiety can be energizing, a kind of tonic that can help make you more productive and aware of what you are doing.",
-                "You tend to get edgy and testy when you are upset or angry, and can even turn on others and blame them for things you have done or brought on yourself. Be aware of your pessimism: it causes you dark moods and negative thought patterns that you tend to project on reality. When you succumb to this self-doubt, you can become your own worst enemy and may harm yourself more than anyone else does.",
-                "Sixes tend to overreact when they are under stress and feeling anxious. Learn to identify what makes you overreact. Also realize that almost none of the things you have feared so much has actually come true. Even if things are as bad as you think, your fearful thoughts weaken you and your ability to change things for the better. You cannot always manage external events, but you can manage your own thoughts.",
-                "Work on becoming more trusting. There are doubtless several people in your life you can turn to who care about you and who are trustworthy. If not, go out of your way to find someone trustworthy, and allow yourself to get close to that person. This will mean risking rejection and stirring up some of your deepest fears, but the risk is worth taking. You have a gift for getting people to like you, but you are unsure of yourself and may be afraid of making a commitment to them. Therefore, come down clearly on one side or the other of the fence in your relationships. Let people know how you feel about them.",
-                "Others probably think better of you than you realize, and few people are really out to get you. In fact, your fears tell you more about your attitudes toward others than they indicate about others' attitudes toward you."
-            ]
+            "keyMotivations": {
+                "Keywords": ["security", "supported", "certitude", "reassurance", "attitudes", "fight", "anxiety", "insecurity"],
+                "DesireSummary": "Desire to have security and feel supported by others, to have certitude and reassurance, to test the attitudes of others toward them.",
+                "FearSummary": "Fear of anxiety and insecurity."
+            },
+            "mentalIllness": ["Passive-Aggressive personality disorder", "Paranoid personality disorder"],
+            "addictions": {
+                "Keywords": ["rigidity", "diet", "nutritional imbalances", "excessive working", "caffeine", "amphetamines", "stamina", "alcohol", "depressants", "anxiety", "alcoholism"],
+                "Summary": "Rigidity in diet causes nutritional imbalances, working excessively, caffeine and amphetamines for stamina but also alcohol and depressants to deaden anxiety. Higher susceptibility to alcoholism than many types."
+                }
         },
         {
             "typeID": 7,
-            "keyWords": [
-            ],
-            "briefDesc": "This person is extroverted, optimistic, versatile, and spontaneous. They can be playful, high-spirited, and practical, but they can also misapply their many talents and become over-extended, scattered, and undisciplined. They constantly seek new and exciting experiences, but can become distracted and exhausted by staying on the go. They typically have problems with impatience and impulsiveness.",
-            "basicFear": "Of being deprived and in pain",
-            "basicDesire": "To be satisfied, content, and to have their needs fulfilled",
+            "briefDesc": {
+                "GeneralKeywords": ["extroverted", "optimistic", "versatile", "spontaneous", "playful", "high-spirited", "practical", "talented", "distracted", "exhausted", "new experiences", "excitement", "impulsive", "impatient"],
+                "TypeofPerson": ["outgoing", "adventurous"],
+                "PositiveAttributes": ["optimistic", "versatile", "spontaneous", "playful", "high-spirited", "practical", "talented"],
+                "NegativeAttributes": ["over-extended", "scattered", "undisciplined", "distracted", "exhausted", "impulsive", "impatient"],
+                "Problems": ["over-extension", "scatteredness", "undisciplined", "impatience", "impulsiveness"]
+            },
+            "basicFear": {
+                "Keywords": ["deprived", "pain"],
+                "Summary": "Feeling deprived and in pain."
+                },
+            "basicDesire": {
+                "Keywords": ["satisfied", "content", "needs fulfilled"],
+                "Summary": "To be satisfied, content, and to have their needs fulfilled."
+                },
             "levelOfDevelopment": [
                 "Assimilate experiences in depth, making them deeply grateful and appreciative for what they have. Become awed by the simple wonders of life: joyous and ecstatic. Intimations of spiritual reality, of the boundless goodness of life.",
                 "Highly responsive, excitable, enthusiastic about sensation and experience. Most extroverted type: stimuli bring immediate responses—they find everything invigorating. Lively, vivacious, eager, spontaneous, resilient, cheerful.",
                 "Easily become accomplished achievers, generalists who do many different things well: multi-talented. Practical, productive, usually prolific, cross-fertilizing areas of interest.",
-                "As restlessness increases, want to have more options and choices available to them. Become adventurous and 'worldly wise,' but less focused, constantly seeking new things and experiences: the sophisticate, connoisseur, and consumer. Money, variety, keeping up with the latest trends important.",
-                "Unable to discriminate what they really need, become hyperactive, unable to say 'no' to themselves, throwing self into constant activity. Uninhibited, doing and saying whatever comes to mind: storytelling, flamboyant exaggerations, witty wise-cracking, performing. Fear being bored: in perpetual motion, but do too many things—many ideas but little follow through.",
+                "As restlessness increases, want to have more options and choices available to them. Become adventurous and "worldly wise," but less focused, constantly seeking new things and experiences: the sophisticate, connoisseur, and consumer. Money, variety, keeping up with the latest trends important.",
+                "Unable to discriminate what they really need, become hyperactive, unable to say "no" to themselves, throwing self into constant activity. Uninhibited, doing and saying whatever comes to mind: storytelling, flamboyant exaggerations, witty wise-cracking, performing. Fear being bored: in perpetual motion, but do too many things—many ideas but little follow through.",
                 "Get into conspicuous consumption and all forms of excess. Self-centered, materialistic, and greedy, never feeling that they have enough. Demanding and pushy, yet unsatisfied and jaded. Addictive, hardened, and insensitive.",
                 "Desperate to quell their anxieties, can be impulsive and infantile: do not know when to stop. Addictions and excess take their toll: debauched, depraved, dissipated escapists, offensive and abusive.",
                 "In flight from self, acting out impulses rather than dealing with anxiety or frustrations: go out of control, into erratic mood swings, and compulsive actions (manias).",
                 "Finally, their energy and health is completely spent: become claustrophobic and panic-stricken. Often give up on themselves and life: deep depression and despair, self-destructive overdoses, impulsive suicide. Generally corresponds to the Bipolar disorder and Histrionic personality disorder."
             ],
-            "keyMotivations": "Want to maintain their freedom and happiness, to avoid missing out on worthwhile experiences, to keep themselves excited and occupied, to avoid and discharge pain.",
-            "overview": "Content TBD",
-            "addictions": "The type most prone to addictions: stimulants (caffeine, cocaine, and amphetamines), Ecstasy, psychotropics, narcotics, and alcohol but tend to avoid other depressants. Wear body out with effort to stay \"up.\" Excessive cosmetic surgery, pain killers.",
-            "growthRecommendations": [
-                "Recognize your impulsiveness, and get in the habit of observing your impulses rather than giving in to them. This means letting most of your impulses pass and becoming a better judge of which ones are worth acting on. The more you can resist acting out your impulses, the more you will be able to focus on what is really good for you.",
-                "Learn to listen to other people. They are often interesting, and you may learn things that will open new doors for you. Also learn to appreciate silence and solitude: you do not have to distract yourself (and protect yourself from anxiety) with constant noise from the television or the stereo. By learning to live with less external stimulation, you will learn to trust yourself. You will be happier than you expect because you will be satisfied with whatever you do, even if it is less than you have been doing.",
-                "You do not have to have everything this very moment. That tempting new acquisition will most likely still be available tomorrow (this is certainly true of food, alcohol, and other common gratifications\u2014that ice cream cone, for instance). Most good opportunities will come back again\u2014and you will be in a better position to discern which opportunities really are best for you.",
-                "Always choose quality over quantity, especially in your experiences. The ability to have experiences of quality can be learned only by giving your full attention to the experience you are having now. If you keep anticipating future experiences, you will keep missing the present one and undermine the possibility of ever being satisfied.",
-                "Make sure that what you want will really be good for you in the long run. As the saying goes, watch what you pray for since your prayers may be answered. In the same vein, think about the long-term consequences of what you want since you may get it only to find that it becomes another disappointment\u2014or even a source of unhappiness."
-            ]
+            "keyMotivations": {
+                "Keywords": ["freedom", "happiness", "experiences", "excitement", "occupation", "pain"],
+                "DesireSummary": "Maintain freedom and happiness, avoid missing out on worthwhile experiences, keep oneself excited and occupied.",
+                "FearSummary": "Avoid and remove pain."
+            },
+            "mentalIllness": ["Bipolar disorder", "Histrionic personality disorder"],
+            "addictions": {
+                "Keywords": ["stimulants", "caffeine", "cocaine", "amphetamines", "Ecstasy", "psychotropics", "narcotics", "alcohol", "depressants", "body", "cosmetic surgery", "pain killers"],
+                "Summary": "The type most prone to addictions: stimulants (caffeine, cocaine, and amphetamines), Ecstasy, psychotropics, narcotics, and alcohol but tend to avoid other depressants. Wear body out with effort to stay "up." Excessive cosmetic surgery, pain killers."
+                }
         },
         {
             "typeID": 8,
-            "keyWords": [
-            ],
-            "briefDesc": "This person is self-confident, strong, and assertive. They are often protective, resourceful, straight-talking, and decisive, but can also be ego-centric and domineering. They feel they must control their environment, especially people, sometimes becoming confrontational and intimidating. They typically have problems with their tempers and with allowing themselves to be vulnerable.",
-            "basicFear": "Of being harmed or controlled by others",
-            "basicDesire": "To protect themselves and to be in control of their own life",
+            "briefDesc": {
+                "GeneralKeywords": ["self-confident", "strong", "assertive", "protective", "resourceful", "straight-talking", "decisive", "ego-centric", "domineering", "control", "confrontational", "intimidating", "temper", "vulnerable"],
+                "TypeofPerson": ["self-confident", "decisive"],
+                "PositiveAttributes": ["self-confident", "strong", "assertive", "protective", "resourceful", "straight-talking", "decisive"],
+                "NegativeAttributes": ["ego-centric", "domineering", "control", "confrontational", "intimidating"],
+                "Problems": ["temper", "vulnerable"]
+                },
+            "basicFear": {
+                "Keywords": ["harm", "control", "abuse", "victim", "powerlessness"],
+                "Summary": "The fear or experience of being harmed or controlled by others, leading to feelings of powerlessness and victimization. This can include abuse, trauma, and oppression."
+            },
+            "basicDesire": {
+                "Keywords": ["protect", "control", "life"],
+                "Summary": "To protect themselves and to be in control of their own life."
+                },
             "levelOfDevelopment": [
                 "Become self-restrained and magnanimous, merciful and forbearing, mastering self through their self-surrender to a higher authority. Courageous, willing to put self in serious jeopardy to achieve their vision and have a lasting influence. May achieve true heroism and historical greatness.",
-                "Self-assertive, self-confident, and strong: have learned to stand up for what they need and want. A resourceful, 'can do' attitude and passionate inner drive.",
+                "Self-assertive, self-confident, and strong: have learned to stand up for what they need and want. A resourceful, "can do" attitude and passionate inner drive.",
                 "Decisive, authoritative, and commanding: the natural leader others look up to. Take initiative, make things happen: champion people, provider, protective, and honorable, carrying others with their strength.",
-                "Self-sufficiency, financial independence, and having enough resources are important concerns: become enterprising, pragmatic, 'rugged individualists,' wheeler-dealers. Risk-taking, hardworking, denying own emotional needs.",
-                "Begin to dominate their environment, including others: want to feel that others are behind them, supporting their efforts. Swaggering, boastful, forceful, and expansive: the 'boss' whose word is law. Proud, egocentric, want to impose their will and vision on everything, not seeing others as equals or treating them with respect.",
+                "Self-sufficiency, financial independence, and having enough resources are important concerns: become enterprising, pragmatic, "rugged individualists," wheeler-dealers. Risk-taking, hardworking, denying own emotional needs.",
+                "Begin to dominate their environment, including others: want to feel that others are behind them, supporting their efforts. Swaggering, boastful, forceful, and expansive: the "boss" whose word is law. Proud, egocentric, want to impose their will and vision on everything, not seeing others as equals or treating them with respect.",
                 "Become highly combative and intimidating to get their way: confrontational, belligerent, creating adversarial relationships. Everything a test of wills, and they will not back down. Use threats and reprisals to get obedience from others, to keep others off balance and insecure. However, unjust treatment makes others fear and resent them, possibly also band together against them.",
-                "Defying any attempt to control them, become completely ruthless, dictatorial, 'might makes right.' The criminal and outlaw, renegade, and con-artist. Hard-hearted, immoral and potentially violent.",
+                "Defying any attempt to control them, become completely ruthless, dictatorial, "might makes right." The criminal and outlaw, renegade, and con-artist. Hard-hearted, immoral and potentially violent.",
                 "Develop delusional ideas about their power, invincibility, and ability to prevail: megalomania, feeling omnipotent, invulnerable. Recklessly over-extending self.",
                 "If they get in danger, they may brutally destroy everything that has not conformed to their will rather than surrender to anyone else. Vengeful, barbaric, murderous. Sociopathic tendencies. Generally corresponds to the Antisocial Personality Disorder."
             ],
-            "keyMotivations": "Want to be self-reliant, to prove their strength and resist weakness, to be important in their world, to dominate the environment, and to stay in control of their situation.",
-            "overview": "Content TBD",
-            "addictions": "Ignore physical needs and problems: avoid medical visits and check-ups. Indulging in rich foods, alcohol, tobacco while pushing self too hard leads to high stress, strokes, and heart conditions. Control issues central, although alcoholism and narcotic addictions are possible.",
-            "growthRecommendations": [
-                "It goes against the grain, but act with self-restraint. You show true power when you forbear from asserting your will with others, even when you could. Your real power lies in your ability to inspire and uplift people. You are at your best when you take charge and help everyone through a crisis. Few will take advantage of you when you are caring, and you will do more to secure the loyalty and devotion of others by showing the greatness of your heart than you ever could by displays of raw power.",
-                "It is difficult for Eights, but learn to yield to others, at least occasionally. Often, little is really at stake, and you can allow others to have their way without fear of sacrificing your power, or your real needs. The desire to dominate everyone all the time is a sign that your ego is beginning to inflate\u2014a danger signal that more serious conflicts with others are inevitable.",
-                "Remember that the world is not against you. Many people in your life care about you and look up to you, but when you are in your fixation, you do not make this easy for them. Let in the affection that is available. Doing this will not make you weak, but will confirm the strength and support in yourself and your life. Also remember that by believing that others are against you and reacting against them, you tend to alienate them and confirm your own fears. Take stock of the people who truly are on your side, and let them know how important they are to you.",
-                "Eights typically want to be self-reliant and depend on no one. But, ironically, they depend on many people. For example, you may think that you are not dependent on your employees because they depend on you for their jobs. You could dismiss them at any time and hire other workers. Everyone is expendable in your little kingdom\u2014except you. But the fact is that you are dependent on others to do their jobs too, especially if your business concerns grow beyond what you can manage alone. But if you alienate everyone associated with you, you will eventually be forced to employ the most obsequious and untrustworthy operatives. When you do, you will have reason to question their loyalty and to fear losing your position. The fact is that whether in your business world or your domestic life, your self-sufficiency is largely an illusion.",
-                "Eights typically overvalue power. Having power, whether through wealth, position, or simple brute force, allows them to do whatever they want, to feel important, to be feared and obeyed. But those who are attracted to you because of your power do not love you for yourself, nor do you love or respect them. While this may be the Faustian bargain you have made, you will nevertheless have to pay the price that whatever power you accumulated will inevitably be at a cost to you, physically and emotionally."
-            ]
+            "keyMotivations": {
+                "Keywords": ["self-reliant", "strength", "importance", "dominate", "control"],
+                "DesireSummary": "To prove their strength, resist weakness, be important, dominate the environment, and stay in control of their situation.",
+                "FearSummary": "Losing control, being weak or dependent on others."
+            },
+            "mentalIllness": ["Antisocial Personality Disorder"],
+            "addictions": {
+                "Keywords": ["ignore physical needs", "ignore problems", "ignore health issues", "over-eating", "alcohol", "tobacco", "self-punishment", "high stress", "narcotics"],
+                "Summary": "The individual tends to ignore physical needs and problems, avoid medical visits and check-ups. They indulge in rich foods, alcohol, and tobacco while pushing themselves too hard, leading to high stress, strokes, and heart conditions. Control issues are central, although alcoholism and narcotic addictions are possible."
+                }
         },
         {
             "typeID": 9,
-            "keyWords": [
-            ],
-            "briefDesc": "This person is accepting, trusting, and stable. They are usually creative, optimistic, and supportive, but can also be too willing to go along with others to keep the peace. They want everything to go smoothly and be without conflict, but they can also tend to be complacent, simplifying problems and minimizing anything upsetting. They typically have problems with inertia and stubbornness.",
-            "basicFear": "Of loss and separation",
-            "basicDesire": "To have inner stability 'peace of mind'",
+            "briefDesc": {
+                "GeneralKeywords": ["accepting", "trusting", "stable", "creative", "optimistic", "supportive", "peace", "conflict", "problems", "complacent", "minimizing", "inertia", "stubbornness"],
+                "TypeofPerson": "Easygoing",
+                "PositiveAttributes": ["accepting", "trusting", "stable", "creative", "optimistic", "supportive"],
+                "NegativeAttributes": ["complacent", "minimizing", "inertia", "stubbornness"],
+                "Problems": ["inertia", "stubbornness"]
+            },
+            "basicFear": {
+                "Keywords": ["loss", "separation"],
+                "Summary": "Of loss and separation."
+            },
+            "basicDesire": {
+                "Keywords": ["inner stability", "peace of mind"],
+                "Summary": "The desire is to have a sense of inner stability and peace of mind."
+            },
             "levelOfDevelopment": [
                 "Become self-possessed, feeling autonomous and fulfilled: have great equanimity and contentment because they are present to themselves. Paradoxically, at one with self, and thus able to form more profound relationships. Intensely alive, fully connected to self and others.",
                 "Deeply receptive, accepting, unselfconscious, emotionally stable and serene. Trusting of self and others, at ease with self and life, innocent and simple. Patient, unpretentious, good-natured, genuinely nice people.",
                 "Optimistic, reassuring, supportive: have a healing and calming influence—harmonizing groups, bringing people together: a good mediator, synthesizer, and communicator.",
-                "Fear conflicts, so become self-effacing and accommodating, idealizing others and 'going along' with their wishes, saying 'yes' to things they do not really want to do. Fall into conventional roles and expectations. Use philosophies and stock sayings to deflect others.",
-                "Active, but disengaged, unreflective, and inattentive. Do not want to be affected, so become unresponsive and complacent, walking away from problems, and 'sweeping them under the rug.' Thinking becomes hazy and ruminative, mostly comforting fantasies, as they begin to 'tune out' reality, becoming oblivious. Emotionally indolent, unwillingness to exert self or to focus on problems: indifference.",
-                "Begin to minimize problems, to appease others and to have 'peace at any price.' Stubborn, fatalistic, and resigned, as if nothing could be done to change anything. Into wishful thinking, and magical solutions. Others frustrated and angry by their procrastination and unresponsiveness.",
+                "Fear conflicts, so become self-effacing and accommodating, idealizing others and "going along" with their wishes, saying "yes" to things they do not really want to do. Fall into conventional roles and expectations. Use philosophies and stock sayings to deflect others.",
+                "Active, but disengaged, unreflective, and inattentive. Do not want to be affected, so become unresponsive and complacent, walking away from problems, and "sweeping them under the rug." Thinking becomes hazy and ruminative, mostly comforting fantasies, as they begin to "tune out" reality, becoming oblivious. Emotionally indolent, unwillingness to exert self or to focus on problems: indifference.",
+                "Begin to minimize problems, to appease others and to have "peace at any price." Stubborn, fatalistic, and resigned, as if nothing could be done to change anything. Into wishful thinking, and magical solutions. Others frustrated and angry by their procrastination and unresponsiveness.",
                 "Can be highly repressed, undeveloped, and ineffectual. Feel incapable of facing problems: become obstinate, dissociating self from all conflicts. Neglectful and dangerous to others.",
                 "Wanting to block out of awareness anything that could affect them, they dissociate so much that they eventually cannot function: numb, depersonalized.",
                 "They finally become severely disoriented and catatonic, abandoning themselves, turning into shattered shells. Multiple personalities possible. Generally corresponds to the Schizoid and Dependent personality disorders."
             ],
-            "keyMotivations": "Want to create harmony in their environment, to avoid conflicts and tension, to preserve things as they are, to resist whatever would upset or disturb them.",
-            "overview": "Content TBD",
-            "addictions": "Over-eating or under-eating due to lack of self-awareness and repressed anger. Lack of physical activity. Depressants and psychotropics, alcohol, marijuana, narcotics to deaden loneliness and anxiety.",
-            "growthRecommendations": [
-                "It is worth examining your type's tendency to go along with others, doing what they want to keep the peace and be nice. Will constantly acquiescing to the wishes of others provide the kind of relationships that will really satisfy you? Remember, it is impossible to love others if you are not truly present to them. This means that you have to be yourself, that you (paradoxically) have to be independent so that you can really be there for others when they need you.",
-                "Exert yourself. Force yourself to pay attention to what is going on. Do not drift off or tune out people, or daydream. Work on focusing your attention to become an active participant in the world around you. Try to become more mentally and emotionally engaged.",
-                "Recognize that you also have aggressions, anxieties, and other feelings that you must deal with. Negative feelings and impulses are a part of you and they affect you emotionally and physically whether or not you acknowledge them. Furthermore, your negative emotions are often expressed inadvertently and get in the way of the peace and harmony you want in your relationships. It is best to get things out in the open first, at least by allowing yourself to become aware of your feelings.",
-                "Although this will be very painful for you, if your marriage has ended in divorce or if you are having problems with your children, you must honestly examine how you have contributed to these problems. Examining troubled relationships will be extremely difficult because the people involved have been close to your heart. The feelings you have for others endow you with much of your identity and self-esteem. But if you really love others, you can do no less than examine the role you have played in whatever conflicts that have arisen. In the last analysis, the choice is simple: you must sacrifice your peace of mind (in the short run) for the satisfaction of genuine relationships (in the long run.)",
-                "Exercise frequently to become more aware of your body and emotions. (Some Nines run around doing errands and think that they are getting enough exercise.) Regular exercise is a healthy form of self-discipline and will increase your awareness of your feelings and other sensations. Developing body-awareness will help teach you to concentrate and focus your attention in other areas of your life as well. Exercise is also a good way to get in touch with and express some aggressions."
-            ]
+            "keyMotivations": {
+                "Keywords": ["create", "harmony", "environment", "avoid", "conflicts", "tension", "preserve", "resist", "upset", "disturb"],
+                "DesireSummary": ["create harmony", "preserve things as they are"],
+                "FearSummary": ["avoid conflicts", "avoid tension", "resist whatever would upset or disturb them"]
+            },
+            "mentalIllness": ["Schizoid personality disorder", "Dependent personality disorder"],
+            "addictions": {
+                "Keywords": ["over-eating", "under-eating", "lack of self-awareness", "repressed anger", "lack of physical activity", "depressants", "psychotropics", "alcohol", "marijuana", "narcotics", "loneliness", "anxiety"],
+                "Summary": "Over-eating or under-eating due to lack of self-awareness and repressed anger. Lack of physical activity. Depressants and psychotropics, alcohol, marijuana, narcotics to deaden loneliness and anxiety."
+              }
         }
     ]
 }
