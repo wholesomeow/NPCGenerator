@@ -9,7 +9,7 @@ from utility import utilities
 
 
 class NPCBase:
-    def __init__(self, UUID, Name) -> None:
+    def __init__(self, UUID, Name):
         self.NPC_UUID = UUID
         self.NPC_Name = Name
         self.NPC_Detail_Information = []

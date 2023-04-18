@@ -9,7 +9,7 @@ import random
 class MarkovChain:
     def __init__(self):
         self.attempts = 6
-        self.order = 1
+        self.order = 3
         self.n_grams = {}
         self.csv = "csv/FantasyNames.csv"
         self.input = self._processCSV()
@@ -56,16 +56,35 @@ class MarkovChain:
                 break
             result += current_gram
 
-        return result.capitalize()
+        return result
 
     def getName(self):
+        vowels = ["a", "e", "i", "o", "u"]
+        accepted_bigrams = ['br', 'dr', 'fr', 'gr', 'kr', 'pr', 'tr', 'cr', 'sn', 'sw', 'th',
+                            'sh', 'ch', 'cl', 'sl', 'sm', 'sn', 'sp', 'st', 'sk', 'bl', 'fl',
+                            'gl', 'pl', 'sl', 'll', 'yl', 'yv', 'gh']
+        # Build the name and then check name meets quality requirements
         makeName = True
         while makeName:
             name = self._makeName()
 
             if len(name) <= 3:
                 continue
+            elif len(name) > 3:
+                letters = [x for x in name]
+                for i, letter in enumerate(letters):
+                    bigram = [letter.lower(), letters[i + 1]]
+                    if bigram[0] in vowels or bigram[1] in vowels:
+                        continue
+                    else:
+                        big = "".join(bigram)
+                        if big not in accepted_bigrams:
+                            del letters[i]
             else:
                 makeName = False
 
-        return name
+        return name.capitalize()
+
+
+new_name = MarkovChain().getName()
+print(new_name)
