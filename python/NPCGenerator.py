@@ -2,6 +2,7 @@ import random
 import json
 
 from datetime import datetime
+from multiprocessing import Pool
 
 import LocationClass
 
@@ -17,53 +18,52 @@ def assignSN(NPC, mem_list):
 
 def makeLocation():
     start = datetime.now()
-    all_families = []
+    all_networks = []
+    citizens = []
+    items = []
+    counter = start.year * 10000000000 + start.month * 100000000 + \
+        start.day * 1000000 + start.hour * 10000 + start.minute * 100 + start.second
 
     test_town = LocationClass.Location()
-    families = test_town.populate()
+    with Pool() as pool:
+        items = [counter + i for i in range(test_town.size)]
+        NPC_List = [pool.map(test_town.populate, items)
+                    for i in range(test_town.size)]
+        for NPC in NPC_List[0]:
+            citizens.append(NPC)
+            test_town.citizens.append(NPC)
+
+        families = test_town.buildFamilies(citizens)
 
     for mem in families:
-        s_network = LocationClass.SocialNetwork()
+        s_network = LocationClass.SocialNetwork(test_town)
         s_network.populateAssociates(mem)
-        all_families.append(s_network.families)
+        all_networks.append(s_network.networks)
 
     # TODO: Help
     for NPC in reversed(test_town.citizens):
-        for family in all_families:
-            mem_list = family.get_dict()
+        for network in all_networks:
+            mem_list = network.get_dict()
             assignSN(NPC, mem_list)
 
     stop = datetime.now()
     time = stop - start
 
-    r = random.randint(0, len(test_town.citizens))
+    r = random.randint(0, len(test_town.citizens) - 1)
 
     print(f"Location size: {test_town.size} \
           Time to create Location: {time} \
-          Size of Location {utilities.getsize(test_town)} bytes")
+          Size of Location {utilities.getsize(test_town) / int(1024^2)} MB")
     print(f"Randomly selected NPC: {test_town.citizens[r].NPC_UUID}")
     print(f"                       {test_town.citizens[r].NPC_Name}")
 
-    citizens = test_town.citizens
+    r = random.randint(0, len(test_town.citizens))
+    person = test_town.citizens[r]
 
-    r = random.randint(0, len(citizens))
-    person = citizens[r]
-    person_out = {}
-    graph = utilities.Graph()
+    # for each in person.__dict__:
+    #     person_out.update({each: person.__dict__[each]})
 
-# TODO: Figure out a way to build an serializable function within the graph
-    for each in person.__dict__:
-        current = person.__dict__[each]
-        print(type(current))
-        if type(current) is not type(graph):
-            person_out.update({each: current})
-        else:
-            sn = {}
-            for i in current:
-                sn.update({i.id: i.get_connections()})
-        person_out.update({each: person.__dict__[each]})
-
-    return person_out
+    return person.__dict__
 
 
 if __name__ == '__main__':

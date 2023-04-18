@@ -55,7 +55,7 @@ class Size(Enum):
 
 
 class Location:
-    def __init__(self, size=Size.HAMLET):
+    def __init__(self, size=Size.TEST):
         self.size = size.value
         self.type = size.name
         self.families = []
@@ -64,57 +64,56 @@ class Location:
             "Parents": 2,
             "Kids": 2
         }
+        total = [self.family_size[i] for i in self.family_size]
+        self.family_total = sum(total)
+        self.family_amount = int(self.size / self.family_total)
+        self.MC = markovChain.MarkovChain()
 
-    def buildFamilies(self, people):
+    def _buildFamilies(self, citizens):
         members = {}
         for i in self.family_size:
             collection = []
+            if self.family_size[i] == "Total":
+                break
             current_size = self.family_size[i]
             for j in range(current_size):
-                collection.append(people.pop())
+                if len(citizens) > 0:
+                    collection.append(citizens.pop())
             members.update({i: collection})
         return members
 
-    def populate(self):
-        families, citizens = [], []
-        now = datetime.now()
-        counter = now.year * 10000000000 + now.month * 100000000 + \
-            now.day * 1000000 + now.hour * 10000 + now.minute * 100 + now.second
-
-        MC = markovChain.MarkovChain()
-
-        for i in range(self.size):
-            counter += i
-            UUID = utilities.encode(counter)
-            Name = MC.getName()
-            NPC = NPCClass.NPCBase(UUID, Name)
-            NPC.assignCoreData()
-            NPC.assignCommunication()
-            NPC.createDetail()
-
-            self.citizens.append(NPC)
-            citizens.append(NPC)
-
-        total_size = 0
-        for i in self.family_size:
-            total_size += self.family_size[i]
-        family_amount = int(self.size / total_size)
-
-        for i in range(family_amount):
-            members = self.buildFamilies(citizens)
+    def buildFamilies(self, citizens):
+        families = []
+        for i in range(self.family_amount):
+            members = self._buildFamilies(citizens)
             families.append(members)
 
         return families
 
+    def populate(self, counter):
+        name = self.MC.getName()
+        UUID = utilities.encode(counter)
+        NPC = NPCClass.NPCBase(UUID, name)
+        NPC.assignCoreData()
+        NPC.assignCommunication()
+        NPC.createDetail()
+
+        return NPC
+
     def getCitizen(self, id):
         for person in self.citizens:
-            if person.UUID is id:
+            if person.NPC_UUID is id:
                 return person
 
 
 class SocialNetwork:
-    def __init__(self):
+    def __init__(self, test_town):
         self.networks = []
+        self.location = test_town
+
+    def getRole(self, person, num):
+        role = f"Role_{num}"
+        return person.NPC_Social_Role[role]
 
     def populateAssociates(self, members):
         # First, create graph of family members
@@ -125,15 +124,20 @@ class SocialNetwork:
             for person in members[current_role]:
                 match current_role:
                     case "Parents":
-                        person.NPC_Social_Role = [
-                            Genogram.PARENT.name, Genogram.SPOUSE.name]
+                        person.NPC_Social_Role = {
+                            "Role_1": Genogram.PARENT.name,
+                            "Role_2": Genogram.SPOUSE.name
+                        }
                     case "Kids":
-                        person.NPC_Social_Role = [
-                            Genogram.CHILD.name, Genogram.SIBLING.name]
+                        person.NPC_Social_Role = {
+                            "Role_1": Genogram.CHILD.name,
+                            "Role_2": Genogram.SIBLING.name
+                        }
                 network.add_vertex(person.NPC_UUID)
                 arr.append(person.NPC_UUID)
 
         # Built a list of all posible direct connections within the family
+        # ---
         # itertools and list comprehension is shockingly faster than for loops
         # TODO: Replace for loops with iter/comprehension where possible/able
         combs = [c for c in itertools.product(
@@ -142,8 +146,20 @@ class SocialNetwork:
         # TODO: Add in Relationship_To value in the weight to indicate what the relationship to the src node is
         for combo in combs:
             r = random.randint(0, 5)
+            c_1 = self.location.getCitizen(combo[0])
+            c_2 = self.location.getCitizen(combo[1])
+
+            # Check the relationship status between nodes to get relationship type
+            if self.getRole(c_1, 1) == self.getRole(c_2, 1):
+                Relationship_Type = f"{self.getRole(c_1, 2)} to {self.getRole(c_2, 2)}"
+            else:
+                Relationship_Type = f"{self.getRole(c_1, 1)} to {self.getRole(c_2, 1)}"
+
             network.add_edge(combo[0], combo[1],
-                             [Closeness.FAMILY.name, Relationship(r).name])
+                             [Closeness.FAMILY.name,
+                              Relationship_Type,
+                              Relationship(r).name]
+                             )
 
         # Second, add random friend connections to each network
 

@@ -7,7 +7,7 @@ from dataclasses import dataclass
 class CoreData:
     def __init__(self):
         try:
-            with open("json/enneagramDataCompiled.json", "r") as e:
+            with open("json/keywordEnneagramData.json", "r") as e:
                 data = json.load(e)
                 self.Enneagram_Main_Data = data.get("mainData")
                 self.Enneagram_Sub_Data = data.get("subData")
@@ -22,8 +22,8 @@ class CoreData:
 
     # Centers are        Thinking,   Feeling,  Instinctive
     Enneagram_Centers = [[5, 6, 7], [2, 3, 4], [1, 8, 9]]
-    Enneagram_Keywords = ["typeID", "breifDesc", "basicFear", "basicDesire",
-                          "levelOfDevelopment", "keyMotivations", "addictions"]
+    Enneagram_Keywords = ["typeID", "briefDesc", "basicFear",
+                          "basicDesire", "keyMotivations", "addictions"]
 
     MICE_Data = [
         "Money",

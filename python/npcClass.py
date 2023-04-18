@@ -36,7 +36,7 @@ class NPCBase:
         NPC_EM = NPCCoreData.EM()
 
         NPC_CSREI.populateCSREI()
-        NPC_OCEAN.defineOCEAN(NPC_CSREI.CSREI[0])
+        NPC_OCEAN.defineOCEAN(NPC_CSREI.CSREI["CSCoords"])
         NPC_EM.populateEM()
 
         self.NPC_CSREI = NPC_CSREI.__dict__
@@ -46,8 +46,7 @@ class NPCBase:
     def assignCommunication(self):
         # Composes the Communication Class to the NPC Class
         NPC_Communication = NPCCommunicationClass.NPCCommunicationBase()
-        EM_Data = self.NPC_EM.get("EM")
-        type_ID = EM_Data[0].get("typeID")
+        type_ID = self.NPC_EM["EM"]["Enneagram"].get("typeID")
         NPC_Communication.loadInteractionMatrix(type_ID)
 
         self.NPC_Communication = NPC_Communication.__dict__
