@@ -1,5 +1,10 @@
 # Project specific ignores
 secrets
+prompts
+archive
+python/test.py
+txt
+csv/Archive
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
