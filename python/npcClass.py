@@ -9,13 +9,9 @@ from utility import utilities
 
 
 def defineOCEAN(CS_Coords, data):
-    OCEAN = []
     OCEAN_Coords = data.OCEAN_Coords
-
-    for i in OCEAN_Coords:
-        OCEAN.append(
-            int(math.dist(i, [-CS_Coords[0], -CS_Coords[1]]))
-        )
+    OCEAN = [int(math.dist(i, [-CS_Coords[0], -CS_Coords[1]]))
+             for i in OCEAN_Coords]
 
     return OCEAN
 
@@ -201,8 +197,7 @@ class NPCBase:
         inches = (ft * 12) + inch
 
         # TODO: Combine the i2m function into a single return
-        cm = utilities.imperialToMetric(inches, 0)
-        kg = utilities.imperialToMetric(lbs, 1)
+        cm, kg = utilities.imperialToMetric(inches, lbs)
         Body_Type = self.data_detail.generateBodyType(cm, kg)
         NPC_Imperial_Data = [ft, inch, lbs]
         NPC_Metric_Data = [cm, kg]

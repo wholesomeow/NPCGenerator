@@ -2,6 +2,7 @@ import random
 
 from datetime import datetime
 
+import NPCClass
 import LocationClass
 
 from utility import utilities
@@ -26,7 +27,6 @@ def makeLocation(size=8):
     start = datetime.now()
     all_networks = []
     citizens = []
-    NPC_List = []
 
     test_town = LocationClass.Location(size)
     counter = start.year * 10000000000 + start.month * 100000000 + \
@@ -35,8 +35,7 @@ def makeLocation(size=8):
     names = [markovChain.MarkovChain().getName() for i in range(size)]
 
     for i in range(size):
-        NPC = test_town.populate(names[i], IDS[i])
-        NPC_List.append(NPC)
+        NPC = NPCClass.NPCBase(names[i], IDS[i])
         citizens.append(NPC)
         test_town.citizens.append(NPC)
 
@@ -72,4 +71,4 @@ def makeLocation(size=8):
 
 
 if __name__ == '__main__':
-    makeLocation(1500)  # This population size is around that of Skyrim
+    makeLocation(250)  # 1500 is around the population size of Skyrim

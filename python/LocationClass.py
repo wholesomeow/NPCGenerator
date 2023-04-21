@@ -1,8 +1,6 @@
 import random
 import itertools
 
-import NPCClass
-
 from utility import utilities
 
 from datetime import datetime
@@ -72,19 +70,10 @@ class Location:
         return members
 
     def buildFamilies(self, citizens):
-        families = []
-        for i in range(self.family_amount):
-            members = self._buildFamilies(citizens)
-            families.append(members)
+        families = [self._buildFamilies(citizens)
+                    for i in range(self.family_amount)]
 
         return families
-
-    def populate(self, name, UUID):
-        NPC = NPCClass.NPCBase(name, UUID)
-        # NPC.assignCoreData()
-        # NPC.assignCommunication()
-
-        return NPC
 
     def getCitizen(self, id):
         for person in self.citizens:
@@ -125,7 +114,8 @@ class SocialNetwork:
         # Built a list of all posible direct connections within the family
         # ---
         # itertools and list comprehension is shockingly faster than for loops
-        # TODO: Replace for loops with iter/comprehension where possible/able
+
+        # TODO: Fix this somehow? I think this is broken and is causing the SN to not build properly.
         combs = [c for c in itertools.product(
             arr, arr) if len(set(c)) == len(c)]
 

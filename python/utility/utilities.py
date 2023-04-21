@@ -210,18 +210,12 @@ def getObjSize(obj):
 # Imperial to Metric
 
 
-def imperialToMetric(imperial, mode):
-    """Converts input imperial to metric based on mode
-    Mode 0 is inches to cm
-    Mode 1 is lbs to kg"""
-    metric = 0
-    match mode:
-        case 0:
-            metric = imperial * 2.54
-        case 1:
-            metric = imperial * 0.453592
+def imperialToMetric(inches, lbs):
+    """Converts input imperial to metric based on mode"""
+    cm = inches * 2.54
+    kg = lbs * 0.453592
 
-    return metric
+    return cm, kg
 
 
 # --------------------------------------------------------------
