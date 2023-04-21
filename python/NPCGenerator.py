@@ -1,12 +1,11 @@
 import random
-import json
 
 from datetime import datetime
-from multiprocessing import Pool
 
 import LocationClass
 
 from utility import utilities
+from nameGen import markovChain
 
 
 def assignSN(NPC, mem_list):
@@ -16,31 +15,38 @@ def assignSN(NPC, mem_list):
             break
 
 
-def makeLocation():
+def makeLocation(size=8):
+    """Use to build a new collection of NPCs in a location.
+
+    Arguments:
+    Size(int) dictates the amount of people to be created in the location.
+    Standard sizes are 100, 1000, 6000, 20000. Size will default
+    to 8 - for testing purposes - if no other value is specified."""
+
     start = datetime.now()
     all_networks = []
     citizens = []
-    items = []
+    NPC_List = []
+
+    test_town = LocationClass.Location(size)
     counter = start.year * 10000000000 + start.month * 100000000 + \
         start.day * 1000000 + start.hour * 10000 + start.minute * 100 + start.second
+    IDS = [utilities.encode(counter + 1) for i in range(size)]
+    names = [markovChain.MarkovChain().getName() for i in range(size)]
 
-    test_town = LocationClass.Location()
-    with Pool() as pool:
-        items = [counter + i for i in range(test_town.size)]
-        NPC_List = [pool.map(test_town.populate, items)
-                    for i in range(test_town.size)]
-        for NPC in NPC_List[0]:
-            citizens.append(NPC)
-            test_town.citizens.append(NPC)
+    for i in range(size):
+        NPC = test_town.populate(names[i], IDS[i])
+        NPC_List.append(NPC)
+        citizens.append(NPC)
+        test_town.citizens.append(NPC)
 
-        families = test_town.buildFamilies(citizens)
+    families = test_town.buildFamilies(citizens)
 
     for mem in families:
         s_network = LocationClass.SocialNetwork(test_town)
         s_network.populateAssociates(mem)
         all_networks.append(s_network.networks)
 
-    # TODO: Help
     for NPC in reversed(test_town.citizens):
         for network in all_networks:
             mem_list = network.get_dict()
@@ -49,16 +55,15 @@ def makeLocation():
     stop = datetime.now()
     time = stop - start
 
-    r = random.randint(0, len(test_town.citizens) - 1)
+    r = random.choice(test_town.citizens)
 
-    print(f"Location size: {test_town.size} \
+    print(f"Location size: {size} \
           Time to create Location: {time} \
-          Size of Location {utilities.getsize(test_town) / int(1024^2)} MB")
-    print(f"Randomly selected NPC: {test_town.citizens[r].NPC_UUID}")
-    print(f"                       {test_town.citizens[r].NPC_Name}")
+          Size of Location ~{round(utilities.getObjSize(test_town) / 1000000)} MB")
+    print(f"Random NPC UUID: {r.NPC_UUID}")
+    print(f"Random NPC Name: {r.NPC_Name}")
 
-    r = random.randint(0, len(test_town.citizens))
-    person = test_town.citizens[r]
+    person = random.choice(test_town.citizens)
 
     # for each in person.__dict__:
     #     person_out.update({each: person.__dict__[each]})
@@ -67,4 +72,4 @@ def makeLocation():
 
 
 if __name__ == '__main__':
-    makeLocation()
+    makeLocation(1500)  # This population size is around that of Skyrim

@@ -188,7 +188,7 @@ class Network:
 BLACKLIST = type, ModuleType, FunctionType
 
 
-def getsize(obj):
+def getObjSize(obj):
     """sum size of object & members."""
     if isinstance(obj, BLACKLIST):
         raise TypeError(

@@ -7,44 +7,41 @@ import random
 
 
 class MarkovChain:
-    def __init__(self):
-        self.attempts = 6
-        self.order = 3
+    def __init__(self, csv_path="csv/FantasyNames.csv", max_attempts=6):
+        # General amount of times to match characters for the name
+        self.attempts = max_attempts
         self.n_grams = {}
-        self.csv = "csv/FantasyNames.csv"
-        self.input = self._processCSV()
+        self.csv = csv_path
+        self.vowels = ["a", "e", "i", "o", "u"]
+        self.accepted_bigrams = set(['br', 'dr', 'fr', 'gr', 'kr', 'pr', 'tr', 'cr', 'sn', 'sw', 'th',
+                                     'sh', 'ch', 'cl', 'sl', 'sm', 'sn', 'sp', 'st', 'sk', 'bl', 'fl',
+                                     'gl', 'pl', 'sl', 'll', 'yl', 'yv', 'gh'])
+        self.n_grams = self._buildNGram(csv_path)
 
-    def _processCSV(self):
-        output = ""
-        with open(self.csv, newline='', encoding='utf8') as infile:
-            reader = csv.reader(infile)
-            i = 0
-            for row in reader:
-                for cell in row:
-                    if cell == '':
-                        continue
-                    output += f"{cell} "
+    def _buildNGram(self, csv_path):
+        with open(csv_path, newline='', encoding='utf8') as infile:
+            input = " ".join(cell for row in csv.reader(infile)
+                             for cell in row if cell)
+        n_grams = {}
 
-        for i, v in enumerate(output):
-            j = i + self.order
-            if v == " ":
+        for i, val in enumerate(input):
+            if i == len(input) - 1:
+                break
+            elif val == " ":  # Checks if data from output is a space between the names or not
                 continue
 
-            if v not in self.n_grams:
-                self.n_grams[v] = []
-            self.n_grams[v].append(output[i + 1])
+            if val not in n_grams and val != ' ':
+                n_grams[val] = []
+            n_grams[val].append(input[i + 1])
 
-        return output
+        return n_grams
 
     def _getStartPoint(self):
-        r = random.randint(0, len(self.input))
-        current_gram = self.input[r]
-        result = current_gram
-
-        return result, current_gram
+        current_gram = random.choice(list(self.n_grams.keys()))
+        return current_gram, current_gram
 
     def _makeName(self):
-        result, current_gram = self._getStartPoint()
+        result, current_gram = self._getStartPoint()  # What a clever trick
 
         for i in range(self.attempts):
             try:
@@ -56,35 +53,34 @@ class MarkovChain:
                 break
             result += current_gram
 
-        return result
+        return result.strip()  # Just incase
+
+    def _checkQuality(self, name):
+        if len(name) <= 3:
+            return False
+
+        # letters = [x for x in name]
+        for letter in range(len(name) - 1):
+            bigram = name[letter:letter + 2].lower()
+            if bigram[0] in self.vowels or bigram[1] in self.vowels:
+                continue
+            elif bigram not in self.accepted_bigrams:
+                return False
+
+        return True
 
     def getName(self):
-        vowels = ["a", "e", "i", "o", "u"]
-        accepted_bigrams = ['br', 'dr', 'fr', 'gr', 'kr', 'pr', 'tr', 'cr', 'sn', 'sw', 'th',
-                            'sh', 'ch', 'cl', 'sl', 'sm', 'sn', 'sp', 'st', 'sk', 'bl', 'fl',
-                            'gl', 'pl', 'sl', 'll', 'yl', 'yv', 'gh']
         # Build the name and then check name meets quality requirements
-        makeName = True
-        while makeName:
+        make_name = True
+        while make_name:
             name = self._makeName()
 
-            if len(name) <= 3:
-                continue
-            elif len(name) > 3:
-                letters = [x for x in name]
-                for i, letter in enumerate(letters):
-                    bigram = [letter.lower(), letters[i + 1]]
-                    if bigram[0] in vowels or bigram[1] in vowels:
-                        continue
-                    else:
-                        big = "".join(bigram)
-                        if big not in accepted_bigrams:
-                            del letters[i]
-            else:
-                makeName = False
-
-        return name.capitalize()
+            if self._checkQuality(name):
+                return name.capitalize()
 
 
-new_name = MarkovChain().getName()
-print(new_name)
+# NOTE: For testing the name creation functionality
+# (Comment out when not working on the generator)
+# for i in range(10):
+#     new_name = MarkovChain().getName()
+#     print(new_name)

@@ -4,7 +4,6 @@ import itertools
 import NPCClass
 
 from utility import utilities
-from nameGen import markovChain
 
 from datetime import datetime
 from enum import Flag, Enum
@@ -46,18 +45,9 @@ class Closeness(Enum):
     FAMILY = 6          # Family members, but Relationship is not const
 
 
-class Size(Enum):
-    TEST = 8
-    HAMLET = 100
-    VILLAGE = 1000
-    TOWN = 6000
-    CITY = 20000
-
-
 class Location:
-    def __init__(self, size=Size.TEST):
-        self.size = size.value
-        self.type = size.name
+    def __init__(self, size=8):
+        self.size = size
         self.families = []
         self.citizens = []
         self.family_size = {
@@ -67,7 +57,6 @@ class Location:
         total = [self.family_size[i] for i in self.family_size]
         self.family_total = sum(total)
         self.family_amount = int(self.size / self.family_total)
-        self.MC = markovChain.MarkovChain()
 
     def _buildFamilies(self, citizens):
         members = {}
@@ -90,13 +79,10 @@ class Location:
 
         return families
 
-    def populate(self, counter):
-        name = self.MC.getName()
-        UUID = utilities.encode(counter)
-        NPC = NPCClass.NPCBase(UUID, name)
-        NPC.assignCoreData()
-        NPC.assignCommunication()
-        NPC.createDetail()
+    def populate(self, name, UUID):
+        NPC = NPCClass.NPCBase(name, UUID)
+        # NPC.assignCoreData()
+        # NPC.assignCommunication()
 
         return NPC
 
